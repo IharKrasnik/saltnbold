@@ -1,0 +1,46 @@
+<script>
+	import '../app.css';
+	import { page } from '$app/stores';
+	import currentUser, { isLoading as isCurrentUserLoading } from '$lib/stores/currentUser';
+</script>
+
+<div class="container flex mx-auto my-8 h-full">
+	<div class="mr-8">
+		<div class="w-[250px] bg-zinc-900 rounded-xl p-4 flex-shrink-0">
+			<div class="flex items-center justify-between">
+				<a href="/"><img class="w-[50px] rounded-full" src="/salt_logo.png" /></a>
+				<div>
+					{#if $currentUser}
+						<img src={$currentUser.avatarUrl} class="rounded-full w-[40px] h-[40px]" />
+					{/if}
+				</div>
+			</div>
+			<div class="mt-8 text-lg">
+				<div
+					class="py-2"
+					class:font-bold={$page.url.pathname === '/' || $page.url.pathname.includes('request/')}
+				>
+					My Requests
+				</div>
+
+				<div class="py-2">Free Templates</div>
+
+				<hr class="mt-4 py-2 opacity-30" />
+
+				<div class="mt-2 text-sm opacity-80">
+					Salt n Bold is a fast design studio built for startups 💙
+				</div>
+			</div>
+		</div>
+
+		<button class="mt-8 w-full"> Get Custom Design </button>
+
+		<button class="mt-4 w-full" style="background: none;"> Refer a friend </button>
+	</div>
+
+	<div class="w-full">
+		{#if !$isCurrentUserLoading}
+			<slot />
+		{/if}
+	</div>
+</div>

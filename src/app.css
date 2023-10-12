@@ -8,10 +8,15 @@ body {
 	font-family: 'Poppins';
 
 	--color-brand: #2b65f9;
+	--color-green: #039177;
 }
 
 .container {
 	max-width: 1200px;
+}
+
+.error {
+	border: 1px red solid;
 }
 
 button {
@@ -21,4 +26,41 @@ button {
 
 button:hover {
 	@apply bg-green-400 text-black transition;
+}
+
+button.secondary {
+	background: none;
+	outline: 2px var(--color-brand) solid;
+	@apply flex items-center;
+}
+
+button.secondary:hover {
+	outline: none;
+	@apply bg-green-400;
+}
+
+label {
+	display: block;
+	@apply font-bold mb-2;
+}
+
+input,
+textarea {
+	background: none;
+	color: white;
+	border: 1px grey solid;
+
+	@apply rounded-lg p-2;
+}
+
+.form-hint {
+	@apply opacity-80 mt-2;
+}
+
+h2 {
+	@apply font-bold text-xl;
+}
+
+h3 {
+	@apply text-lg;
 }
