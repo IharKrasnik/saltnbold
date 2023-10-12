@@ -1,7 +1,23 @@
 <script>
 	import '../app.css';
+	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
+	import { get } from '$lib/api';
+
 	import currentUser, { isLoading as isCurrentUserLoading } from '$lib/stores/currentUser';
+	import requests, { isLoading as requestsIsLoading } from '$lib/stores/requests';
+
+	if (browser) {
+		if (!$isCurrentUserLoading && $currentUser) {
+			get('requests').then(({ results }) => {
+				requests.set(results);
+				requestsIsLoading.set(false);
+			});
+		} else {
+			requestsIsLoading.set(false);
+		}
+	}
 </script>
 
 <div class="container flex mx-auto my-8 h-full">
@@ -18,12 +34,16 @@
 				</div>
 			</div>
 			<div class="mt-8 text-lg">
-				<div
-					class="py-2"
-					class:font-bold={$page.url.pathname === '/' || $page.url.pathname.includes('request/')}
-				>
-					My Requests
-				</div>
+				<a href="/requests">
+					<div
+						class="py-2"
+						class:font-bold={$page.url.pathname === '/' ||
+							$page.url.pathname.includes('requests') ||
+							$page.url.pathname.includes('new')}
+					>
+						My Requests
+					</div>
+				</a>
 
 				<div class="py-2">Free Templates</div>
 
@@ -43,7 +63,7 @@
 	</div>
 
 	<div class="w-full">
-		{#if !$isCurrentUserLoading}
+		{#if !$isCurrentUserLoading && !$requestsIsLoading}
 			<slot />
 		{/if}
 	</div>
