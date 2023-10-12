@@ -35,7 +35,9 @@
 			</div>
 		</div>
 
-		<button class="mt-8 w-full"> Get Custom Design </button>
+		<button class="mt-8 w-full" data-cal-link="team/salt-and-bold/intro-call-30-min">
+			Get Custom Design
+		</button>
 
 		<button class="mt-4 w-full" style="background: none;"> Refer a friend </button>
 	</div>
