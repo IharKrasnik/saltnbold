@@ -5,6 +5,8 @@
 </script>
 
 <div class="container flex mx-auto my-8 h-full">
+	<link rel="icon" href="favicon.png" />
+
 	<div class="mr-8">
 		<div class="w-[250px] bg-zinc-900 rounded-xl p-4 flex-shrink-0">
 			<div class="flex items-center justify-between">

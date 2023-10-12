@@ -13,11 +13,7 @@ export default async ({ url, cookies }, pageName = 'Momentum') => {
 				const authData = await api.get('users/current-by-otp', { otp });
 				const { accessToken } = authData;
 
-				if (url.href.includes('saltnbold.com')) {
-					cookies.set('access_token', accessToken, { httpOnly: false, domain: '.saltnbold.com' });
-				} else {
-					cookies.set('access_token', accessToken, { httpOnly: false });
-				}
+				cookies.set('access_token', accessToken, { httpOnly: false });
 			} catch (err) {
 				console.log('err', err);
 			}
