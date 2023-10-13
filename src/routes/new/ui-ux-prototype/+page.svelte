@@ -8,8 +8,16 @@
 	let form = {
 		fields: [
 			{
+				name: 'name',
+				title: `What's your product name?`,
+				placeholder: 'MyProduct',
+				type: 'short-text',
+				isRequired: true
+			},
+			{
 				name: 'websiteUrl',
 				title: `What's your website?`,
+				placeholder: 'https://myproduct.com',
 				description: '',
 				type: 'url',
 				hint: `Leave empty if you don't have a website yet`,

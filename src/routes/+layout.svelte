@@ -14,6 +14,8 @@
 				requests.set(results);
 				requestsIsLoading.set(false);
 			});
+
+			window.$crisp.push(['set', 'user:email', $currentUser.email]);
 		} else {
 			requestsIsLoading.set(false);
 		}
@@ -34,14 +36,14 @@
 				</div>
 			</div>
 			<div class="mt-8 text-lg">
-				<a href="/requests">
+				<a href="/my-designs">
 					<div
 						class="py-2"
 						class:font-bold={$page.url.pathname === '/' ||
-							$page.url.pathname.includes('requests') ||
+							$page.url.pathname.includes('my-designs') ||
 							$page.url.pathname.includes('new')}
 					>
-						My Requests
+						My Designs
 					</div>
 				</a>
 

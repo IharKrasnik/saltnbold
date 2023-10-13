@@ -11,7 +11,7 @@
 	if (browser) {
 		if ($currentUser) {
 			if ($requests.length) {
-				goto('/requests');
+				goto('/my-designs');
 			} else {
 				goto('/new');
 			}

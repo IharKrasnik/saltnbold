@@ -102,6 +102,17 @@
 					class="w-full"
 					bind:value={valueObj[field.name]}
 				/>
+			{:else if field.type === 'short-text'}
+				<input
+					name={field.name}
+					type="text"
+					on:blur={validate}
+					class:error={errors[field.name]}
+					required={field.isRequired}
+					placeholder={field.placeholder || ''}
+					bind:value={valueObj[field.name]}
+					class="w-full"
+				/>
 			{/if}
 
 			{#if field.hint}

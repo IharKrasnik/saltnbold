@@ -4,6 +4,9 @@ import fs from 'fs';
 /** @type {import('vite').UserConfig} */
 const config = {
 	plugins: [sveltekit(), rawFonts(['.ttf'])],
+	server: {
+		port: process.env.PORT || 5190
+	},
 	build: {
 		minify: 'esbuild'
 	}
