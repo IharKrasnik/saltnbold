@@ -6,7 +6,7 @@
 	import { get } from '$lib/api';
 
 	import currentUser, { isLoading as isCurrentUserLoading } from '$lib/stores/currentUser';
-	import requests, { isLoading as requestsIsLoading } from '$lib/stores/requests';
+	import requests, { isLoading as isRequestsLoading } from '$lib/stores/requests';
 
 	if (browser) {
 		if ($currentUser) {

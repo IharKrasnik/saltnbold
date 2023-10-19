@@ -41,7 +41,7 @@
 			createdOn: request.createdOn,
 			content: `Great, thank you 👏
 The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${toDollars(
-				request.activateAmount / 100
+				request.activateAmount
 			)} to activate your request. Once you approve prototype, will ask you to pay remaining ${toDollars(
 				request.amount - request.activateAmount
 			)}`
@@ -71,7 +71,7 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 			request.reviews &&
 			_.last(request.reviews).isPending &&
 			$currentUser._id === request.user._id &&
-			(request.totalReviewsCount || 1 - request.reviews?.length > 0)
+			(request.totalReviewsCount || 2 - request.reviews?.length > 0)
 		);
 	};
 
@@ -90,7 +90,7 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 	}
 
 	let activateRequest = async () => {
-		let data = await post(`stripe/activate-request`, {
+		let { messages: msgs } = await post(`stripe/activate-request`, {
 			requestId: request._id
 		});
 
@@ -101,6 +101,8 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 
 			return r;
 		});
+
+		messages = [...messages, ...msgs];
 
 		request.isActivated = true;
 	};
@@ -186,14 +188,18 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 
 <div class="flex mb-0">
 	<div class="p-2 px-6 rounded-lg rounded-b-none bg-zinc-600 font-bold mr-2">Chat</div>
-	<div class="p-2 px-6 mr-2 rounded-lg rounded-b-none bg-zinc-800">
+	<!-- <div class="p-2 px-6 mr-2 rounded-lg rounded-b-none bg-zinc-800">
 		Files
 		{request.isCompleted ? '' : '🔐'}
-	</div>
+	</div> -->
 </div>
 
 <div class="bg-zinc-900 rounded-xl rounded-tl-none">
-	<div style="height: calc(100vh - 300px)" class=" p-4 overflow-y-scroll" bind:this={chatEl}>
+	<div
+		style="height: calc(100vh - {isRequestingChanges ? 450 : 300}px)"
+		class=" p-4 overflow-y-scroll"
+		bind:this={chatEl}
+	>
 		{#each messages as message (message._id)}
 			{#if message.isSystem}
 				<div class="system">
@@ -274,7 +280,7 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 
 	<div class="bg-[#222] rounded-b-xl">
 		{#if request.isActivated}
-			{#if isSendMessage || !request.reviews?.length || request.isCompleted}
+			{#if $currentUser.isAdmin || isSendMessage || !request.reviews?.length || !_.last(request.reviews).isPending || request.isCompleted}
 				<div class="p-4 justify-between flex w-full items-center h-full">
 					<textarea class="w-full h-full" bind:value={newMessage.content} />
 
@@ -295,6 +301,7 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 	{#if !isSendMessage && _.last(request.reviews)?.isPending && $currentUser._id === request.user._id}
 		<RequestChanges
 			{request}
+			bind:isRequestingChanges
 			onApproved={completeRequest}
 			onSubmitted={onChangeRequestSubmitted}
 			onSendMessage={() => (isSendMessage = true)}

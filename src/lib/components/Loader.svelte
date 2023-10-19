@@ -1,7 +1,12 @@
+<script>
+	let clazz;
+	export { clazz as class };
+</script>
+
 <svg
 	aria-hidden="true"
 	role="status"
-	class="inline mr-2 w-4 h-4 text-gray-200 animate-spin dark:text-gray-600"
+	class="{clazz} inline mr-2 w-4 h-4 text-gray-200 animate-spin dark:text-gray-600"
 	viewBox="0 0 100 101"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"

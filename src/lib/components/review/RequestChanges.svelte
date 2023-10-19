@@ -10,7 +10,7 @@
 	export let onApproved = () => {};
 	export let onSendMessage = () => {};
 
-	let isRequestingChanges = false;
+	export let isRequestingChanges = false;
 
 	let changeRequest = {
 		message: '',
@@ -33,8 +33,8 @@
 </script>
 
 {#if isRequestingChanges}
-	<div class="p-4 px-8 mt-8 my-8 bg-gray-800 rounded-xl">
-		<h3 class="font-bold">Request Changes</h3>
+	<div class="p-4 px-8 mt-8 my-8 bg-zinc-900 rounded-xl">
+		<h3 class="font-bold mb-8">Request Changes</h3>
 		<div class="rounded-xl bg-indigo-700 p-4 my-4">
 			Please provide detailed feedback on what need to be improved. Attach files or send us links to
 			explain your points.
@@ -69,8 +69,14 @@
 		</div>
 		<hr class="my-8 opacity-30" />
 		<div>
-			<Button class="orange mt-2 mr-4" onClick={submitChangeRequest}>Request Changes</Button>
-			<div class="mt-2">You have 1 revision left</div>
+			<Button class="orange my-2 mr-4" onClick={submitChangeRequest}>Request Changes</Button>
+			{#if request.totalReviewsCount || 2 - (request.reviews?.length || 0) === 1}
+				This is your last revision. Please keep your requirements specific.
+			{:else}
+				<div class="mt-2">
+					You have {request.totalReviewsCount || 2 - (request.reviews?.length || 0)} revision left
+				</div>
+			{/if}
 		</div>
 	</div>
 {:else}
@@ -81,12 +87,12 @@
 				Pay remaining {toDollars(request.amount - request.activateAmount)} and download your files
 			</div>
 		</div>
-		{#if request.totalReviewsCount || 1 - request.reviews?.length > 0}
+		{#if request.totalReviewsCount || 2 - request.reviews?.length > 0}
 			<div class="bg-orange-900 p-4">
 				<button class="orange" on:click={requestChanges}>Request Changes</button>
 
 				<div class="mt-2">
-					You have {request.totalReviewsCount || 1 - request.reviews?.length || 0 + 1} revisions left
+					You have {request.totalReviewsCount || 2 - request.reviews?.length || 0 + 1} revisions left
 				</div>
 			</div>
 		{:else}

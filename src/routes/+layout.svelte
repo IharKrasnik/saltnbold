@@ -1,25 +1,25 @@
 <script>
 	import '../app.css';
+	import Loader from '$lib/components/Loader.svelte';
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { get } from '$lib/api';
 
 	import currentUser, { isLoading as isCurrentUserLoading } from '$lib/stores/currentUser';
-	import requests, { isLoading as requestsIsLoading } from '$lib/stores/requests';
+	import requests, { isLoading as isRequestsLoading } from '$lib/stores/requests';
 
 	if (browser) {
 		if (!$isCurrentUserLoading) {
-			debugger;
 			if ($currentUser) {
 				get('requests').then(({ results }) => {
 					requests.set(results);
-					requestsIsLoading.set(false);
+					isRequestsLoading.set(false);
 				});
 
 				window.$crisp.push(['set', 'user:email', $currentUser.email]);
 			} else {
-				requestsIsLoading.set(false);
+				isRequestsLoading.set(false);
 			}
 		}
 	}
@@ -59,11 +59,24 @@
 				<a href="/my-designs">
 					<div
 						class="py-2"
+						class:opacity-30={!$isRequestsLoading && !$requests.length}
 						class:font-bold={$page.url.pathname === '/' ||
-							$page.url.pathname.includes('my-designs') ||
-							$page.url.pathname.includes('new')}
+							$page.url.pathname.includes('my-designs')}
 					>
-						My Designs
+						My Designs {#if $isRequestsLoading}
+							<Loader class="ml-2" />
+						{:else}
+							{$requests.length || ''}
+						{/if}
+					</div>
+				</a>
+
+				<a href="/new">
+					<div
+						class="py-2"
+						class:font-bold={$page.url.pathname === '/' || $page.url.pathname.includes('new')}
+					>
+						Get Fast Design
 					</div>
 				</a>
 
@@ -78,14 +91,14 @@
 		</div>
 
 		<button class="mt-8 w-full" data-cal-link="team/salt-and-bold/intro-call-30-min">
-			Get Custom Design
+			Request Custom Design
 		</button>
 
 		<!-- <button class="mt-4 w-full" style="background: none;"> Refer a friend </button> -->
 	</div>
 
 	<div class="w-full">
-		{#if !$isCurrentUserLoading && !$requestsIsLoading}
+		{#if !$isCurrentUserLoading && !$isRequestsLoading}
 			<slot />
 		{/if}
 	</div>

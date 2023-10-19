@@ -25,7 +25,6 @@
 		let { messages } = await post(`requests/${request._id}/reviews`, {
 			message: revision.message,
 			files: revision.files,
-			figmaPrototypeUrl: revision.figmaPrototypeUrl,
 			figmaFileUrl: revision.figmaFileUrl,
 			loomUrl: revision.loomUrl
 		});
@@ -39,13 +38,6 @@
 		<h3 class="font-bold">Submit For Review</h3>
 
 		{#if !request.figmaFileUrl}
-			<label class="mt-8">Figma Prototype File:</label>
-			<input
-				class="w-full"
-				placeholder="https://www.figma.com/proto/ZMm7jGbK9iVKmg22CpBq8w/TechMatch?type=design&node-id=0-1&t=ugGXPDrTcRyETuVK-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A3"
-				bind:value={revision.figmaPrototypeUrl}
-			/>
-
 			<label class="mt-8">Figma Source File:</label>
 			<input
 				class="w-full"
@@ -53,7 +45,7 @@
 				bind:value={revision.figmaFileUrl}
 			/>
 
-			<div class="mt-2">Ensure that the files are public</div>
+			<div class="mt-2">Ensure that the file is public</div>
 		{/if}
 
 		<hr class="my-8 opacity-30" />

@@ -1,12 +1,24 @@
 <script>
 	import { get, post } from '$lib/api';
 	import { goto } from '$app/navigation';
-	import Button from '$lib/components/Button.svelte';
 	import Loader from '$lib/components/Loader.svelte';
+	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
+	import Button from '$lib/components/Button.svelte';
 	import tooltip from '$lib/use/tooltip';
 	import currentUser from '$lib/stores/currentUser';
 	import requests from '$lib/stores/requests';
 	import services from '$lib/stores/services';
+
+	if (browser) {
+		if ($currentUser) {
+			if (!$requests.length) {
+				goto('/new');
+			}
+		} else {
+			goto('/new');
+		}
+	}
 
 	let requestTypes = {
 		ui_ux_prototype: 'UI/UX Prototype'
@@ -63,74 +75,55 @@
 
 <div class="grid grid-cols-2 w-full gap-4 w-full">
 	{#each $requests as request}
-		<a href={request.href}>
-			<div class="rounded-xl border border-slate-600 flex flex-col justify-between mb-4 transition">
-				<div class="w-full relative aspect-video" style="background-color: rgba(0,0,0, .3);">
-					<div
-						class="rounded-t-xl w-full h-full flex flex-col items-center justify-center text-center absolute z-10"
-						style="background: rgba(0, 0, 0, .9);"
-					>
-						<div class="mb-2 opacity-80">{formatRequestType(request.type)}</div>
-						<div class="text-lg my-2">
-							{formatRequestStatus(request)}
-							<span
-								use:tooltip
-								class="font-bold"
-								title="We'll notify you via email once designs are ready for review">ℹ️</span
-							>
+		<div>
+			<a href="/my-designs/{request._id}">
+				<div
+					class="rounded-xl border border-slate-600 flex flex-col justify-between mb-4 transition"
+				>
+					<div class="w-full relative aspect-video" style="background-color: rgba(0,0,0, .3);">
+						<div
+							class="rounded-t-xl w-full h-full flex flex-col items-center justify-center text-center absolute z-10"
+							style="background: rgba(0, 0, 0, .9);"
+						>
+							<div class="mb-2 opacity-80">{formatRequestType(request.type)}</div>
+							<div class="text-lg my-2">
+								{formatRequestStatus(request)}
+								<span
+									use:tooltip
+									class="font-bold"
+									title="We'll notify you via email once designs are ready for review">ℹ️</span
+								>
+							</div>
 						</div>
+
+						{#if request.isActivated}
+							<div class="absolute left-4 top-4 z-10 px-2 rounded-lg bg-zinc-600">
+								Revisions: {request.reviews?.length || 0}/{request.totalReviewsCount || 2}
+							</div>
+						{/if}
+						<img
+							class="w-full rounded-t-xl cover-image absolute h-full object-cover"
+							src={request.img || $services.find((r) => r.key === request.type).img}
+						/>
 					</div>
 
-					{#if request.isActivated}
-						<div class="absolute left-4 top-4 z-10 px-2 rounded-lg bg-zinc-600">Revisions: 0/2</div>
-					{/if}
-					<img
-						class="w-full rounded-t-xl cover-image absolute h-full object-cover"
-						src={request.img || $services.find((r) => r.key === request.type).img}
-					/>
+					<div class="p-4">
+						<h3 class="font-bold mb-2">{request.project.name}</h3>
+
+						<p class="opacity-80 line-clamp-2">{request.data.description}</p>
+					</div>
 				</div>
+			</a>
 
-				<div class="p-4">
-					<h3 class="font-bold mb-2">{request.project.name}</h3>
-
-					<p class="opacity-80 line-clamp-2">{request.data.description}</p>
-				</div>
-
-				{#if request.isActivated}
-					{#if !request.isCompleted}
-						<Button
-							class="w-full text-center py-4 border cursor-pointer"
-							onClick={() => completeRequest(request)}
-						>
-							Complete Request
-						</Button>
-					{:else}{/if}
-
-					<a href="/my-designs/{request._id}">
-						<div class="w-full text-center py-4 border cursor-pointer">Send message</div>
-					</a>
-					{#if request.isCompleted}
-						<!-- <div class="w-full text-center py-4 border rounded-b-xl cursor-pointer">
-							Open Figma Prototype
-						</div> -->
-					{/if}
-				{:else if $currentUser.paymentMethods?.length}
-					<Button
-						class="w-full text-center py-4 border rounded-b-xl cursor-pointer"
-						onClick={() => activateRequest(request)}
-					>
-						Activate for $9.99
-					</Button>
-				{:else}
-					<button
-						class="w-full text-center py-4 border rounded-b-xl cursor-pointer"
-						on:click={() => addPaymentMethod()}
-					>
-						Add Card To Activate
-					</button>
-				{/if}
-			</div>
-		</a>
+			{#if !$currentUser.paymentMethods?.length}
+				<button
+					class="w-full text-center py-4 border rounded-b-xl cursor-pointer"
+					on:click={() => addPaymentMethod()}
+				>
+					Add Card To Activate
+				</button>
+			{/if}
+		</div>
 		<!-- <div>
 			<div>Timeline</div>
 
