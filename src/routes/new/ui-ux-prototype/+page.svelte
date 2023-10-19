@@ -4,8 +4,11 @@
 
 	import currentUser, { isLoading as isCurrentUserLoading } from '$lib/stores/currentUser';
 	import Form from '$lib/components/Form.svelte';
+	import requests from '$lib/stores/requests';
+	import { goto } from '$app/navigation';
 
 	let form = {
+		cacheId: 'ui-ux-prototype',
 		fields: [
 			{
 				name: 'name',
@@ -61,10 +64,14 @@
 	};
 
 	let createRequest = async (newRequest) => {
-		await post('requests', {
-			type: 'prototype',
+		let createdRequest = await post('requests', {
+			type: 'ui_ux_prototype',
 			data: newRequest
 		});
+
+		$requests = [createdRequest, ...$requests];
+
+		goto(`/my-designs/${createdRequest._id}`);
 	};
 </script>
 

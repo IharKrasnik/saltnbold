@@ -9,18 +9,38 @@
 	import requests, { isLoading as requestsIsLoading } from '$lib/stores/requests';
 
 	if (browser) {
-		if (!$isCurrentUserLoading && $currentUser) {
-			get('requests').then(({ results }) => {
-				requests.set(results);
-				requestsIsLoading.set(false);
-			});
+		if (!$isCurrentUserLoading) {
+			debugger;
+			if ($currentUser) {
+				get('requests').then(({ results }) => {
+					requests.set(results);
+					requestsIsLoading.set(false);
+				});
 
-			window.$crisp.push(['set', 'user:email', $currentUser.email]);
-		} else {
-			requestsIsLoading.set(false);
+				window.$crisp.push(['set', 'user:email', $currentUser.email]);
+			} else {
+				requestsIsLoading.set(false);
+			}
 		}
 	}
 </script>
+
+<svelte:head>
+	<title>{$page.data.ogTitle}</title>
+	<meta name="title" content={$page.data.title || $page.data.ogTitle} />
+	<meta name="description" content={$page.data.ogDescription} />
+	<meta name="og:description" content={$page.data.ogDescription} />
+
+	<meta name="twitter:title" content={$page.data.ogTitle} />
+	<meta name="twitter:description" content={$page.data.ogDescription} />
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<meta name="twitter:image" content={$page.data.ogImage} />
+
+	<link rel="icon" href="logo.svg" />
+
+	<meta name="og:image" content={$page.data.ogImage} />
+</svelte:head>
 
 <div class="container flex mx-auto my-8 h-full">
 	<link rel="icon" href="favicon.png" />
@@ -61,7 +81,7 @@
 			Get Custom Design
 		</button>
 
-		<button class="mt-4 w-full" style="background: none;"> Refer a friend </button>
+		<!-- <button class="mt-4 w-full" style="background: none;"> Refer a friend </button> -->
 	</div>
 
 	<div class="w-full">

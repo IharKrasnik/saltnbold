@@ -9,7 +9,7 @@ let user;
 
 currentUser.subscribe((value) => (user = value));
 
-export default async ({ url }, title = 'Momentum') => {
+export default async ({ url }, title = 'Salt n Bold') => {
 	if (browser && !user) {
 		const cookies = cookie.parse(document.cookie);
 		let accessToken = cookies.access_token;

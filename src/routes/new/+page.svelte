@@ -1,58 +1,20 @@
 <script>
 	import currentUser, { isLoading as isCurrentUserloading } from '$lib/stores/currentUser';
-
-	let services = [
-		{
-			name: 'Landing Page',
-			description: 'Validate your product idea and grow waitlist',
-			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527198530-image.png'
-		},
-		{
-			name: 'UI/UX Prototype',
-			description: 'Pitch your product to users and investors',
-			img: 'https://assets.website-files.com/64831da00244efd7c8280a6c/6501fa4c88cef88ac28330a7_image%202.png',
-			href: '/new/ui-ux-prototype'
-		},
-		{
-			name: 'Product Demo Video',
-			description: 'Explain your product with dynamic video',
-			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696528187173-image.png'
-		},
-		{
-			name: 'Motion Animation',
-			description: 'Win people attention with stunning animations',
-			video:
-				'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1696528525428-motion.mp4'
-		},
-		{
-			name: 'Pitch Deck',
-			description: 'Convert your story into compelling pitch',
-			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527520883-image.png'
-		},
-		{
-			name: 'Logo & Brand',
-			description: 'Differentiate and stand out from the crowd',
-			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696528413760-image.png'
-		},
-		{
-			name: 'Marketing Assets',
-			description: 'Unify your marketing content and make it pop',
-			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696528869771-image.png'
-		}
-	];
+	import services from '$lib/stores/services';
 </script>
 
-<h2 class="text-2xl font-bold mb-2">
+<h1 class="text-2xl font-bold mb-2">
 	{#if $currentUser}
-		Hi {$currentUser.fullName?.split(' ')[0] || ''}! Need new designs?
+		Hi {$currentUser.fullName.split(' ')[0] || ''}! Need new designs?
 	{:else}
 		Hi! Need new designs?
 	{/if}
-</h2>
-<h3 class="mb-8">Choose the service your need and get it done super fast</h3>
+</h1>
+
+<h2 class="mb-8">Choose the service you need and get it done super fast</h2>
 
 <div class="grid grid-cols-3 w-full gap-4 w-full">
-	{#each services as service}
+	{#each $services as service}
 		<a href={service.href}>
 			<div
 				class="rounded-xl border border-slate-600 flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
@@ -64,7 +26,11 @@
 				{/if}
 
 				<div class="p-4">
-					<div class="font-bold mb-2">{service.name}</div>
+					<div class="font-bold mb-2">
+						<h3>
+							{service.name}
+						</h3>
+					</div>
 
 					<div class="opacity-80">{service.description}</div>
 				</div>
