@@ -6,6 +6,7 @@
 
 	import FileInput from '$lib/components/FileInput.svelte';
 	import RequestChanges from '$lib/components/review/RequestChanges.svelte';
+	import SubmitForReview from '$lib/components/review/SubmitForReview.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import RenderUrl from '$lib/components/RenderUrl.svelte';
 	import Loader from '$lib/components/Loader.svelte';
@@ -65,7 +66,13 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 	let chatEl;
 
 	let isPendingReview = () => {
-		return !request.isCompleted && request.reviews && _.last(request.reviews).isPending;
+		return (
+			!request.isCompleted &&
+			request.reviews &&
+			_.last(request.reviews).isPending &&
+			$currentUser._id === request.user._id &&
+			(request.totalReviewsCount || 1 - request.reviews?.length > 0)
+		);
 	};
 
 	const scrollToBottom = (node = chatEl) => {
@@ -102,7 +109,7 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 
 	let changeRequest = { message: '', files: [] };
 
-	let completeRequest = async (request) => {
+	let completeRequest = async () => {
 		let data = await post(`stripe/complete-request`, {
 			requestId: request._id
 		});
@@ -112,7 +119,15 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 
 	let onChangeRequestSubmitted = ({ messages: msgs }) => {
 		messages = [...messages, ...msgs];
+
 		request.reviews = request.reviews.map((r) => ({ ...r, isPending: false }));
+	};
+
+	let onReviewSubmitted = ({ messages: msgs }) => {
+		messages = [...messages, ...msgs];
+		request.reviews = request.reviews || [{ isPending: true }];
+
+		request.reviews = request.reviews.map((r) => ({ ...r, isPending: true }));
 	};
 
 	let sendMessage = async () => {
@@ -132,7 +147,10 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 
 		newMessage.content = '';
 		newMessage.files = [];
+		isSendMessage = false;
 	};
+
+	let isSendMessage = false;
 
 	$: if (messages && browser && chatEl) {
 		tick().then(() => {
@@ -140,10 +158,6 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 		});
 	}
 </script>
-
-{#if _.last(request.reviews)?.isPending}
-	<RequestChanges {request} onSubmitted={onChangeRequestSubmitted} />
-{/if}
 
 <div class="flex justify-between">
 	<h1 class="mb-4">{request.data.name}</h1>
@@ -160,10 +174,12 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 		src="https://www.figma.com/proto/8Mb6BCx3yTShfW6ZvDkhGe/Shelf-prototype?page-id=0%3A1&type=design&node-id=202-11871&viewport=846%2C-972%2C0.1&t=ZXtZTOi4ZCn6whbq-1&scaling=scale-down&starting-point-node-id=202%3A11871"
 	/> -->
 	<div>
-		{#if request.isCompleted}
-			<a href={request.deliverableUrl}><Button>Download Figma</Button></a>
-		{:else if !isPendingReview(request)}
-			<Button class="green" onClick={completeRequest}>Approve & Download</Button>
+		{#if $currentUser._id === request.user._id && request.isActivated}
+			{#if request.isCompleted}
+				<a href={request.figmaFileUrl} target="_blank"><Button>Download Figma</Button></a>
+			{:else if request.reviews?.length && !isPendingReview(request)}
+				<Button class="green" onClick={completeRequest}>Approve & Download</Button>
+			{/if}
 		{/if}
 	</div>
 </div>
@@ -186,12 +202,15 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 							<div class="emoji">💸</div>
 
 							<div>
-								Paid <b>${(message.metadata.amount / 100).toFixed(2)}</b> from
-								<b
-									>{$currentUser.paymentMethods.find(
-										(pm) => pm.id === message.metadata.paymentMethodId
-									).card.last4}</b
-								>
+								Paid <b>${(message.metadata.amount / 100).toFixed(2)}</b>
+								{#if $currentUser._id === request.user._id}
+									from
+									<b
+										>{$currentUser.paymentMethods.find(
+											(pm) => pm.id === message.metadata.paymentMethodId
+										).card.last4}</b
+									>
+								{/if}
 							</div>
 						{/if}
 						{#if message.metadata.type === 'review'}
@@ -255,7 +274,7 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 
 	<div class="bg-[#222] rounded-b-xl">
 		{#if request.isActivated}
-			{#if !isPendingReview(request)}
+			{#if isSendMessage || !request.reviews?.length || request.isCompleted}
 				<div class="p-4 justify-between flex w-full items-center h-full">
 					<textarea class="w-full h-full" bind:value={newMessage.content} />
 
@@ -271,6 +290,21 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 		{/if}
 	</div>
 </div>
+
+{#if !request.isCompleted}
+	{#if !isSendMessage && _.last(request.reviews)?.isPending && $currentUser._id === request.user._id}
+		<RequestChanges
+			{request}
+			onApproved={completeRequest}
+			onSubmitted={onChangeRequestSubmitted}
+			onSendMessage={() => (isSendMessage = true)}
+		/>
+	{/if}
+
+	{#if $currentUser.isAdmin && !_.last(request.reviews)?.isPending}
+		<SubmitForReview {request} onSubmitted={onReviewSubmitted} />
+	{/if}
+{/if}
 
 <style>
 	.system {

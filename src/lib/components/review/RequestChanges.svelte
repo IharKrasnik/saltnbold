@@ -7,6 +7,8 @@
 
 	export let request;
 	export let onSubmitted = (cr) => {};
+	export let onApproved = () => {};
+	export let onSendMessage = () => {};
 
 	let isRequestingChanges = false;
 
@@ -74,17 +76,27 @@
 {:else}
 	<div class="grid grid-cols-2 w-full rounded-xl my-8">
 		<div class="bg-green-900 p-4">
-			<button class="green">Approve & Download</button>
+			<Button class="green" onClick={onApproved}>Approve & Download</Button>
 			<div class="mt-2">
 				Pay remaining {toDollars(request.amount - request.activateAmount)} and download your files
 			</div>
 		</div>
-		<div class="bg-orange-900 p-4">
-			<button class="orange" on:click={requestChanges}>Request Changes</button>
+		{#if request.totalReviewsCount || 1 - request.reviews?.length > 0}
+			<div class="bg-orange-900 p-4">
+				<button class="orange" on:click={requestChanges}>Request Changes</button>
 
-			<div class="mt-2">
-				You have {request.totalReviewsCount || 1 - request.reviews?.length || 0 + 1} revisions left
+				<div class="mt-2">
+					You have {request.totalReviewsCount || 1 - request.reviews?.length || 0 + 1} revisions left
+				</div>
 			</div>
-		</div>
+		{:else}
+			<div class="bg-blue-900 p-4">
+				<button on:click={onSendMessage}>Send Message</button>
+
+				<div class="mt-2">
+					You don't have any change requests yet. You can still chat with the team
+				</div>
+			</div>
+		{/if}
 	</div>
 {/if}
