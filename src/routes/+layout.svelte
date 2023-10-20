@@ -1,6 +1,11 @@
 <script>
 	import '../app.css';
 	import Loader from '$lib/components/Loader.svelte';
+
+	import HomeIcon from '$lib/icons/home.svelte';
+	import GiftIcon from '$lib/icons/gift.svelte';
+	import FlashIcon from '$lib/icons/flash.svelte';
+
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
@@ -62,33 +67,46 @@
 					{/if}
 				</div>
 			</div>
-			<div class="mt-8 text-lg">
+			<div class="mt-4 text-lg">
 				<a href="/my-designs">
 					<div
-						class="py-2"
+						class="menuitem flex items-center py-2"
 						class:opacity-30={!$isRequestsLoading && !$requests.length}
-						class:font-bold={$page.url.pathname === '/' ||
-							$page.url.pathname.includes('my-designs')}
+						class:active={$page.url.pathname === '/' || $page.url.pathname.includes('my-designs')}
 					>
-						My Designs {#if $isRequestsLoading}
-							<Loader class="ml-2" />
-						{:else}
-							{$requests.length || ''}
-						{/if}
+						<HomeIcon />
+
+						<div class="ml-2">
+							My Designs {#if $isRequestsLoading}
+								<Loader class="ml-2" />
+							{:else}
+								{$requests.length || ''}
+							{/if}
+						</div>
 					</div>
 				</a>
 
 				<a href="/new">
 					<div
-						class="py-2"
-						class:font-bold={$page.url.pathname === '/' || $page.url.pathname.includes('new')}
+						class="menuitem flex items-center py-2"
+						class:active={$page.url.pathname === '/' || $page.url.pathname.includes('new')}
 					>
-						Get Fast Design ⚡️
+						<FlashIcon
+							class={$page.url.pathname === '/' || $page.url.pathname.includes('new')
+								? 'active'
+								: ''}
+						/>
+						<div class="ml-2">Get Fast Design</div>
 					</div>
 				</a>
 
-				<div class="py-2">Free Tools</div>
+				<a href="/tools" class="menuitem" class:active={$page.url.pathname === '/tools'}>
+					<div class=" flex items-center py-2">
+						<GiftIcon class={$page.url.pathname === '/tools' ? 'active' : ''} />
 
+						<div class="ml-2">Free Tools</div>
+					</div>
+				</a>
 				<hr class="mt-4 py-2 opacity-30" />
 
 				<div class="mt-2 text-sm opacity-80">
@@ -110,3 +128,19 @@
 		{/if}
 	</div>
 </div>
+
+<style>
+	.menuitem {
+		color: #b0b0be;
+		@apply transition;
+	}
+
+	.menuitem:hover {
+		color: #fff;
+	}
+
+	.menuitem.active {
+		color: #fff;
+		font-weight: 500;
+	}
+</style>

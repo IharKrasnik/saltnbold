@@ -91,3 +91,19 @@ h3 {
 .section-body {
 	@apply bg-zinc-900 lg:p-8 p-4 pt-8 rounded-b-xl;
 }
+
+.svgicon .stroke-color {
+	stroke: #b0b0be;
+}
+
+.svgicon .fill-color {
+	fill: #b0b0be;
+}
+
+.svgicon.active .stroke-color {
+	stroke: #ffffff;
+}
+
+.svgicon.active .fill-color {
+	fill: #ffffff;
+}
