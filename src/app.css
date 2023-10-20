@@ -83,3 +83,11 @@ h2 {
 h3 {
 	@apply text-lg;
 }
+
+.section-header {
+	@apply bg-[#222] p-4 px-8 rounded-t-xl;
+}
+
+.section-body {
+	@apply bg-zinc-900 p-8 rounded-b-xl;
+}

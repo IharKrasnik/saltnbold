@@ -15,8 +15,10 @@
 	import { get, post, postFile } from '$lib/api';
 	import { page } from '$app/stores';
 	import toDollars from '$lib/helpers/toDollars';
+	import showCrispChat from '$lib/helpers/showCrispChat';
 
 	import currentUser from '$lib/stores/currentUser';
+	import { formatRequestType } from '$lib/stores/services';
 	import requests from '$lib/stores/requests';
 
 	let request = $requests.find((r) => r._id === $page.params.requestId);
@@ -35,19 +37,37 @@
 			sender: request.user,
 			content: request.data.description,
 			isRequest: true
-		},
-		{
-			_id: '3',
-			createdOn: request.createdOn,
-			content: `Great, thank you 👏
-The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${toDollars(
-				request.activateAmount
-			)} to activate your request. Once you approve prototype, will ask you to pay remaining ${toDollars(
-				request.amount - request.activateAmount
-			)}`
 		}
 	];
 
+	if (request.activateAmount) {
+		messages = [
+			...messages,
+			{
+				_id: '3',
+				createdOn: request.createdOn,
+				content: `Thank you! 👏
+The ${formatRequestType(request.type)} price is $${(request.amount / 100).toFixed(
+					2
+				)}. Please pre-pay ${toDollars(
+					request.activateAmount
+				)} to activate your request. Once you approve our work, will ask you to pay remaining ${toDollars(
+					request.amount - request.activateAmount
+				)}`
+			}
+		];
+	} else {
+		messages = [
+			...messages,
+			{
+				_id: '3',
+				createdOn: request.createdOn,
+				content: `Thank you!
+We'll take a look and get back to you shortly.
+You'll get a notification to your email ${$currentUser.email}`
+			}
+		];
+	}
 	let isLoading = true;
 
 	let loadMessages = async () => {
@@ -161,8 +181,9 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 	}
 </script>
 
+<h1 class="mb-4">{request.data.name}</h1>
+<h3 class="opacity-80">{formatRequestType(request.type)}</h3>
 <div class="flex justify-between">
-	<h1 class="mb-4">{request.data.name}</h1>
 	<!-- 
 	<iframe
 		style="border: 1px solid rgba(0, 0, 0, 0.1);"
@@ -186,17 +207,31 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 	</div>
 </div>
 
-<div class="flex mb-0">
+<!-- <div class="flex mb-0">
 	<div class="p-2 px-6 rounded-lg rounded-b-none bg-zinc-600 font-bold mr-2">Chat</div>
-	<!-- <div class="p-2 px-6 mr-2 rounded-lg rounded-b-none bg-zinc-800">
+	<div class="p-2 px-6 mr-2 rounded-lg rounded-b-none bg-zinc-800">
 		Files
 		{request.isCompleted ? '' : '🔐'}
-	</div> -->
-</div>
+	</div>
+</div> -->
 
-<div class="bg-zinc-900 rounded-xl rounded-tl-none">
+<div class="bg-zinc-900 rounded-xl mt-8">
+	<div class="p-4 bg-[#222] rounded-t-xl flex items-center justify-between w-full">
+		<h2>
+			<div>
+				Chat with Salt & Bold
+				{#if !request.isActivated}<span class="ml-2" title="Please pay to activate chat">🔐</span
+					>{/if}
+			</div>
+		</h2>
+		{#if !request.isActivated}
+			<div class="ml-2 text-right cursor-pointer" on:click={showCrispChat}>
+				Questions? Message Us
+			</div>
+		{/if}
+	</div>
 	<div
-		style="height: calc(100vh - {isRequestingChanges ? 450 : 300}px)"
+		style="height: calc(100vh - {isRequestingChanges ? 450 : 350}px)"
 		class=" p-4 overflow-y-scroll"
 		bind:this={chatEl}
 	>
@@ -288,9 +323,11 @@ The prototype will cost $${(request.amount / 100).toFixed(2)}. Please pre-pay ${
 				</div>
 			{/if}
 		{:else}
-			<div class="flex justify-center items-center w-full h-full bg-green-900 p-4">
+			<div
+				class="flex justify-center items-center w-full h-full bg-green-900 p-4 py-8 rounded-b-xl"
+			>
 				<Button class="green" onClick={activateRequest}
-					>Pay ${(request.activateAmount / 100).toFixed(2)} To Activate</Button
+					>Activate for ${(request.activateAmount / 100).toFixed(2)}</Button
 				>
 			</div>
 		{/if}

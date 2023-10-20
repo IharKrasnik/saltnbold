@@ -8,62 +8,38 @@
 	import { goto } from '$app/navigation';
 
 	let form = {
-		cacheId: 'ui-ux-prototype',
-		buttonText: 'Get My Prototype',
+		cacheId: 'motion_animation',
+		buttonText: 'Get Motion Animation',
 		fields: [
 			{
-				name: 'name',
-				title: `What's your product name?`,
-				placeholder: 'MyAwesomeProduct',
-				type: 'short-text',
-				isRequired: true
-			},
-			{
-				name: 'websiteUrl',
-				title: `What's your website?`,
-				placeholder: 'https://myproduct.com',
-				description: '',
-				type: 'url',
-				hints: [`Leave empty if you don't have a website yet`],
-				isRequired: false
-			},
-			{
 				name: 'description',
-				title: `What problem do you solve?`,
+				title: `What animation do you need to create? How will you use it?`,
 				description: '',
-				placeholder: `I'm building a marketplace like Trustpilot for fashion lovers. It helps people to find world-class fashion specialists and get their service. You can register as fashion specialist or fashion lover.`,
+				placeholder: `I want to animate images on my website to add slight cool effect + I want to use this animation in social networks to promote my brand. Here's my website: somebrand.com. It would be cool to add some sci-fi vibes to it if possible!`,
 				type: 'long-text',
-				hints: [`The more details you share, the better prototype you'll get`],
 				isRequired: true
 			},
 			{
-				name: 'mustHaveWorkflow',
-				title: `What is 1 must-have workflow?`,
+				name: 'references',
+				title: `Please send few examples (urls) of similar animations`,
 				description: '',
-				placeholder: `Fashion seekers should be able to find specialist in their area and book their service. Once service is done they can leave a feedback.`,
+				placeholder: `Here is some concept that looks similar: https://www.instagram.com/p/CyBTlSdMJHp`,
 				type: 'long-text',
-				hints: [
-					`Focus single outcome to get better prototype. Decide what actually matters for your product to deliver the core value.`
-				],
 				isRequired: true
 			}
 		]
 	};
 
 	let request = {
-		type: 'ui_ux_prototype',
-		websiteUrl: '',
+		type: 'motion_animation',
 		description: '',
-		mustHaveWorkflow: '',
 		references: ''
 	};
 </script>
 
 <div class="section-header">
-	<h2 class="text-xl font-bold">Get your UX/UX prototype in 48 hours</h2>
-	<h3 class="text-lg mt-2">
-		So, what are you building? Please share as much specific info as you can to get us started.
-	</h3>
+	<h2 class="text-xl font-bold">Get your motion design fast</h2>
+	<h3 class="text-lg mt-2">Please share as much specific info as you can to get us started.</h3>
 </div>
 
 <div class="section-body">

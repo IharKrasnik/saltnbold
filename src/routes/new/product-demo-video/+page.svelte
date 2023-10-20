@@ -8,8 +8,8 @@
 	import { goto } from '$app/navigation';
 
 	let form = {
-		cacheId: 'ui-ux-prototype',
-		buttonText: 'Get My Prototype',
+		cacheId: 'product_demo_video',
+		buttonText: 'Get My Video',
 		fields: [
 			{
 				name: 'name',
@@ -31,19 +31,20 @@
 				name: 'description',
 				title: `What problem do you solve?`,
 				description: '',
-				placeholder: `I'm building a marketplace like Trustpilot for fashion lovers. It helps people to find world-class fashion specialists and get their service. You can register as fashion specialist or fashion lover.`,
+				placeholder: `I'm building an asset management system for companies to track their equipment. We work with QR codes a lot to scan inventory.`,
 				type: 'long-text',
 				hints: [`The more details you share, the better prototype you'll get`],
 				isRequired: true
 			},
 			{
 				name: 'mustHaveWorkflow',
-				title: `What is 1 must-have workflow?`,
+				title: `What workflow should we visualize?`,
 				description: '',
-				placeholder: `Fashion seekers should be able to find specialist in their area and book their service. Once service is done they can leave a feedback.`,
+				placeholder: `I want to show how simple it is to generate QR codes in different sizes for print`,
 				type: 'long-text',
 				hints: [
-					`Focus single outcome to get better prototype. Decide what actually matters for your product to deliver the core value.`
+					`Describe in step by step how you see the video`,
+					`Focus single outcome to get better video`
 				],
 				isRequired: true
 			}
@@ -60,10 +61,8 @@
 </script>
 
 <div class="section-header">
-	<h2 class="text-xl font-bold">Get your UX/UX prototype in 48 hours</h2>
-	<h3 class="text-lg mt-2">
-		So, what are you building? Please share as much specific info as you can to get us started.
-	</h3>
+	<h2 class="text-xl font-bold">Get your product demo video</h2>
+	<h3 class="text-lg mt-2">Please share as much specific info as you can to get us started.</h3>
 </div>
 
 <div class="section-body">

@@ -3,6 +3,9 @@
 	import Loader from '$lib/components/Loader.svelte';
 	import formCache from '$lib/stores/formCache';
 
+	let clazz;
+	export { clazz as class };
+
 	export let form = {
 		cacheId: '',
 		title: ' ',
@@ -104,7 +107,7 @@
 	</h3>
 {/if}
 
-<div class="mt-8 w-full max-w-[600px]">
+<div class="{clazz} w-full max-w-[600px]">
 	{#each form.fields as field}
 		<div class="mb-8">
 			<label>{field.title}</label>
@@ -126,7 +129,7 @@
 					on:blur={validate}
 					class:error={errors[field.name]}
 					placeholder={field.placeholder || ''}
-					rows="4"
+					rows={field.rows || 4}
 					class="w-full"
 					bind:value={valueObj[field.name]}
 				/>
@@ -143,8 +146,10 @@
 				/>
 			{/if}
 
-			{#if field.hint}
-				<div class="form-hint">💡 {field.hint}</div>
+			{#if field.hints}
+				{#each field.hints as hint}
+					<div class="form-hint">💡 {hint}</div>
+				{/each}
 			{/if}
 		</div>
 	{/each}

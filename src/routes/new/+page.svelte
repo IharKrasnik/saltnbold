@@ -1,6 +1,7 @@
 <script>
 	import currentUser, { isLoading as isCurrentUserloading } from '$lib/stores/currentUser';
 	import services from '$lib/stores/services';
+	import toDollars from '$lib/helpers/toDollars';
 </script>
 
 <h1 class="text-2xl font-bold mb-2">
@@ -17,7 +18,7 @@
 	{#each $services as service}
 		<a href={service.href}>
 			<div
-				class="rounded-xl border border-slate-600 flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
+				class="rounded-xl relative border border-slate-600 flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
 			>
 				{#if service.img}
 					<img class="w-full rounded-t-xl cover-image" src={service.img} />
@@ -33,6 +34,12 @@
 					</div>
 
 					<div class="opacity-80">{service.description}</div>
+
+					<!-- {#if service.amount}
+						<div class="mt-4">
+							{toDollars(service.amount)}
+						</div>
+					{/if} -->
 				</div>
 			</div>
 		</a>
@@ -40,8 +47,9 @@
 
 	<div
 		class="rounded-xl border border-slate-600 flex flex-col mb-4 bg-[#2b65f9] flex flex-col justify-center items-center transition hover:scale-105 hover:bg-green-300 hover:text-black cursor-pointer"
+		data-cal-link="team/salt-and-bold/intro-call-30-min"
 	>
-		<div class="text-2xl">Get custom design</div>
+		<div class="text-2xl">Hire Design Team</div>
 	</div>
 </div>
 

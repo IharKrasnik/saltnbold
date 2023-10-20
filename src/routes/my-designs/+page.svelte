@@ -8,7 +8,8 @@
 	import tooltip from '$lib/use/tooltip';
 	import currentUser from '$lib/stores/currentUser';
 	import requests from '$lib/stores/requests';
-	import services from '$lib/stores/services';
+	import services, { formatRequestType } from '$lib/stores/services';
+	import showCrispChat from '$lib/helpers/showCrispChat';
 
 	if (browser) {
 		if ($currentUser) {
@@ -22,10 +23,6 @@
 
 	let requestTypes = {
 		ui_ux_prototype: 'UI/UX Prototype'
-	};
-
-	let formatRequestType = (requestType) => {
-		return $services.find((s) => s.key === requestType).name;
 	};
 
 	let formatRequestStatus = (request) => {
@@ -61,10 +58,6 @@
 	let addPaymentMethod = async () => {
 		let { url: stripeUrl } = await post(`stripe/payment-method`, {});
 		goto(stripeUrl);
-	};
-
-	let sendMessage = () => {
-		window.$crisp && window.$crisp.push(['do', 'chat:open']);
 	};
 </script>
 
@@ -103,7 +96,7 @@
 						{/if}
 						<img
 							class="w-full rounded-t-xl cover-image absolute h-full object-cover"
-							src={request.img || $services.find((r) => r.key === request.type).img}
+							src={request.img || $services.find((r) => r.key === request.type)?.img}
 						/>
 					</div>
 

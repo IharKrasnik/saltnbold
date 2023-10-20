@@ -8,14 +8,16 @@
 	import { goto } from '$app/navigation';
 
 	let form = {
-		cacheId: 'ui-ux-prototype',
-		buttonText: 'Get My Prototype',
+		cacheId: 'pitch_deck',
+		buttonText: 'Get My Pitch Deck',
 		fields: [
 			{
 				name: 'name',
 				title: `What's your product name?`,
-				placeholder: 'MyAwesomeProduct',
+				description: '',
+				placeholder: `MyGreatProduct`,
 				type: 'short-text',
+
 				isRequired: true
 			},
 			{
@@ -29,21 +31,16 @@
 			},
 			{
 				name: 'description',
-				title: `What problem do you solve?`,
+				title: `Describe your product idea and traction`,
+				rows: 8,
 				description: '',
-				placeholder: `I'm building a marketplace like Trustpilot for fashion lovers. It helps people to find world-class fashion specialists and get their service. You can register as fashion specialist or fashion lover.`,
-				type: 'long-text',
-				hints: [`The more details you share, the better prototype you'll get`],
-				isRequired: true
-			},
-			{
-				name: 'mustHaveWorkflow',
-				title: `What is 1 must-have workflow?`,
-				description: '',
-				placeholder: `Fashion seekers should be able to find specialist in their area and book their service. Once service is done they can leave a feedback.`,
+				placeholder: `I'm building an app that will allow startup founders to launch their landing page in seconds with AI. We've launched a landing page for validation and got 1k+ users in waitlist.`,
 				type: 'long-text',
 				hints: [
-					`Focus single outcome to get better prototype. Decide what actually matters for your product to deliver the core value.`
+					`What problem do you solve for what target audience?`,
+					`What traction do you have so far? (specific number of users or views)`,
+					`How will you acquire users?`,
+					`Please share the links to existing assets, if any`
 				],
 				isRequired: true
 			}
@@ -51,19 +48,16 @@
 	};
 
 	let request = {
-		type: 'ui_ux_prototype',
+		type: 'pitch_deck',
+		name: '',
 		websiteUrl: '',
-		description: '',
-		mustHaveWorkflow: '',
-		references: ''
+		description: ''
 	};
 </script>
 
 <div class="section-header">
-	<h2 class="text-xl font-bold">Get your UX/UX prototype in 48 hours</h2>
-	<h3 class="text-lg mt-2">
-		So, what are you building? Please share as much specific info as you can to get us started.
-	</h3>
+	<h2 class="text-xl font-bold">Get your pitch deck</h2>
+	<h3 class="text-lg mt-2">Please share as much specific info as you can to get us started.</h3>
 </div>
 
 <div class="section-body">

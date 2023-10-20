@@ -8,62 +8,40 @@
 	import { goto } from '$app/navigation';
 
 	let form = {
-		cacheId: 'ui-ux-prototype',
-		buttonText: 'Get My Prototype',
+		cacheId: 'marketing_assets',
+		buttonText: 'Start Designing',
 		fields: [
 			{
-				name: 'name',
-				title: `What's your product name?`,
-				placeholder: 'MyAwesomeProduct',
-				type: 'short-text',
-				isRequired: true
-			},
-			{
-				name: 'websiteUrl',
-				title: `What's your website?`,
-				placeholder: 'https://myproduct.com',
-				description: '',
-				type: 'url',
-				hints: [`Leave empty if you don't have a website yet`],
-				isRequired: false
-			},
-			{
 				name: 'description',
-				title: `What problem do you solve?`,
+				title: `What design do you need?`,
 				description: '',
-				placeholder: `I'm building a marketplace like Trustpilot for fashion lovers. It helps people to find world-class fashion specialists and get their service. You can register as fashion specialist or fashion lover.`,
+				placeholder: `I want to design a logo for my product Momentum. It will help founders to monitor their growth daily.`,
 				type: 'long-text',
-				hints: [`The more details you share, the better prototype you'll get`],
+				hints: [`Please share the links to existing assets, if any`],
 				isRequired: true
 			},
 			{
-				name: 'mustHaveWorkflow',
-				title: `What is 1 must-have workflow?`,
+				name: 'references',
+				title: `Please send few examples (urls) of designs that you like`,
 				description: '',
-				placeholder: `Fashion seekers should be able to find specialist in their area and book their service. Once service is done they can leave a feedback.`,
+				placeholder: `I love how clean and simple Linear brand is (https://linear.app)`,
 				type: 'long-text',
-				hints: [
-					`Focus single outcome to get better prototype. Decide what actually matters for your product to deliver the core value.`
-				],
+				// hint: `The more details you share, the better prototype you'll get`,
 				isRequired: true
 			}
 		]
 	};
 
 	let request = {
-		type: 'ui_ux_prototype',
-		websiteUrl: '',
+		type: 'logo_branding',
 		description: '',
-		mustHaveWorkflow: '',
 		references: ''
 	};
 </script>
 
 <div class="section-header">
-	<h2 class="text-xl font-bold">Get your UX/UX prototype in 48 hours</h2>
-	<h3 class="text-lg mt-2">
-		So, what are you building? Please share as much specific info as you can to get us started.
-	</h3>
+	<h2 class="text-xl font-bold">Get your brand design</h2>
+	<h3 class="text-lg mt-2">Please share as much specific info as you can to get us started.</h3>
 </div>
 
 <div class="section-body">
