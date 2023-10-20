@@ -39,12 +39,20 @@
 	<link rel="icon" href="logo.svg" />
 
 	<meta name="og:image" content={$page.data.ogImage} />
+	<link rel="icon" href="favicon.png" />
 </svelte:head>
 
-<div class="container flex mx-auto my-8 h-full">
-	<link rel="icon" href="favicon.png" />
+<div class="lg:hidden block p-4">
+	<div class="w-full flex items-center justify-between">
+		<a href="/"><img class="w-[50px] rounded-full" src="/salt_logo.png" /></a>
+		{#if $currentUser}
+			<img src={$currentUser.avatarUrl} class="rounded-full w-[40px] h-[40px]" />
+		{/if}
+	</div>
+</div>
 
-	<div class="mr-8">
+<div class="container flex mx-auto my-8 h-full">
+	<div class="mr-8 ml-8 lg:ml-0 hidden lg:block">
 		<div class="w-[250px] bg-zinc-900 rounded-xl p-4 flex-shrink-0">
 			<div class="flex items-center justify-between">
 				<a href="/"><img class="w-[50px] rounded-full" src="/salt_logo.png" /></a>
@@ -96,7 +104,7 @@
 		<!-- <button class="mt-4 w-full" style="background: none;"> Refer a friend </button> -->
 	</div>
 
-	<div class="w-full">
+	<div class="w-full p-4 lg:p-0">
 		{#if !$isCurrentUserLoading && !$isRequestsLoading}
 			<slot />
 		{/if}

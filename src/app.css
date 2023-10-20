@@ -85,9 +85,9 @@ h3 {
 }
 
 .section-header {
-	@apply bg-[#222] p-4 px-8 rounded-t-xl;
+	@apply bg-[#222] lg:px-8 px-4 py-4 rounded-t-xl;
 }
 
 .section-body {
-	@apply bg-zinc-900 p-8 rounded-b-xl;
+	@apply bg-zinc-900 lg:p-8 p-4 pt-8 rounded-b-xl;
 }

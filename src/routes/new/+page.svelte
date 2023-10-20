@@ -14,7 +14,7 @@
 
 <h2 class="mb-8">Choose the service you need and get it done super fast</h2>
 
-<div class="grid grid-cols-3 w-full gap-4 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-4 w-full">
 	{#each $services as service}
 		<a href={service.href}>
 			<div

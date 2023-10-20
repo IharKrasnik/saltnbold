@@ -66,7 +66,7 @@
 	<a href="/new"><button>Get New Design ⚡️</button></a>
 </div>
 
-<div class="grid grid-cols-2 w-full gap-4 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-2 w-full gap-4 w-full">
 	{#each $requests as request}
 		<div>
 			<a href="/my-designs/{request._id}">
