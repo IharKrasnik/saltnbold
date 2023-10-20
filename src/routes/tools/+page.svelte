@@ -2,23 +2,40 @@
 	import FigmaIcon from '$lib/icons/figma.svelte';
 	let freebies = [
 		{
+			name: 'Landing Pages Starters',
+			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697817502067-image.png',
+			url: 'https://webflow.com/@Paralect-Design-Team',
+			description: '4 Webflow Templates'
+		},
+		{
 			name: 'Scribble Pack',
 			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697813025026-image.png',
 			url: 'https://www.figma.com/community/file/1291356570368301625/scribble-pack',
-			description: 'Turn your presentations into engaging stories with hand-drawn scribbles'
+			description: '20+ hand-drawn icons'
 		},
 		{
 			name: 'Marketing Pack',
 			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697813093453-image.png',
 			url: 'https://www.figma.com/community/file/1291750160148525477/social-media-templates',
-			description: 'Use marketing pack for your social media posts (3 different sizes)'
+			description: '10 social media templates in 3 sizes'
 		},
 		{
 			name: 'Icon Set',
 			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697813078586-image.png',
 			url: 'https://www.figma.com/community/file/1291761276684095954/20-hand-drawn-icon-set',
-			description:
-				'Make your landing pages and visual content stand out with custom drawn emoji-like icons'
+			description: '20 SVG icons'
+		},
+		{
+			name: 'Nice Web Icons',
+			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697817073992-image.png',
+			url: 'https://www.figma.com/file/Hw0ZejK2izBk3DEvNDek5Z/Trendycons?type=design&node-id=18-4808&mode=design&t=ZHIQsa9MqH7tQJuz-0',
+			description: '12 detailed icons in 2 color schemes'
+		},
+		{
+			name: 'Pitch Deck Templates',
+			img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697817362327-image.png',
+			url: 'https://drive.google.com/drive/folders/10sI5OZY944C8Rhw_5gw65ZvmZnT07MiS',
+			description: '6 pitch deck templates'
 		}
 	];
 </script>
@@ -91,14 +108,11 @@
 	<h2 class="font-bold">Marketing Gems</h2>
 </div>
 
-<h3 class="mb-8 mt-2">
-	Use our simple design systems to design quick mockups yourself. No need to prior knowledge of
-	designing or Figma.
-</h3>
+<h3 class="mb-8 mt-2">Use Salt And Bold marketing assets to make your brand pop</h3>
 
-<div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-4 w-full">
+<div class="columns-1 md:columns-2 lg:columns-3 w-full gap-4 w-full">
 	{#each freebies as freebie}
-		<div>
+		<div class="break-inside-avoid mb-8">
 			<a href={freebie.url} target="_blank">
 				<div
 					class="rounded-xl relative border border-slate-600 flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
@@ -112,7 +126,7 @@
 								<div>{freebie.description}</div>
 							</div>
 							<div class="max-w-[50px] h-[25px]">
-								<FigmaIcon />
+								<!-- <FigmaIcon /> -->
 							</div>
 						</div>
 					</div>
