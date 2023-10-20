@@ -40,8 +40,9 @@
 	];
 </script>
 
-<div class="flex justify-between">
-	<h1 class="mb-8">Design Tools and Templates</h1>
+<div class="">
+	<h1 class="mb-2">Design Tools and Templates</h1>
+	<h2 class="mb-4 sm:mb-12">Save days on your product design with our free tools</h2>
 </div>
 
 <div class="flex justify-between">
