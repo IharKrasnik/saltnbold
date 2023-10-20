@@ -8,8 +8,8 @@ export async function load({ url, params, session, cookies }) {
 	return {
 		...authData,
 		ogTitle: 'Salt and Bold Studio',
-		ogDescription: 'Fast product design for startups',
+		ogDescription: 'Result-oriented product design studio for startups',
 		ogImage:
-			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1693764860336-image.png'
+			'https://studio.saltnbold.com/salt_logo.pnghttps://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1693764860336-image.png'
 	};
 }
