@@ -1,7 +1,43 @@
 <script>
+	import _ from 'lodash';
 	import currentUser, { isLoading as isCurrentUserloading } from '$lib/stores/currentUser';
 	import services from '$lib/stores/services';
 	import toDollars from '$lib/helpers/toDollars';
+
+	let designers = _.shuffle([
+		{
+			avatarUrl:
+				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253e634de1359dea96a693_Ellipse%206.png'
+		},
+		{
+			avatarUrl:
+				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253e778bc23c60411216b8_Ellipse%207.png'
+		},
+		{
+			avatarUrl:
+				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253e85c9f60eedf06d758d_Ellipse%2023.png'
+		},
+		{
+			avatarUrl:
+				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253ea584fc70a4cd15a622_zhenya.png'
+		},
+		{
+			avatarUrl:
+				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253ec34de1359dea9725b8_Ellipse%2019.png'
+		},
+		{
+			avatarUrl:
+				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253eb2822bf3f73eba7826_Ellipse%2014.png'
+		},
+		{
+			avatarUrl:
+				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253ecefda4476ceb958646_Ellipse%2022.png'
+		},
+		{
+			avatarUrl:
+				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253e3ee55cd50534b412ed_Ellipse%2011.png'
+		}
+	]);
 </script>
 
 <h1 class="text-2xl font-bold mb-2">
@@ -46,10 +82,22 @@
 	{/each}
 
 	<div
-		class="rounded-xl border border-slate-600 flex flex-col mb-4 bg-[#2b65f9] flex flex-col justify-center items-center transition hover:scale-105 hover:bg-green-300 hover:text-black cursor-pointer"
+		class="rounded-xl py-8 border border-slate-600 flex flex-col mb-4 bg-[#2b65f9] flex flex-col justify-center items-center transition hover:scale-105 hover:bg-green-300 hover:text-black cursor-pointer"
 		data-cal-link="team/salt-and-bold/intro-call-30-min"
 	>
-		<div class="text-2xl">Hire Design Team</div>
+		<div class="text-2xl" data-cal-link="team/salt-and-bold/intro-call-30-min">
+			Hire Design Team
+		</div>
+		<div class="flex flex-wrap mt-4">
+			{#each designers as designer}
+				<img
+					src={designer.avatarUrl}
+					class="w-[40px] h-[40px] rounded-full"
+					data-cal-link="team/salt-and-bold/intro-call-30-min"
+					style="margin-right: -10px;"
+				/>
+			{/each}
+		</div>
 	</div>
 </div>
 

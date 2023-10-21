@@ -74,7 +74,11 @@
 						class:opacity-30={!$isRequestsLoading && !$requests.length}
 						class:active={$page.url.pathname === '/' || $page.url.pathname.includes('my-designs')}
 					>
-						<HomeIcon />
+						<HomeIcon
+							class={$page.url.pathname === '/' || $page.url.pathname.includes('my-designs')
+								? 'active'
+								: ''}
+						/>
 
 						<div class="ml-2">
 							My Designs {#if $isRequestsLoading}

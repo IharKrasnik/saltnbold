@@ -14,6 +14,7 @@ export default async ({ url }, title = 'Salt n Bold') => {
 		const cookies = cookie.parse(document.cookie);
 		let accessToken = cookies.access_token;
 		console.log('accessToken', accessToken);
+
 		if (!user && accessToken && !url.href.includes('/embed')) {
 			let api = apiServerSide({ accessToken });
 			isUserLoading.set(true);

@@ -50,8 +50,8 @@
 </div>
 
 <h3 class="mb-8 mt-2">
-	Use our simple design systems to design quick mockups yourself. No need to prior knowledge of
-	designing or Figma.
+	Use our simple design systems to design quick mockups yourself. No need to know how to use Figma
+	or desig.
 </h3>
 
 <div class="grid grid-cols-1 lg:grid-cols-2 w-full gap-4 w-full">
