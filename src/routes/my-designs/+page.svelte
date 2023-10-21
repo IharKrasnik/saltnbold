@@ -26,7 +26,7 @@
 	};
 
 	let formatRequestStatus = (request) => {
-		if (!request.isActivated) {
+		if (!request.isActivated || !request.amount) {
 			return 'In Draft';
 		} else if (!request.isCompleted) {
 			return 'Work In Progress';

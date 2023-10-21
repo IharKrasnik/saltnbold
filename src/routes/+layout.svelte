@@ -104,9 +104,9 @@
 					</div>
 				</a>
 
-				<a href="/tools" class="menuitem" class:active={$page.url.pathname === '/tools'}>
+				<a href="/tools" class="menuitem" class:active={$page.url.pathname.startsWith('/tools')}>
 					<div class=" flex items-center py-2">
-						<GiftIcon class={$page.url.pathname === '/tools' ? 'active' : ''} />
+						<GiftIcon class={$page.url.pathname.startsWith('/tools') ? 'active' : ''} />
 
 						<div class="ml-2">Free Tools</div>
 					</div>
