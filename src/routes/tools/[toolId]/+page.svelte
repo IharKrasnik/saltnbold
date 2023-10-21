@@ -7,9 +7,9 @@
 
 	let tool = $toolsObj[$page.params.toolId];
 
-	// setTimeout(() => {
-	// 	goto(tool.url);
-	// }, 2000);
+	setTimeout(() => {
+		goto(tool.url);
+	}, 2000);
 </script>
 
 <div>
