@@ -100,9 +100,9 @@
 		</div> -->
 		</div>
 	{:else}
-		<div class="mt-8">
+		<div>
 			<a href={GOOGLE_LOGIN_URL}>
-				<button class="secondary">
+				<button>
 					<svg
 						class="mr-2"
 						width="17"

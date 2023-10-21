@@ -119,7 +119,7 @@
 			</div>
 		</div>
 
-		<button class="mt-8 w-full" data-cal-link="team/salt-and-bold/intro-call-30-min">
+		<button class="mt-8 w-full secondary" data-cal-link="team/salt-and-bold/intro-call-30-min">
 			Get Custom Design
 		</button>
 

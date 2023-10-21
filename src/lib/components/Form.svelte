@@ -154,7 +154,7 @@
 		</div>
 	{/each}
 
-	<button type="submit" class="secondary" on:click={submit} disabled={isLoading}>
+	<button class="primary" type="submit" on:click={submit} disabled={isLoading}>
 		{#if isLoading}
 			<Loader />
 		{/if}

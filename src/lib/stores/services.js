@@ -75,6 +75,37 @@ let services = [
 	}
 ];
 
+export let portfolio = writable([
+	{
+		type: 'ui_ux_prototype',
+		name: 'Shelf',
+		description: 'Modern QR-code generator for tracking inventory',
+		src: 'https://www.figma.com/proto/8Mb6BCx3yTShfW6ZvDkhGe/Shelf-prototype?page-id=0%3A1&type=design&node-id=202-11871&viewport=846%2C-972%2C0.1&t=ZXtZTOi4ZCn6whbq-1&scaling=scale-down&starting-point-node-id=202%3A11871',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697916380201-image.png'
+	},
+	{
+		type: 'ui_ux_prototype',
+		name: 'Moodahub',
+		description: 'A virtual wardrobe with social mechanics',
+		img: 'https://assets-global.website-files.com/64831da00244efd7c8280a6c/6501fa4c88cef88ac28330a7_image%202.png',
+		src: 'https://www.figma.com/proto/ZN2PbVdAdFcWBSKOeXLzFz/Moodahub?page-id=0%3A1&type=design&node-id=0-12609&viewport=895%2C1154%2C0.12&t=WlR9YRLJSax4O2jU-1&scaling=scale-down&starting-point-node-id=0%3A12724&mode=design'
+	},
+	{
+		type: 'ui_ux_prototype',
+		name: 'TechMate',
+		description: 'Find perfect co-founder with AI',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697916195962-image.png',
+		src: 'https://www.figma.com/proto/ZMm7jGbK9iVKmg22CpBq8w'
+	},
+	{
+		type: 'ui_ux_prototype',
+		name: 'Collab Universe',
+		description: 'Connect with creators via booking agencies, major labels, production companies',
+		img: 'https://assets-global.website-files.com/64831da00244efd7c8280a6c/6501fa4d1d0b77399cac8a9c_image%202-3.png',
+		src: 'https://www.figma.com/proto/bh94Fc3bczOEBGCwkAmIHf/Collab-Universe?page-id=0%3A1&type=design&node-id=9-14&viewport=-435%2C724%2C0.39&t=dfxBToX6UmYSa4DA-1&scaling=scale-down&starting-point-node-id=9%3A14&show-proto-sidebar=1'
+	}
+]);
+
 export default writable(services);
 
 export let formatRequestType = (requestType) => {
