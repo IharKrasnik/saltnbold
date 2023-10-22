@@ -5,9 +5,11 @@
 	let href = GOOGLE_LOGIN_URL;
 
 	setTimeout(() => {
-		let referral = JSON.parse(localStorage['referral'] || { code: '' });
-		debugger;
-		href = `${GOOGLE_LOGIN_URL}&r=${referral.code}`;
+		let referral = JSON.parse(localStorage['referral']) || { code: '' };
+
+		if (referral?.code) {
+			href = `${GOOGLE_LOGIN_URL}&r=${referral.code}`;
+		}
 	}, 0);
 </script>
 
