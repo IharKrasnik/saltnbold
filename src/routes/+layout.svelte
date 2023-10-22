@@ -1,6 +1,6 @@
 <script>
 	import '../app.css';
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import Loader from '$lib/components/Loader.svelte';
 	import NavLinks from '$lib/components/NavLinks.svelte';
 	import LoginButton from '$lib/components/LoginButton.svelte';
@@ -13,6 +13,7 @@
 
 	import currentUser, { isLoading as isCurrentUserLoading } from '$lib/stores/currentUser';
 	import requests, { isLoading as isRequestsLoading } from '$lib/stores/requests';
+	let scrollY;
 
 	if (browser) {
 		if (!$isCurrentUserLoading) {
@@ -28,6 +29,8 @@
 		}
 	}
 </script>
+
+<svelte:window bind:scrollY />
 
 <svelte:head>
 	<title>{$page.data.ogTitle}</title>
@@ -106,6 +109,15 @@
 		{/if}
 	</div>
 </div>
+
+{#if !$isCurrentUserLoading && !$currentUser}
+	{#if scrollY > 100}
+		<div class="sm:hidden fixed bottom-16 w-full" in:fly={{ y: 50, duration: 150 }}>
+			{#if !$page.url.pathname.includes('/new/')}{/if}
+			<LoginButton class="mx-auto" text="Log In With Google" />
+		</div>
+	{/if}
+{/if}
 
 <div class="sm:hidden p-8 bg-zinc-900 min-h-screen">
 	<div class="font-bold text-lg">Salt & Bold</div>
