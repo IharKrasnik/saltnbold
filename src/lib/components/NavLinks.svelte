@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { fly } from 'svelte/transition';
 	import currentUser, { isLoading as isCurrentUserLoading } from '$lib/stores/currentUser';
 	import requests, { isLoading as isRequestsLoading } from '$lib/stores/requests';
 	import Loader from '$lib/components/Loader.svelte';
@@ -11,25 +12,24 @@
 </script>
 
 <div class="mt-4 text-lg">
-	<a href="/my-designs">
-		<div
-			class="menuitem flex items-center py-2"
-			class:opacity-30={!$isRequestsLoading && !$requests.length}
-			class:active={$page.url.pathname === '/' || $page.url.pathname.includes('my-designs')}
-		>
-			<HomeIcon
-				class={$page.url.pathname === '/' || $page.url.pathname.includes('my-designs')
-					? 'active'
-					: ''}
-			/>
+	{#if $currentUser?.requestsCount}
+		<a href="/my-designs" in:fly={{ y: -50, duration: 150 }}>
+			<div
+				class="menuitem flex items-center py-2"
+				class:active={$page.url.pathname === '/' || $page.url.pathname.includes('my-designs')}
+			>
+				<HomeIcon
+					class={$page.url.pathname === '/' || $page.url.pathname.includes('my-designs')
+						? 'active'
+						: ''}
+				/>
 
-			<div class="ml-2">
-				My Designs {#if $isRequestsLoading}{:else}
-					{$requests.length || ''}
-				{/if}
+				<div class="ml-2">
+					My Designs {$currentUser.requestsCount}
+				</div>
 			</div>
-		</div>
-	</a>
+		</a>
+	{/if}
 
 	<a href="/new">
 		<div

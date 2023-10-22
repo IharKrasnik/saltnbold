@@ -54,7 +54,9 @@
 
 <div class="lg:hidden block p-4">
 	<div class="w-full flex items-center justify-between">
-		<a href="/"><img class="w-[50px] rounded-full" src="/salt_logo.png" /></a>
+		<a href="/" class="block w-[50px] h-[50px]"
+			><img class="w-[50px] rounded-full" src="/salt_logo.png" /></a
+		>
 		{#if $currentUser}
 			<img src={$currentUser.avatarUrl} class="rounded-full w-[40px] h-[40px]" />
 		{/if}

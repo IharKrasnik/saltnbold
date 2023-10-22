@@ -2,6 +2,7 @@
 	import { get, post } from '$lib/api';
 	import { goto } from '$app/navigation';
 	import Loader from '$lib/components/Loader.svelte';
+	import GetNewDesign from '$lib/components/GetNewDesign.svelte';
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import Button from '$lib/components/Button.svelte';
@@ -12,13 +13,6 @@
 	import showCrispChat from '$lib/helpers/showCrispChat';
 
 	if (browser) {
-		if ($currentUser) {
-			if (!$requests.length) {
-				goto('/new');
-			}
-		} else {
-			goto('/new');
-		}
 	}
 
 	let requestTypes = {
@@ -65,6 +59,10 @@
 	<h1 class="mb-8">My Designs</h1>
 	<a href="/new"><button>Get New Design ⚡️</button></a>
 </div>
+
+{#if !$requests.length}
+	<GetNewDesign />
+{/if}
 
 <div class="grid grid-cols-1 lg:grid-cols-2 w-full gap-4 w-full">
 	{#each $requests as request}
