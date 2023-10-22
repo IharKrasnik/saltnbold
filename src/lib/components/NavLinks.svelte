@@ -24,9 +24,7 @@
 			/>
 
 			<div class="ml-2">
-				My Designs {#if $isRequestsLoading}
-					<Loader class="ml-2" />
-				{:else}
+				My Designs {#if $isRequestsLoading}{:else}
 					{$requests.length || ''}
 				{/if}
 			</div>

@@ -1,7 +1,9 @@
 <script>
 	import '../app.css';
+	import { fade } from 'svelte/transition';
 	import Loader from '$lib/components/Loader.svelte';
 	import NavLinks from '$lib/components/NavLinks.svelte';
+	import LoginButton from '$lib/components/LoginButton.svelte';
 	import { SvelteToast } from '@zerodevx/svelte-toast';
 
 	import { browser } from '$app/environment';
@@ -81,9 +83,21 @@
 			</div>
 		</a>
 
-		<button class="mt-8 w-full secondary" data-cal-link="team/salt-and-bold/intro-call-30-min">
-			Get Custom Design
-		</button>
+		{#if !$isCurrentUserLoading}
+			<div class="mt-8" in:fade>
+				{#if $currentUser}
+					<button class=" w-full secondary" data-cal-link="team/salt-and-bold/intro-call-30-min">
+						Get Custom Design
+					</button>
+				{:else}
+					<LoginButton class="w-full" text="Log In With Google" />
+				{/if}
+			</div>
+		{:else}
+			<div class="w-full mt-8 flex justify-center">
+				<Loader />
+			</div>
+		{/if}
 	</div>
 
 	<div class="w-full p-4 lg:p-0">

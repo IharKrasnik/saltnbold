@@ -1,22 +1,29 @@
 <script>
+	import { browser } from '$app/environment';
 	import { getGoogleLoginUrl } from '$lib/env';
 	import { goto } from '$app/navigation';
+	export let text = 'Continue With Google';
+
+	let clazz = '';
+	export { clazz as class };
 
 	let href = getGoogleLoginUrl();
 
 	let getUrl = () => {};
 
-	setTimeout(() => {
-		let referral = JSON.parse(localStorage['referral']) || { code: '' };
+	if (browser) {
+		setTimeout(() => {
+			let referral = JSON.parse(localStorage['referral']) || { code: '' };
 
-		if (referral?.code) {
-			href = `${getGoogleLoginUrl()}&r=${referral.code}`;
-		}
-	}, 0);
+			if (referral?.code) {
+				href = `${getGoogleLoginUrl()}&r=${referral.code}`;
+			}
+		}, 0);
+	}
 </script>
 
 <a {href}>
-	<button>
+	<button class={clazz}>
 		<svg
 			class="mr-2"
 			width="17"
@@ -49,6 +56,6 @@
 				</clipPath>
 			</defs>
 		</svg>
-		Continue with Google</button
+		{text}</button
 	>
 </a>
