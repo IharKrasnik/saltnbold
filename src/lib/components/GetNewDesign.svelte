@@ -54,7 +54,7 @@
 	{#each $services as service}
 		<a href={service.href}>
 			<div
-				class="rounded-xl relative border border-slate-600 flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
+				class="rounded-xl bg-zinc-900 relative border border-[#242424] flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
 			>
 				{#if service.img}
 					<img class="w-full rounded-t-xl cover-image" src={service.img} />

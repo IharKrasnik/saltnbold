@@ -69,7 +69,7 @@
 		<div>
 			<a href="/my-designs/{request._id}">
 				<div
-					class="rounded-xl border border-slate-600 flex flex-col justify-between mb-4 transition"
+					class="rounded-xl border border-[#242424] flex flex-col justify-between mb-4 transition"
 				>
 					<div class="w-full relative aspect-video" style="background-color: rgba(0,0,0, .3);">
 						<div

@@ -81,7 +81,7 @@
 	{/if}
 </div>
 
-<div class="mt-12">
+<div class="my-12">
 	<div class="section-header">
 		<div>
 			<h2>Clickable UI/UX prototypes examples</h2>

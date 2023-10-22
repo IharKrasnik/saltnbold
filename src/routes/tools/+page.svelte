@@ -39,7 +39,7 @@
 	<div>
 		<a href="tools/{figplateWeb.key}" target="_blank">
 			<div
-				class="rounded-xl relative border border-slate-600 flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
+				class="rounded-xl relative border bg-zinc-900 border-[#242424] flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
 			>
 				<img class="w-full rounded-t-xl cover-image" src={figplateWeb.img} />
 
@@ -57,7 +57,7 @@
 	<div>
 		<a href="tools/{figplateMobile.key}" target="_blank">
 			<div
-				class="rounded-xl relative border border-slate-600 flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
+				class="rounded-xl relative border bg-zinc-900 border-[#242424] flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
 			>
 				<img class="w-full rounded-t-xl cover-image" src={figplateMobile.img} />
 
@@ -85,7 +85,7 @@
 		<div class="break-inside-avoid mb-8">
 			<a href="tools/{freebie.key}" target="_blank">
 				<div
-					class="rounded-xl relative border border-slate-600 flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
+					class="rounded-xl relative border bg-zinc-900 border-[#242424] flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
 				>
 					<img class="w-full rounded-t-xl cover-image" src={freebie.img} />
 
