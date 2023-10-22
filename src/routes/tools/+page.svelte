@@ -13,12 +13,15 @@
 
 	let figplateWeb = $toolsObj['figplate-web'];
 	let figplateMobile = $toolsObj['figplate-mobile'];
+	let productName = '';
 </script>
 
 <div class="">
 	<h1 class="mb-2">Design Tools and Templates</h1>
-	<h2 class="mb-4 sm:mb-12">Save days on your product design with our free tools</h2>
+	<h2 class="mb-4">Save days on your product design with Salt & Bold free design tools</h2>
 </div>
+
+<hr class="my-8 opacity-30" />
 
 <div class="flex justify-between">
 	<h2 class="font-bold">Figma Starters</h2>
@@ -72,7 +75,7 @@
 	<h2 class="font-bold">Marketing Gems</h2>
 </div>
 
-<h3 class="mb-8 mt-2">Use Salt And Bold marketing assets to make your brand pop</h3>
+<h3 class="mb-8 mt-2">Use Salt & Bold marketing assets to make your brand pop</h3>
 
 <div class="columns-1 md:columns-2 lg:columns-3 w-full gap-4 w-full">
 	{#each freebies as freebie}
@@ -100,17 +103,21 @@
 	{/each}
 </div>
 
+<h2 class="mb-8 mt-8">Ready For No-Code?</h2>
+
 <div class="p-4 sm:p-8 bg-zinc-900 mb-4 rounded-xl mb-8">
 	<div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
 		<div>
 			<h2 class="font-bold">Momentum Page</h2>
 			<h3>Launch your landing page with email capture and analytics in seconds</h3>
 
-			<div class="mt-4">
+			<div class="mt-8">
 				<label>What's your product name?</label>
-				<input placeholder="MyBrand" class="w-full" />
+				<input placeholder="MyCoolProduct" class="w-full" bind:value={productName} />
 
-				<button class="mt-4">Launch My Page</button>
+				<a href="https://page.mmntm.build?brandName={productName}" target="_blank">
+					<button class="mt-8">Launch My Page</button>
+				</a>
 			</div>
 		</div>
 		<div>
