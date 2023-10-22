@@ -9,6 +9,7 @@ export async function load({ url, params, session, cookies }) {
 		...authData,
 		ogTitle: 'Salt and Bold Studio',
 		ogDescription: 'Result-oriented product design studio for startups',
-		ogImage: 'https://studio.saltnbold.com/salt_logo.png'
+		ogImage:
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/63eb7b390b1414001513caf7/1697985592176-salt_og.png'
 	};
 }
