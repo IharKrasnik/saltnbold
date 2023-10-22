@@ -124,10 +124,11 @@
 
 		<a
 			href="/referrals"
-			class="block w-[250px] bg-zinc-900 cursor-pointer p-4 rounded-xl mt-8 hover:bg-green-400 hover:text-black transition"
+			class:active={$page.url.pathname.startsWith('/referrals')}
+			class="nav block w-[250px] bg-zinc-900 cursor-pointer p-4 rounded-xl mt-8 hover:bg-green-400 hover:text-black transition"
 		>
 			<div class="block">Share With Friends 💙</div>
-			<div class="opacity-80 text-sm">
+			<div class="opacity-80 text-sm mt-2">
 				Earn 20% of the payments from people you've referred to Salt & Bold
 			</div>
 		</a>
@@ -157,5 +158,16 @@
 	.menuitem.active {
 		color: #fff;
 		font-weight: 500;
+	}
+
+	.nav {
+		@apply text-[#b0b0be];
+	}
+	.nav.active {
+		@apply text-white;
+	}
+
+	.nav:hover {
+		@apply text-black;
 	}
 </style>

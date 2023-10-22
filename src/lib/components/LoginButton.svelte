@@ -1,14 +1,16 @@
 <script>
-	import { GOOGLE_LOGIN_URL } from '$lib/env';
+	import { getGoogleLoginUrl } from '$lib/env';
 	import { goto } from '$app/navigation';
 
-	let href = GOOGLE_LOGIN_URL;
+	let href = getGoogleLoginUrl();
+
+	let getUrl = () => {};
 
 	setTimeout(() => {
 		let referral = JSON.parse(localStorage['referral']) || { code: '' };
 
 		if (referral?.code) {
-			href = `${GOOGLE_LOGIN_URL}&r=${referral.code}`;
+			href = `${getGoogleLoginUrl()}&r=${referral.code}`;
 		}
 	}, 0);
 </script>

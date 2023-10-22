@@ -1,5 +1,6 @@
 <script>
 	import currentUser from '$lib/stores/currentUser';
+	import Icon from '$lib/components/Icon.svelte';
 	import LoginButton from '$lib/components/LoginButton.svelte';
 	import TwitterIcon from '$lib/icons/twitter.svelte';
 	import LinkedinIcon from '$lib/icons/linkedin.svelte';
@@ -105,24 +106,34 @@ ${referralLink}`;
 	</div>
 </div>
 
-<div class="section-body grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="section-body grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-4">
 	<div>
+		<Icon class="mb-2" name="upload" />
 		<div class="font-bold">1. Share the Link</div>
 
 		Send a link to your friends, publish in social networks etc.
 	</div>
 	<div>
+		<Icon class="mb-2" name="notification" />
 		<div class="font-bold">2. See Referrals</div>
 
 		Once people sign up with your link, you'll see them in your referral list
 	</div>
 	<div>
+		<Icon class="mb-2" name="percentage" />
 		<div class="font-bold">3. Earn 20% Commision</div>
 		Once they buy from Salt & Bold we'll pay you 20% of their payment
 	</div>
 
 	<div>
+		<Icon class="mb-2" name="wallet" />
 		<div class="font-bold">4. Get Paid</div>
 		Withdraw your funds to PayPal account
 	</div>
 </div>
+
+<style>
+	.icon {
+		@apply p-4 rounded-full bg-zinc-300;
+	}
+</style>

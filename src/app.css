@@ -95,6 +95,18 @@ h3 {
 	@apply bg-zinc-900 lg:p-8 p-4 pt-8 rounded-b-xl;
 }
 
+.icon-white {
+	opacity: 0.9;
+}
+
+.icon-white path[stroke] {
+	stroke: #fff;
+}
+
+.icon-white path[fill] {
+	fill: #fff;
+}
+
 .svgicon .stroke-color {
 	stroke: #b0b0be;
 }
