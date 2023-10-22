@@ -1,10 +1,7 @@
 <script>
 	import '../app.css';
 	import Loader from '$lib/components/Loader.svelte';
-
-	import HomeIcon from '$lib/icons/home.svelte';
-	import GiftIcon from '$lib/icons/gift.svelte';
-	import FlashIcon from '$lib/icons/flash.svelte';
+	import NavLinks from '$lib/components/NavLinks.svelte';
 	import { SvelteToast } from '@zerodevx/svelte-toast';
 
 	import { browser } from '$app/environment';
@@ -70,56 +67,7 @@
 					{/if}
 				</div>
 			</div>
-			<div class="mt-4 text-lg">
-				<a href="/my-designs">
-					<div
-						class="menuitem flex items-center py-2"
-						class:opacity-30={!$isRequestsLoading && !$requests.length}
-						class:active={$page.url.pathname === '/' || $page.url.pathname.includes('my-designs')}
-					>
-						<HomeIcon
-							class={$page.url.pathname === '/' || $page.url.pathname.includes('my-designs')
-								? 'active'
-								: ''}
-						/>
-
-						<div class="ml-2">
-							My Designs {#if $isRequestsLoading}
-								<Loader class="ml-2" />
-							{:else}
-								{$requests.length || ''}
-							{/if}
-						</div>
-					</div>
-				</a>
-
-				<a href="/new">
-					<div
-						class="menuitem flex items-center py-2"
-						class:active={$page.url.pathname === '/' || $page.url.pathname.includes('new')}
-					>
-						<FlashIcon
-							class={$page.url.pathname === '/' || $page.url.pathname.includes('new')
-								? 'active'
-								: ''}
-						/>
-						<div class="ml-2">Get Fast Design</div>
-					</div>
-				</a>
-
-				<a href="/tools" class="menuitem" class:active={$page.url.pathname.startsWith('/tools')}>
-					<div class=" flex items-center py-2">
-						<GiftIcon class={$page.url.pathname.startsWith('/tools') ? 'active' : ''} />
-
-						<div class="ml-2">Free Tools</div>
-					</div>
-				</a>
-				<hr class="mt-4 py-2 opacity-30" />
-
-				<div class="mt-2 text-sm opacity-80">
-					Salt n Bold is a result-driven design studio for startups
-				</div>
-			</div>
+			<NavLinks />
 		</div>
 
 		<a
@@ -145,21 +93,11 @@
 	</div>
 </div>
 
+<div class="sm:hidden p-8 bg-zinc-900 min-h-screen">
+	<NavLinks />
+</div>
+
 <style>
-	.menuitem {
-		color: #b0b0be;
-		@apply transition;
-	}
-
-	.menuitem:hover {
-		color: #fff;
-	}
-
-	.menuitem.active {
-		color: #fff;
-		font-weight: 500;
-	}
-
 	.nav {
 		@apply text-[#b0b0be];
 	}

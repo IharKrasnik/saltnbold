@@ -99,6 +99,14 @@ h3 {
 	opacity: 0.9;
 }
 
+.icon path[stroke] {
+	stroke: #b0b0be;
+}
+
+.icon path[fill] {
+	fill: #b0b0be;
+}
+
 .icon-white path[stroke] {
 	stroke: #fff;
 }

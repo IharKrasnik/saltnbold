@@ -25,7 +25,6 @@
 
 		try {
 			const referralsResult = await get('referrals');
-			debugger;
 			referrals = referralsResult.results;
 		} finally {
 			isReferralsLoading = false;
@@ -168,7 +167,7 @@ ${referralLink}`;
 		<Icon class="mb-2" name="upload" />
 		<div class="font-bold">1. Share the Link</div>
 
-		Send a link to your friends, publish in social networks etc.
+		Send the link to your friends, publish in social networks, add to blog etc.
 	</div>
 	<div>
 		<Icon class="mb-2" name="notification" />

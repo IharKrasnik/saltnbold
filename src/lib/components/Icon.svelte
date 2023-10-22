@@ -12,13 +12,14 @@
 	};
 
 	let clazz = '';
-	let color = 'white';
-	let size = 35;
 	export { clazz as class };
+
+	export let color = 'white';
+	export let size = 35;
 
 	export let name = 'wallet';
 </script>
 
-<div class="icon icon-{color} w-[{size}px] h-[{size}px] {clazz}">
+<div class="icon {color ? `icon-${color}` : ''} w-[{size}px] h-[{size}px] {clazz}">
 	<svelte:component this={map[name]} />
 </div>
