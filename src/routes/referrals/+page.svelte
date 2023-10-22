@@ -1,16 +1,38 @@
 <script>
+	import moment from 'moment';
 	import currentUser from '$lib/stores/currentUser';
+	import { get } from '$lib/api';
+	import { showSuccessMessage } from '$lib/services/toast';
+	import showCrispChat from '$lib/helpers/showCrispChat';
+
+	import Loader from '$lib/components/Loader.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+
 	import LoginButton from '$lib/components/LoginButton.svelte';
 	import TwitterIcon from '$lib/icons/twitter.svelte';
 	import LinkedinIcon from '$lib/icons/linkedin.svelte';
 	import FacebookIcon from '$lib/icons/facebook.svelte';
-	import { showSuccessMessage } from '$lib/services/toast';
-	import showCrispChat from '$lib/helpers/showCrispChat';
 
 	if ($currentUser) {
 		$currentUser.referralCode = 'igor';
 	}
+
+	let referrals;
+	let isReferralsLoading = false;
+
+	let loadReferrals = async () => {
+		isReferralsLoading = true;
+
+		try {
+			const referralsResult = await get('referrals');
+			debugger;
+			referrals = referralsResult.results;
+		} finally {
+			isReferralsLoading = false;
+		}
+	};
+
+	loadReferrals();
 
 	let referralLink =
 		window &&
@@ -95,6 +117,41 @@ ${referralLink}`;
 		<LoginButton />
 	{/if}
 </div>
+
+{#if $currentUser}
+	<div class="section-header mt-8">
+		<h3>My Referrals</h3>
+	</div>
+
+	<div class="section-body">
+		{#if isReferralsLoading}
+			<Loader />
+		{:else if referrals?.length}
+			<table class="w-full">
+				{#each referrals as referral}
+					<tr>
+						<td class="py-4">
+							<div class="flex items-center">
+								<img
+									src={referral.avatarUrl}
+									alt="avatar"
+									class="w-[50px] h-[50px] rounded-full mr-4"
+								/>
+								{referral.fullName}
+							</div>
+						</td>
+						<td class=" p-4 text-right"> $0.00 </td>
+						<td class=" p-4 text-right">
+							{moment(referral.createdOn).format('MMM DD')}
+						</td>
+					</tr>
+				{/each}
+			</table>
+		{:else}
+			You don't have referrals yet
+		{/if}
+	</div>
+{/if}
 
 <div class="section-header mt-8">
 	<h3>How it works?</h3>
