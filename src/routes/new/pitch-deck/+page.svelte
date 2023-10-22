@@ -58,8 +58,10 @@
 </script>
 
 <div class="section-header">
-	<h2 class="text-xl font-bold">Get your pitch deck</h2>
-	<h3 class="text-lg mt-2">Please share as much specific info as you can to get us started.</h3>
+	<div>
+		<h2 class="text-xl font-bold">Get your pitch deck</h2>
+		<h3 class="text-lg mt-2">Please share as much specific info as you can to get us started.</h3>
+	</div>
 </div>
 
 <div class="section-body">
