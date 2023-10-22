@@ -1,8 +1,17 @@
 <script>
 	import { GOOGLE_LOGIN_URL } from '$lib/env';
+	import { goto } from '$app/navigation';
+
+	let href = GOOGLE_LOGIN_URL;
+
+	setTimeout(() => {
+		let referral = JSON.parse(localStorage['referral'] || { code: '' });
+		debugger;
+		href = `${GOOGLE_LOGIN_URL}&r=${referral.code}`;
+	}, 0);
 </script>
 
-<a href={GOOGLE_LOGIN_URL}>
+<a {href}>
 	<button>
 		<svg
 			class="mr-2"
@@ -37,5 +46,5 @@
 			</defs>
 		</svg>
 		Continue with Google</button
-	></a
->
+	>
+</a>

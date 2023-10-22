@@ -1,7 +1,6 @@
 import { toast } from '@zerodevx/svelte-toast';
 
 export const showSuccessMessage = (text) => {
-	debugger;
 	window.toast = toast;
 
 	toast.push(text, {

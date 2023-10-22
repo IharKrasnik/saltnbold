@@ -13,6 +13,7 @@
 
 	let referralLink =
 		window &&
+		$currentUser &&
 		`${
 			window.location.hostname.includes('localhost')
 				? 'https://studio.saltnbold.com'
@@ -48,8 +49,10 @@ ${referralLink}`;
 </script>
 
 <div class="section-header">
-	<h1>My Referrals</h1>
-	<h2>Earn 20% of the payments from people you've referred to Salt & Bold</h2>
+	<div>
+		<h1>My Referrals</h1>
+		<h2>Earn 20% of the payments from people you've referred to Salt & Bold</h2>
+	</div>
 </div>
 
 <div class="section-body">
