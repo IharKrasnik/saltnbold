@@ -31,7 +31,9 @@
 		}
 	};
 
-	loadReferrals();
+	if ($currentUser) {
+		loadReferrals();
+	}
 
 	let referralLink =
 		window &&
