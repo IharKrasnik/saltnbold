@@ -59,7 +59,7 @@
 				{#if service.img}
 					<img class="w-full rounded-t-xl cover-image" src={service.img} />
 				{:else if service.video}
-					<video class="cover-image" looped autoplay muted src={service.video} />
+					<video playsinline class="cover-image" looped autoplay muted src={service.video} />
 				{/if}
 
 				<div class="p-4">
