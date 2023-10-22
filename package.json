@@ -30,7 +30,7 @@
   "type": "module",
   "dependencies": {
     "@lukeed/uuid": "^2.0.0",
-    "@zerodevx/svelte-toast": "^0.9.5",
+    "@zerodevx/svelte-toast": "^1.0.0-rc.1",
     "cookie": "^0.4.1",
     "file-selector": "^0.6.0",
     "lodash": "^4.17.21",

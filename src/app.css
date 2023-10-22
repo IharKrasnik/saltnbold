@@ -78,15 +78,17 @@ h1 {
 }
 
 h2 {
+	font-weight: 500;
 	@apply text-xl;
 }
 
 h3 {
+	font-weight: 500;
 	@apply text-lg;
 }
 
 .section-header {
-	@apply bg-[#222] lg:px-8 px-4 py-4 rounded-t-xl;
+	@apply flex justify-between items-center bg-[#222] lg:px-8 px-4 py-4 rounded-t-xl;
 }
 
 .section-body {

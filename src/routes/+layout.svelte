@@ -5,6 +5,7 @@
 	import HomeIcon from '$lib/icons/home.svelte';
 	import GiftIcon from '$lib/icons/gift.svelte';
 	import FlashIcon from '$lib/icons/flash.svelte';
+	import { SvelteToast } from '@zerodevx/svelte-toast';
 
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
@@ -46,6 +47,8 @@
 	<meta name="og:image" content={$page.data.ogImage} />
 	<link rel="icon" href="favicon.png" />
 </svelte:head>
+
+<SvelteToast />
 
 <div class="lg:hidden block p-4">
 	<div class="w-full flex items-center justify-between">
@@ -114,16 +117,24 @@
 				<hr class="mt-4 py-2 opacity-30" />
 
 				<div class="mt-2 text-sm opacity-80">
-					Salt n Bold is a result-driven design studio for startups 💙
+					Salt n Bold is a result-driven design studio for startups
 				</div>
 			</div>
 		</div>
 
+		<a
+			href="/referrals"
+			class="block w-[250px] bg-zinc-900 cursor-pointer p-4 rounded-xl mt-8 hover:bg-green-400 hover:text-black transition"
+		>
+			<div class="block">Share With Friends 💙</div>
+			<div class="opacity-80 text-sm">
+				Earn 20% of the payments from people you've referred to Salt & Bold
+			</div>
+		</a>
+
 		<button class="mt-8 w-full secondary" data-cal-link="team/salt-and-bold/intro-call-30-min">
 			Get Custom Design
 		</button>
-
-		<!-- <button class="mt-4 w-full" style="background: none;"> Refer a friend </button> -->
 	</div>
 
 	<div class="w-full p-4 lg:p-0">

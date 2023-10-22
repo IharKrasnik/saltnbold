@@ -62,7 +62,7 @@
 </script>
 
 <div class="flex justify-between">
-	<h2 class="mb-8">My Designs</h2>
+	<h1 class="mb-8">My Designs</h1>
 	<a href="/new"><button>Get New Design ⚡️</button></a>
 </div>
 

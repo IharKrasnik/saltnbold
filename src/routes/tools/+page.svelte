@@ -20,27 +20,6 @@
 	<h2 class="mb-4 sm:mb-12">Save days on your product design with our free tools</h2>
 </div>
 
-<div class="p-4 sm:p-8 bg-zinc-900 mb-4 rounded-xl mb-8">
-	<div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
-		<div>
-			<h2 class="font-bold">Momentum Page</h2>
-			<h3>Launch your landing page with email capture and analytics in seconds</h3>
-
-			<div class="mt-4">
-				<label>What's your product name?</label>
-				<input placeholder="MyBrand" class="w-full" />
-
-				<button class="mt-4">Launch My Page</button>
-			</div>
-		</div>
-		<div>
-			<img
-				src="https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697913914623-image.png"
-			/>
-		</div>
-	</div>
-</div>
-
 <div class="flex justify-between">
 	<h2 class="font-bold">Figma Starters</h2>
 </div>
@@ -119,4 +98,25 @@
 			</a>
 		</div>
 	{/each}
+</div>
+
+<div class="p-4 sm:p-8 bg-zinc-900 mb-4 rounded-xl mb-8">
+	<div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
+		<div>
+			<h2 class="font-bold">Momentum Page</h2>
+			<h3>Launch your landing page with email capture and analytics in seconds</h3>
+
+			<div class="mt-4">
+				<label>What's your product name?</label>
+				<input placeholder="MyBrand" class="w-full" />
+
+				<button class="mt-4">Launch My Page</button>
+			</div>
+		</div>
+		<div>
+			<img
+				src="https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697913914623-image.png"
+			/>
+		</div>
+	</div>
 </div>

@@ -17,6 +17,12 @@ let tools = [
 		url: 'https://www.figma.com/file/dWdp1f7Vo9WbpI9SMoOq4E/Figplate-Mobile?type=design&node-id=54-4413&mode=design&t=TpYPGgYX4FzXzwpd-0'
 	},
 	{
+		key: 'ship-ui',
+		name: 'Ship Design System',
+		description: 'Advanced Design System',
+		url: 'https://www.figma.com/file/IVXGkuYntNiy5bYQgurwrs/ship-ui-web?type=design&node-id=3-25&mode=design&t=srW1krKlcMSdhG8E-0'
+	},
+	{
 		key: 'webflow-starters',
 		name: 'Landing Pages Starters',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697817502067-image.png',

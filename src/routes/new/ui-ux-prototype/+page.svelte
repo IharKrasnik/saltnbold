@@ -166,7 +166,7 @@
 </div>
 
 <div class="mt-12">
-	<h2>Clickable UI/UX Prototype Examples</h2>
+	<h2>Clickable UI/UX prototypes examples</h2>
 	<h3 class="mt-2">Here's what we've designed for startup founders like you</h3>
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 mt-8">
