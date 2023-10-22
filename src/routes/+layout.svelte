@@ -61,9 +61,9 @@
 	</div>
 </div>
 
-<div class="container flex mx-auto my-8 h-full">
-	<div class="mr-8 ml-8 lg:ml-0 hidden lg:block">
-		<div class="w-[250px] bg-zinc-900 rounded-xl p-4 flex-shrink-0">
+<div class="container mx-auto lg:mt-8 h-full">
+	<div class="fixed w-[256px] mr-8 ml-8 lg:ml-2 hidden lg:block">
+		<div class="bg-zinc-900 rounded-xl p-4 flex-shrink-0">
 			<div class="flex items-center justify-between">
 				<a href="/"><img class="w-[50px] rounded-full" src="/salt_logo.png" /></a>
 				<div>
@@ -78,7 +78,7 @@
 		<a
 			href="/referrals"
 			class:active={$page.url.pathname.startsWith('/referrals')}
-			class="nav block w-[250px] bg-zinc-900 cursor-pointer p-4 rounded-xl mt-8 hover:bg-green-400 hover:text-black transition"
+			class="nav block w-full bg-zinc-900 cursor-pointer p-4 rounded-xl mt-8 hover:bg-green-400 hover:text-black transition"
 		>
 			<div class="block">Share With Friends 💙</div>
 			<div class="opacity-80 text-sm mt-2">
@@ -103,26 +103,26 @@
 		{/if}
 	</div>
 
-	<div class="w-full p-4 lg:p-0">
+	<div class=" p-4 lg:p-0 lg:ml-[304px]">
 		{#if !$isCurrentUserLoading && !$isRequestsLoading}
 			<slot />
 		{/if}
 	</div>
-</div>
 
-{#if !$isCurrentUserLoading && !$currentUser}
-	{#if scrollY > 100}
-		<div class="sm:hidden fixed bottom-16 w-full" in:fly={{ y: 50, duration: 150 }}>
-			{#if !$page.url.pathname.includes('/new/')}{/if}
-			<LoginButton class="mx-auto" text="Log In With Google" />
-		</div>
+	{#if !$isCurrentUserLoading && !$currentUser}
+		{#if scrollY > 100}
+			<div class="lg:hidden fixed bottom-16 w-full" in:fly={{ y: 50, duration: 150 }}>
+				{#if !$page.url.pathname.includes('/new/')}{/if}
+				<LoginButton class="mx-auto" text="Log In With Google" />
+			</div>
+		{/if}
 	{/if}
-{/if}
 
-<div class="sm:hidden p-8 bg-zinc-900 min-h-screen">
-	<div class="font-bold text-lg">Salt & Bold</div>
-	<div class="opacity-80">Product Design Studio</div>
-	<NavLinks />
+	<div class="lg:hidden p-8 bg-zinc-900 min-h-screen">
+		<div class="font-bold text-lg">Salt & Bold</div>
+		<div class="opacity-80">Product Design Studio</div>
+		<NavLinks />
+	</div>
 </div>
 
 <style>

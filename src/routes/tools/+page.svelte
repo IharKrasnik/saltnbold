@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import FigmaIcon from '$lib/icons/figma.svelte';
 	import { toolsObj } from '$lib/stores/tools';
 
@@ -13,7 +14,9 @@
 
 	let figplateWeb = $toolsObj['figplate-web'];
 	let figplateMobile = $toolsObj['figplate-mobile'];
+
 	let productName = '';
+	let productTitle = '';
 </script>
 
 <div class="">
@@ -103,27 +106,44 @@
 	{/each}
 </div>
 
-<h2 class="mb-8 mt-8">Ready For No-Code?</h2>
+<div class="min-h-screen pt-4">
+	<h2 class="mb-8 mt-8">Ready For No-Code?</h2>
 
-<div class="p-4 sm:p-8 bg-zinc-900 mb-4 rounded-xl mb-8">
-	<div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
-		<div>
-			<h2 class="font-bold">Momentum Page</h2>
-			<h3>Launch your landing page with email capture and analytics in seconds</h3>
+	<div class="p-4 sm:p-8 bg-zinc-900 mb-4 rounded-xl mb-8 h-full">
+		<div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+			<div>
+				<h2 class="font-bold">Momentum Page</h2>
+				<h3 class="mt-2">Launch your landing page with email capture and analytics in seconds</h3>
 
-			<div class="mt-8">
-				<label>What's your product name?</label>
-				<input placeholder="MyCoolProduct" class="w-full" bind:value={productName} />
+				<div class="mt-8">
+					<label>What's your product name?</label>
+					<input placeholder="MyCoolProduct" class="w-full" bind:value={productName} />
 
-				<a href="https://page.mmntm.build?brandName={productName}" target="_blank">
-					<button class="mt-8">Launch My Page</button>
-				</a>
+					{#if productName}
+						<div class="mt-4" in:fade>
+							<label>What's your 1-sentence pitch?</label>
+
+							<input
+								placeholder="Achieve some goal by doing something"
+								class="w-full"
+								bind:value={productTitle}
+							/>
+						</div>
+					{/if}
+
+					<a
+						href="https://page.mmntm.build?name={productName}&title={productTitle}"
+						target="_blank"
+					>
+						<button class="mt-8">Launch My Page</button>
+					</a>
+				</div>
 			</div>
-		</div>
-		<div>
-			<img
-				src="https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697913914623-image.png"
-			/>
+			<div>
+				<img
+					src="https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697913914623-image.png"
+				/>
+			</div>
 		</div>
 	</div>
 </div>
