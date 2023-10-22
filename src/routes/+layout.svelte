@@ -94,6 +94,8 @@
 </div>
 
 <div class="sm:hidden p-8 bg-zinc-900 min-h-screen">
+	<div class="font-bold text-lg">Salt & Bold</div>
+	<div class="opacity-80">Product Design Studio</div>
 	<NavLinks />
 </div>
 

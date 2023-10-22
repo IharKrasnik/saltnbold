@@ -75,7 +75,7 @@
 	<hr class="mt-4 py-2 opacity-30" />
 
 	<div class="mt-2 text-sm opacity-80">
-		Salt n Bold is a result-driven design studio for startups
+		Salt & Bold is a result-driven design studio for startups
 	</div>
 </div>
 
