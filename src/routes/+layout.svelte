@@ -65,7 +65,7 @@
 
 <div class="container mx-auto lg:mt-8 h-full">
 	<div class="fixed w-[256px] mr-8 ml-8 lg:ml-2 hidden lg:block">
-		<div class="bg-zinc-900 rounded-xl p-4 flex-shrink-0">
+		<div class="bg-zinc-900 border border-[#242424] rounded-xl p-4 flex-shrink-0">
 			<div class="flex items-center justify-between">
 				<a href="/"><img class="w-[50px] rounded-full" src="/salt_logo.png" /></a>
 				<div>
@@ -80,7 +80,7 @@
 		<a
 			href="/referrals"
 			class:active={$page.url.pathname.startsWith('/referrals')}
-			class="nav block w-full bg-zinc-900 cursor-pointer p-4 rounded-xl mt-8 hover:bg-green-400 hover:text-black transition"
+			class="nav block w-full bg-zinc-900 border border-[#242424] cursor-pointer p-4 rounded-xl mt-8 hover:bg-green-400 hover:text-black transition"
 		>
 			<div class="block">Share With Friends 💙</div>
 			<div class="opacity-80 text-sm mt-2">
