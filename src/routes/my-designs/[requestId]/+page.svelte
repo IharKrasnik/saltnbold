@@ -3,6 +3,7 @@
 	import { onMount, afterUpdate, tick } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { v4 as uuidv4 } from 'uuid';
+	import { goto } from '$app/navigation';
 
 	import FileInput from '$lib/components/FileInput.svelte';
 	import RequestChanges from '$lib/components/review/RequestChanges.svelte';
@@ -335,12 +336,7 @@ You'll get a notification to your email ${$currentUser.email}`
 						>Activate for ${(request.activateAmount / 100).toFixed(2)}</Button
 					>
 				{:else}
-					<button
-						class="w-full text-center py-4 border rounded-b-xl cursor-pointer"
-						on:click={() => addPaymentMethod()}
-					>
-						Add Card To Activate
-					</button>
+					<button class="green" on:click={() => addPaymentMethod()}> Add Card To Activate </button>
 				{/if}
 			</div>
 		{/if}
