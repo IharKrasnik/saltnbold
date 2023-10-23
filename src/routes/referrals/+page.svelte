@@ -13,10 +13,6 @@
 	import LinkedinIcon from '$lib/icons/linkedin.svelte';
 	import FacebookIcon from '$lib/icons/facebook.svelte';
 
-	if ($currentUser) {
-		$currentUser.referralCode = 'igor';
-	}
-
 	let referrals;
 	let isReferralsLoading = false;
 
