@@ -105,8 +105,8 @@
 		{/if}
 	</div>
 
-	<div class=" p-4 lg:p-0 lg:ml-[304px]">
-		{#if !$isCurrentUserLoading && !$isRequestsLoading}
+	<div class=" p-4 lg:p-0 lg:ml-[304px] mb-8" style="min-height: 70vh">
+		{#if $page.url.pathname === '/new' || $page.url.pathname === '/' || (!$isCurrentUserLoading && !$isRequestsLoading)}
 			<slot />
 		{/if}
 	</div>
