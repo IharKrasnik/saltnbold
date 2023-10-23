@@ -179,6 +179,10 @@ You'll get a notification to your email ${$currentUser.email}`
 			scrollToBottom();
 		});
 	}
+	let addPaymentMethod = async () => {
+		let { url: stripeUrl } = await post(`stripe/payment-method`, {});
+		goto(stripeUrl);
+	};
 </script>
 
 <h1 class="mb-4">{request.data.name}</h1>
@@ -326,9 +330,18 @@ You'll get a notification to your email ${$currentUser.email}`
 			<div
 				class="flex justify-center items-center w-full h-full bg-green-900 p-4 py-8 rounded-b-xl"
 			>
-				<Button class="green" onClick={activateRequest}
-					>Activate for ${(request.activateAmount / 100).toFixed(2)}</Button
-				>
+				{#if $currentUser.paymentMethods?.length}
+					<Button class="green" onClick={activateRequest}
+						>Activate for ${(request.activateAmount / 100).toFixed(2)}</Button
+					>
+				{:else}
+					<button
+						class="w-full text-center py-4 border rounded-b-xl cursor-pointer"
+						on:click={() => addPaymentMethod()}
+					>
+						Add Card To Activate
+					</button>
+				{/if}
 			</div>
 		{/if}
 	</div>
