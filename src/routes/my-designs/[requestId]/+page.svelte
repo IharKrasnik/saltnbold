@@ -186,21 +186,11 @@ You'll get a notification to your email ${$currentUser.email}`
 	};
 </script>
 
-<h1 class="mb-4">{request.data.name}</h1>
-<h3 class="opacity-80">{formatRequestType(request.type)}</h3>
-<div class="flex justify-between">
-	<!-- 
-	<iframe
-		style="border: 1px solid rgba(0, 0, 0, 0.1);"
-		width="800"
-		height="450"
-		src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F8Mb6BCx3yTShfW6ZvDkhGe%2FShelf-prototype%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D202-11871%26viewport%3D846%252C-972%252C0.1%26t%3DsKrDPl9rYMwhFkdh-1%26scaling%3Dscale-down%26starting-point-node-id%3D202%253A11871%26mode%3Ddesign"
-		allowfullscreen
-	/> -->
-
-	<!-- <iframe
-		src="https://www.figma.com/proto/8Mb6BCx3yTShfW6ZvDkhGe/Shelf-prototype?page-id=0%3A1&type=design&node-id=202-11871&viewport=846%2C-972%2C0.1&t=ZXtZTOi4ZCn6whbq-1&scaling=scale-down&starting-point-node-id=202%3A11871"
-	/> -->
+<div class="flex justify-between items-center">
+	<div>
+		<h1 class="mb-4">{request.data.name}</h1>
+		<h3 class="opacity-80">{formatRequestType(request.type)}</h3>
+	</div>
 	<div>
 		{#if $currentUser._id === request.user._id && request.isActivated}
 			{#if request.isCompleted}
@@ -212,13 +202,17 @@ You'll get a notification to your email ${$currentUser.email}`
 	</div>
 </div>
 
-<!-- <div class="flex mb-0">
-	<div class="p-2 px-6 rounded-lg rounded-b-none bg-zinc-600 font-bold mr-2">Chat</div>
-	<div class="p-2 px-6 mr-2 rounded-lg rounded-b-none bg-zinc-800">
-		Files
-		{request.isCompleted ? '' : '🔐'}
-	</div>
-</div> -->
+<!-- 
+	<iframe
+		style="border: 1px solid rgba(0, 0, 0, 0.1);"
+		width="800"
+		height="450"
+		src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F8Mb6BCx3yTShfW6ZvDkhGe%2FShelf-prototype%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D202-11871%26viewport%3D846%252C-972%252C0.1%26t%3DsKrDPl9rYMwhFkdh-1%26scaling%3Dscale-down%26starting-point-node-id%3D202%253A11871%26mode%3Ddesign"
+		allowfullscreen
+	/> -->
+<!-- <iframe
+		src="https://www.figma.com/proto/8Mb6BCx3yTShfW6ZvDkhGe/Shelf-prototype?page-id=0%3A1&type=design&node-id=202-11871&viewport=846%2C-972%2C0.1&t=ZXtZTOi4ZCn6whbq-1&scaling=scale-down&starting-point-node-id=202%3A11871"
+	/> -->
 
 <div class="bg-zinc-900 rounded-xl mt-8">
 	<div class="p-4 bg-[#222] rounded-t-xl flex items-center justify-between w-full">
