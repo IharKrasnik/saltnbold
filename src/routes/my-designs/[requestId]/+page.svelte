@@ -321,7 +321,7 @@ You'll get a notification to your email ${$currentUser.email}`
 	{/if}
 
 	<div class="bg-[#222] rounded-b-xl">
-		{#if request.isActivated}
+		{#if $currentUser.isAdmin || request.isActivated}
 			{#if $currentUser.isAdmin || isSendMessage || !request.reviews?.length || !_.last(request.reviews).isPending || request.isCompleted}
 				<div class="flex items-center p-4">
 					<div style="margin-left: -16px;">
