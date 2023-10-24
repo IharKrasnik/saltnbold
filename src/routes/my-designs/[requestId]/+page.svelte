@@ -36,7 +36,14 @@
 			_id: '2',
 			createdOn: request.createdOn,
 			sender: request.user,
-			content: request.data.description,
+			content:
+				`${request.data.description || ''}` +
+				`${
+					request.data.mustHaveWorkflow
+						? `\nMust-have worfklow: ${request.data.mustHaveWorkflow}`
+						: ''
+				}` +
+				`${request.data.references ? `\nReferences: ${request.data.references}` : ''}`,
 			isRequest: true
 		}
 	];
@@ -292,9 +299,9 @@ You'll get a notification to your email ${$currentUser.email}`
 								</div>
 							{/if}
 
-							{#if message.isRequest}
+							<!-- {#if message.isRequest}
 								<button class="cursor-pointer p-2 secondary mt-4">View Full Request</button>
-							{/if}
+							{/if} -->
 						</div>
 					</div>
 
