@@ -312,13 +312,40 @@ You'll get a notification to your email ${$currentUser.email}`
 		{/if}
 	</div>
 
+	{#if newMessage.files?.length}
+		<div class="flex">
+			{#each newMessage.files as file}
+				<RenderUrl imgClass="max-h-[100px] w-auto mr-4" url={file.url} />
+			{/each}
+		</div>
+	{/if}
+
 	<div class="bg-[#222] rounded-b-xl">
 		{#if request.isActivated}
 			{#if $currentUser.isAdmin || isSendMessage || !request.reviews?.length || !_.last(request.reviews).isPending || request.isCompleted}
-				<div class="p-4 justify-between flex w-full items-center h-full">
-					<textarea class="w-full h-full" bind:value={newMessage.content} />
+				<div class="flex items-center p-4">
+					<div style="margin-left: -16px;">
+						<label for="new-file" class="p-4 cursor-pointer">
+							📂
 
-					<button class="ml-8 shrink-0" on:click={sendMessage}>Send Message</button>
+							<input
+								id="new-file"
+								type="file"
+								on:change={async (e) => {
+									let file = await postFile('files', (e.target?.files || e.detail?.files)[0]);
+
+									newMessage.files = [...(newMessage.files || []), file];
+								}}
+								hidden
+							/>
+						</label>
+					</div>
+
+					<div class="justify-between flex w-full items-center h-full">
+						<textarea class="w-full h-full" bind:value={newMessage.content} />
+
+						<button class="ml-8 shrink-0" on:click={sendMessage}>Send Message</button>
+					</div>
 				</div>
 			{/if}
 		{:else}
