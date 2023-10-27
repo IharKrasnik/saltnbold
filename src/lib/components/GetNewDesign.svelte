@@ -4,6 +4,7 @@
 	import currentUser, { isLoading as isCurrentUserloading } from '$lib/stores/currentUser';
 	import services from '$lib/stores/services';
 	import toDollars from '$lib/helpers/toDollars';
+	import showCrispChat from '$lib/helpers/showCrispChat';
 
 	let designers = _.shuffle([
 		{
@@ -50,6 +51,45 @@
 </h1>
 
 <h2 class="mb-8">Choose the service you need and get it done super fast</h2>
+
+<div class="p-8 rounded-xl mb-8" style="outline: 2px #414141 solid">
+	<h3 class="text-2xl font-bold">No calls, no time-consuming proposals, no friction</h3>
+
+	<div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-8">
+		<div>
+			<div class="font-semibold mb-2">1. Submit a simple form</div>
+
+			<div>Get chat access in less than 1 minute</div>
+		</div>
+
+		<div>
+			<div class="font-semibold mb-2">2. Activate your request</div>
+			<div>Pre-pay $9.99 to start the work</div>
+		</div>
+		<div>
+			<div class="font-semibold mb-2">3. Get designs & Review</div>
+			<div>Get notified via email once we ready</div>
+		</div>
+		<div>
+			<div class="font-semibold mb-2">4. Approve & Pay</div>
+			<div>Pay service price to download design files</div>
+		</div>
+	</div>
+
+	<hr class="border-white/20 my-8" />
+
+	<div class="mt-4">
+		<div class="text-sm py-1 w-full sm:text-center">
+			Chat with us at anytime, even before you've activated your request. <span
+				class="cursor-pointer text-blue-300"
+				on:click={showCrispChat}>Chat now</span
+			>
+		</div>
+		<div class="text-sm py-1 w-full sm:text-center">
+			If you're not satisfied with final result, you don't need to pay service price
+		</div>
+	</div>
+</div>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-4 w-full">
 	{#each $services as service}
