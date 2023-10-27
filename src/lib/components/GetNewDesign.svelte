@@ -42,18 +42,17 @@
 	]);
 </script>
 
-<h1 class="text-2xl font-bold mb-2">
+<h1 class="text-2xl font-bold mb-4">
 	{#if $currentUser}
 		Hi {$currentUser.fullName.split(' ')[0] || ''}! Need new designs?
 	{:else}
 		Hi! Need new designs?
 	{/if}
+	Get them now!
 </h1>
 
-<h2 class="mb-8">Choose the service you need and get it done super fast</h2>
-
-<div class="p-8 rounded-xl mb-8" style="outline: 2px #414141 solid">
-	<h3 class="text-2xl font-bold">No calls, no time-consuming proposals, no friction</h3>
+<div class="p-8 rounded-xl mb-8 mt-8" style="outline: 2px #414141 solid">
+	<h3 class="text-2xl">No calls, no time-consuming proposals, no friction</h3>
 
 	<div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-8">
 		<div>
@@ -90,6 +89,7 @@
 		</div>
 	</div>
 </div>
+<h2 class="mb-8">Send your request, get your design</h2>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-4 w-full">
 	{#each $services as service}
