@@ -7,7 +7,9 @@ let services = [
 		activateAmount: 999,
 		name: 'Landing Page',
 		description: 'Validate your product idea and grow waitlist',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527198530-image.png',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393601171-Landing%20page.png',
+
+		img2: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527198530-image.png',
 		href: '/new/landing-page'
 	},
 	{
@@ -43,7 +45,7 @@ let services = [
 		key: 'marketing_assets',
 		name: 'Marketing Assets',
 		description: 'Design nice unified marketing images',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696528869771-image.png',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393662430-marketing.png',
 		href: '/new/marketing-assets'
 	},
 	{
@@ -52,13 +54,16 @@ let services = [
 		key: '3d_icon',
 		name: '3D Icon',
 		description: 'Spice up your designs with authentic 3D art',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697798080012-image.png',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393543012-3d.png',
+		img2: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697798080012-image.png',
 		href: '/new/3d-icon'
 	},
 	{
 		key: 'motion_animation',
 		name: 'Motion Animation',
 		description: 'Win people attention with stunning animations',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393679354-motion.png',
+
 		video:
 			'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1696528525428-motion.mp4',
 		href: '/new/motion-animation'

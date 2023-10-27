@@ -123,6 +123,19 @@ h3 {
 	stroke: #b0b0be;
 }
 
+.service-image svg {
+	width: 100%;
+	height: auto;
+}
+
+.stroke-service-bg {
+	stroke: #97aadc;
+}
+
+.fill-service-bg {
+	fill: #97aadc;
+}
+
 .svgicon .fill-color {
 	fill: #b0b0be;
 }

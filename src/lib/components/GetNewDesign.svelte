@@ -1,5 +1,6 @@
 <script>
 	import _ from 'lodash';
+	// import ServiceImage from '$lib/components/ServiceImage.svelte';
 	import currentUser, { isLoading as isCurrentUserloading } from '$lib/stores/currentUser';
 	import services from '$lib/stores/services';
 	import toDollars from '$lib/helpers/toDollars';
@@ -56,11 +57,19 @@
 			<div
 				class="rounded-xl bg-zinc-900 relative border border-[#242424] flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
 			>
-				{#if service.img}
-					<img class="w-full rounded-t-xl cover-image" src={service.img} />
+				<div class="max-w-[60%] mx-auto">
+					<!-- <ServiceImage class="w-full h-full" serviceKey={service.key} /> -->
+					<img
+						class="w-full rounded-t-xl cover-image object-contain"
+						style="margin-left: -9px;"
+						src={`services_images/${service.key}.svg`}
+					/>
+				</div>
+				<!-- {#if service.img}
+					<img class="w-full rounded-t-xl cover-image" src={`services_images/${service.key}.svg`} />
 				{:else if service.video}
 					<video playsinline class="cover-image" looped autoplay muted src={service.video} />
-				{/if}
+				{/if} -->
 
 				<div class="p-4">
 					<div class="font-bold mb-2">
@@ -99,6 +108,6 @@
 	.cover-image {
 		height: 200px;
 		width: 100%;
-		object-fit: cover;
+		object-fit: contain;
 	}
 </style>
