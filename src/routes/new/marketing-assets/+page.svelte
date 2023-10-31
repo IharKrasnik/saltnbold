@@ -92,5 +92,11 @@
 		<RenderUrl
 			url="https://blog.paralect.com/storage/app/uploads/public/63a/1b1/379/63a1b1379a685165502527.png"
 		/>
+		<RenderUrl
+			url="https://blog.paralect.com/storage/app/uploads/public/613/1f1/294/6131f12943e2e057298504.png"
+		/>
+		<RenderUrl
+			url="https://blog.paralect.com/storage/app/uploads/public/60a/673/c57/60a673c578c84710585563.png"
+		/>
 	</div>
 </div>
