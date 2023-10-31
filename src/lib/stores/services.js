@@ -2,17 +2,6 @@ import { writable } from 'svelte/store';
 
 let services = [
 	{
-		key: 'landing_page',
-		amount: 19999,
-		activateAmount: 999,
-		name: 'Landing Page',
-		description: 'Validate your product idea and grow waitlist',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393601171-Landing%20page.png',
-
-		img2: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527198530-image.png',
-		href: '/new/landing-page'
-	},
-	{
 		key: 'ui_ux_prototype',
 		amount: 9999,
 		activateAmount: 999,
@@ -26,6 +15,7 @@ let services = [
 	},
 	{
 		amount: 39999,
+		activateAmount: 999,
 		key: 'product_demo_video',
 		name: 'Product Demo Video',
 		description: 'Explain your product with dynamic video',
@@ -33,15 +23,8 @@ let services = [
 		href: '/new/product-demo-video'
 	},
 	{
-		amount: 19999,
-		key: 'pitch_deck',
-		name: 'Pitch Deck',
-		description: 'Convert your story into compelling pitch',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527520883-image.png',
-		href: '/new/pitch-deck'
-	},
-
-	{
+		amount: 5999,
+		activateAmount: 999,
 		key: 'marketing_assets',
 		name: 'Marketing Assets',
 		description: 'Design nice unified marketing images',
@@ -49,7 +32,7 @@ let services = [
 		href: '/new/marketing-assets'
 	},
 	{
-		amount: 9999,
+		amount: 5999,
 		activateAmount: 999,
 		key: '3d_icon',
 		name: '3D Icon',
@@ -59,6 +42,8 @@ let services = [
 		href: '/new/3d-icon'
 	},
 	{
+		amount: 9999,
+		activateAmount: 999,
 		key: 'motion_animation',
 		name: 'Motion Animation',
 		description: 'Win people attention with stunning animations',
@@ -69,9 +54,30 @@ let services = [
 		href: '/new/motion-animation'
 	},
 	{
+		amount: 19999,
+		key: 'landing_page',
+		activateAmount: 999,
+		name: 'Landing Page',
+		description: 'Validate your product idea and grow waitlist',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393601171-Landing%20page.png',
+
+		img2: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527198530-image.png',
+		href: '/new/landing-page'
+	},
+	{
+		amount: 9999,
+		activateAmount: 999,
+		key: 'pitch_deck',
+		name: 'Pitch Deck',
+		description: 'Convert your story into compelling pitch',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527520883-image.png',
+		href: '/new/pitch-deck'
+	},
+	{
+		amount: 750000,
 		key: 'mvp_build',
 		name: 'MVP in 1 Month',
-		description: 'Build your product super fast with no-code + code',
+		description: 'Build your product super fast. Full-stack code + no-code',
 		time: {
 			label: '1 month'
 		},

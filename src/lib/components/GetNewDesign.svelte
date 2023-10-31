@@ -92,18 +92,50 @@
 <h2 class="mb-8">Send your request, get your design</h2>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-4 w-full">
-	{#each $services as service}
+	{#each $services as service, i}
+		{#if i === 2}
+			<div
+				class="rounded-xl py-8 border border-slate-600 flex flex-col mb-4 bg-[#97aadc] text-[#222] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-300 hover:text-black cursor-pointer"
+				data-cal-link="team/salt-and-bold/intro-call-30-min"
+			>
+				<div class="text-2xl" data-cal-link="team/salt-and-bold/intro-call-30-min">
+					Custom Design
+				</div>
+				<div class="flex flex-wrap mt-4 w-[50%]">
+					{#each designers as designer}
+						<img
+							src={designer.avatarUrl}
+							class="w-[40px] h-[40px] rounded-full grayscale"
+							data-cal-link="team/salt-and-bold/intro-call-30-min"
+							style="margin-right: -10px;"
+						/>
+					{/each}
+				</div>
+				<div class="mt-4">Book a call</div>
+			</div>
+		{/if}
 		<a href={service.href}>
 			<div
-				class="rounded-xl bg-zinc-900 relative border border-[#242424] flex flex-col justify-between mb-4 transition hover:scale-105 cursor-pointer"
+				class="rounded-xl bg-zinc-900 relative border border-[#242424] flex flex-col justify-between mb-4 transition hover:border-white cursor-pointer"
 			>
-				<div class="max-w-[60%] mx-auto">
-					<!-- <ServiceImage class="w-full h-full" serviceKey={service.key} /> -->
-					<img
-						class="w-full rounded-t-xl cover-image object-contain"
-						style="margin-left: -9px;"
-						src={`services_images/${service.key}.svg`}
-					/>
+				<div
+					class="relative"
+					style="height: 156px;
+				margin-top: -23px;"
+				>
+					<div class=" max-w-[60%] mx-auto">
+						<!-- <ServiceImage class="w-full h-full" serviceKey={service.key} /> -->
+						<img
+							class="w-full rounded-t-xl cover-image object-contain"
+							style="margin-left: -9px; transform: scale(.5)"
+							src={`services_images/${service.key}.svg`}
+						/>
+					</div>
+					<!-- <div
+						class="absolute top-2 right-4 rounded-2xl px-2 py-1 bg-blue-300/20 border-blue-300 border inline-block"
+					>
+						{toDollars(service.amount)}
+					</div> -->
 				</div>
 				<!-- {#if service.img}
 					<img class="w-full rounded-t-xl cover-image" src={`services_images/${service.key}.svg`} />
@@ -120,28 +152,12 @@
 
 					<div class="opacity-80">{service.description}</div>
 				</div>
+				<div class="px-4 pb-4 text-lg font-semibold">
+					{toDollars(service.amount)}
+				</div>
 			</div>
 		</a>
 	{/each}
-
-	<div
-		class="rounded-xl py-8 border border-slate-600 flex flex-col mb-4 bg-[#2b65f9] flex flex-col justify-center items-center transition hover:scale-105 hover:bg-green-300 hover:text-black cursor-pointer"
-		data-cal-link="team/salt-and-bold/intro-call-30-min"
-	>
-		<div class="text-2xl" data-cal-link="team/salt-and-bold/intro-call-30-min">
-			Hire Design Team
-		</div>
-		<div class="flex flex-wrap mt-4">
-			{#each designers as designer}
-				<img
-					src={designer.avatarUrl}
-					class="w-[40px] h-[40px] rounded-full"
-					data-cal-link="team/salt-and-bold/intro-call-30-min"
-					style="margin-right: -10px;"
-				/>
-			{/each}
-		</div>
-	</div>
 </div>
 
 <style>
