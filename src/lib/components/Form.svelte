@@ -108,7 +108,7 @@
 {/if}
 
 <div class="{clazz} w-full max-w-[600px]">
-	{#each form.fields as field}
+	{#each form.fields as field, i}
 		<div class="mb-8">
 			<label>{field.title}</label>
 
@@ -121,6 +121,7 @@
 					required={field.isRequired}
 					placeholder={field.placeholder || 'https://mysite.com'}
 					bind:value={valueObj[field.name]}
+					autofocus={i === 0}
 					class="w-full"
 				/>
 			{:else if field.type === 'long-text'}
@@ -131,6 +132,7 @@
 					placeholder={field.placeholder || ''}
 					rows={field.rows || 4}
 					class="w-full"
+					autofocus={i === 0}
 					bind:value={valueObj[field.name]}
 				/>
 			{:else if field.type === 'short-text'}
@@ -141,6 +143,7 @@
 					class:error={errors[field.name]}
 					required={field.isRequired}
 					placeholder={field.placeholder || ''}
+					autofocus={i === 0}
 					bind:value={valueObj[field.name]}
 					class="w-full"
 				/>

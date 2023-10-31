@@ -28,15 +28,15 @@
 				hints: [`Leave empty if you don't have a website yet`],
 				isRequired: false
 			},
-			{
-				name: 'description',
-				title: `What problem do you solve?`,
-				description: '',
-				placeholder: `I'm building an asset management system for companies to track their equipment. We work with QR codes a lot to scan inventory.`,
-				type: 'long-text',
-				hints: [`The more details you share, the better prototype you'll get`],
-				isRequired: true
-			},
+			// {
+			// 	name: 'description',
+			// 	title: `What problem do you solve?`,
+			// 	description: '',
+			// 	placeholder: `I'm building an asset management system for companies to track their equipment. We work with QR codes a lot to scan inventory.`,
+			// 	type: 'long-text',
+			// 	hints: [`The more details you share, the better prototype you'll get`],
+			// 	isRequired: true
+			// },
 			{
 				name: 'mustHaveWorkflow',
 				title: `What workflow should we visualize?`,
