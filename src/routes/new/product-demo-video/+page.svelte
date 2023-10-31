@@ -5,6 +5,7 @@
 	import currentUser, { isLoading as isCurrentUserLoading } from '$lib/stores/currentUser';
 	import Form from '$lib/components/Form.svelte';
 	import LoginButton from '$lib/components/LoginButton.svelte';
+	import RenderUrl from '$lib/components/RenderUrl.svelte';
 	import requests, { createRequest } from '$lib/stores/requests';
 	import { goto } from '$app/navigation';
 
@@ -78,4 +79,19 @@
 			<LoginButton />
 		</div>
 	{/if}
+</div>
+
+<div class="my-12">
+	<div class="section-header">
+		<div>
+			<h2>Product demo video examples</h2>
+			<h3 class="mt-2">Here's some product videos that we've created for founders like you</h3>
+		</div>
+	</div>
+	<div class="section-body grid sm:grid-cols-2 gap-4">
+		<RenderUrl url="https://www.loom.com/share/bb5dab095d17453faa3d3f1afdfd326c" />
+		<RenderUrl url="https://www.loom.com/share/721e225d20d54f8299c90c781664b031" />
+		<RenderUrl url="https://www.loom.com/share/f0f17226896c4246acf0340455ebefbd" />
+		<RenderUrl url="https://www.loom.com/share/677ef77cca2d40679ca07a361e2a7f6b" />
+	</div>
 </div>

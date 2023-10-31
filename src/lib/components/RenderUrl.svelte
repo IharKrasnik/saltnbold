@@ -58,6 +58,7 @@
 				{#if !isFilesOnly}
 					<iframe
 						class="lazyload"
+						allowfullscreen
 						style="width: 100%; aspect-ratio: 536/300;"
 						src={url.replace('share/', 'embed/')}
 					/>
