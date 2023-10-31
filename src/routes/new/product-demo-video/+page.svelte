@@ -85,7 +85,7 @@
 	<div class="section-header">
 		<div>
 			<h2>Product demo video examples</h2>
-			<h3 class="mt-2">Here's some product videos that we've created for founders like you</h3>
+			<h3 class="mt-2">Here are few product videos that we've created for founders like you</h3>
 		</div>
 	</div>
 	<div class="section-body grid sm:grid-cols-2 gap-4">
