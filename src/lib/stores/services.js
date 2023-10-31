@@ -19,7 +19,7 @@ let services = [
 		key: 'product_demo_video',
 		name: 'Product Demo Video',
 		time: {
-			label: '3 days'
+			label: '5 days'
 		},
 		description: 'Explain your product with dynamic video',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696528187173-image.png',
