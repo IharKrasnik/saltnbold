@@ -89,13 +89,7 @@
 		</div>
 	</div>
 	<div class="section-body">
-		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 mb-8">
-			<RenderUrl url="https://www.loom.com/share/4f4896d2c82942acbe4a3f55e7b29c22" />
-			<RenderUrl
-				url="https://www.loom.com/share/49e83ae30050411492f992db3677c311?sid=af5d0e5e-3730-4112-aed6-6128e82bb3d3"
-			/>
-		</div>
-		<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+		<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 mb-4">
 			{#each $portfolio as portfolioItem}
 				<a target="_blank" href={portfolioItem.src} class="block rounded-lg">
 					<img src={portfolioItem.img} class="mb-2 object-cover aspect-video rounded-xl" />
@@ -106,6 +100,14 @@
 					</div>
 				</a>
 			{/each}
+		</div>
+
+		<h3 class="mb-2">Here is how we'll present your prototype:</h3>
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 mb-2">
+			<RenderUrl url="https://www.loom.com/share/4f4896d2c82942acbe4a3f55e7b29c22" />
+			<RenderUrl
+				url="https://www.loom.com/share/49e83ae30050411492f992db3677c311?sid=af5d0e5e-3730-4112-aed6-6128e82bb3d3"
+			/>
 		</div>
 	</div>
 </div>

@@ -41,54 +41,67 @@
 				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253e3ee55cd50534b412ed_Ellipse%2011.png'
 		}
 	]);
+
+	let isOnboardingExpaded = false;
 </script>
 
-<h1 class="text-2xl font-bold mb-4">
+<!-- <h1 class="text-2xl font-bold mb-4">
 	{#if $currentUser}
 		Hi {$currentUser.fullName.split(' ')[0] || ''}! Need new designs?
 	{:else}
 		Hi! Need new designs?
 	{/if}
 	Get them now!
-</h1>
+</h1> -->
 
 <div class="p-8 rounded-xl mb-8 mt-8" style="outline: 2px #414141 solid">
-	<h3 class="text-2xl">No calls, no time-consuming proposals, no friction</h3>
-
-	<div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-8">
-		<div>
-			<div class="font-semibold mb-2">1. Submit a simple form</div>
-
-			<div>Get chat access in less than 1 minute</div>
-		</div>
-
-		<div>
-			<div class="font-semibold mb-2">2. Activate your request</div>
-			<div>Pre-pay $9.99 to start the work</div>
-		</div>
-		<div>
-			<div class="font-semibold mb-2">3. Get designs & Review</div>
-			<div>Get notified via email once we ready</div>
-		</div>
-		<div>
-			<div class="font-semibold mb-2">4. Approve & Pay</div>
-			<div>Pay service price to download design files</div>
+	<div class="flex items-center justify-between">
+		<h3 class="text-2xl">No calls, no complex proposals, no friction</h3>
+		<div
+			class="cursor-pointer"
+			class:opacity-70={isOnboardingExpaded}
+			on:click={() => (isOnboardingExpaded = !isOnboardingExpaded)}
+		>
+			How Fast Design Works?
 		</div>
 	</div>
 
-	<hr class="border-white/20 my-8" />
+	{#if isOnboardingExpaded}
+		<div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-8">
+			<div>
+				<div class="font-semibold mb-2">1. Submit a simple form</div>
 
-	<div class="mt-4">
-		<div class="text-sm py-1 w-full sm:text-center">
-			Chat with us at anytime, even before you've activated your request. <span
-				class="cursor-pointer text-blue-300"
-				on:click={showCrispChat}>Chat now</span
-			>
+				<div>Get chat access in less than 1 minute</div>
+			</div>
+
+			<div>
+				<div class="font-semibold mb-2">2. Activate your request</div>
+				<div>Pre-pay $9.99 to start the work</div>
+			</div>
+			<div>
+				<div class="font-semibold mb-2">3. Get designs & Review</div>
+				<div>Get notified via email once we ready</div>
+			</div>
+			<div>
+				<div class="font-semibold mb-2">4. Approve & Pay</div>
+				<div>Pay service price to download design files</div>
+			</div>
 		</div>
-		<div class="text-sm py-1 w-full sm:text-center">
-			If you're not satisfied with final result, you don't need to pay service price
+
+		<hr class="border-white/20 my-8" />
+
+		<div class="mt-4">
+			<div class="text-sm py-1 w-full sm:text-center">
+				Chat with us at anytime, even before you've activated your request. <span
+					class="cursor-pointer text-blue-300"
+					on:click={showCrispChat}>Chat now</span
+				>
+			</div>
+			<div class="text-sm py-1 w-full sm:text-center">
+				If you're not satisfied with final result, you don't need to pay service price
+			</div>
 		</div>
-	</div>
+	{/if}
 </div>
 <h2 class="mb-8">Send your request, get your design</h2>
 
@@ -102,7 +115,7 @@
 				<div class="text-2xl" data-cal-link="team/salt-and-bold/intro-call-30-min">
 					Custom Design
 				</div>
-				<div class="flex flex-wrap mt-4 w-[50%]">
+				<div class="flex flex-wrap mt-4 justify-center sm:w-[50%]">
 					{#each designers as designer}
 						<img
 							src={designer.avatarUrl}
@@ -115,7 +128,7 @@
 				<div class="mt-4">Book a call</div>
 			</div>
 		{/if}
-		<a href={service.href}>
+		<a class="service" href={service.href}>
 			<div
 				class="bg-[#141414] rounded-xl bg-zinc-900 relative border border-[#5a5454] flex flex-col justify-between mb-4 transition hover:border-white cursor-pointer"
 			>
@@ -123,9 +136,9 @@
 					<div class=" max-w-[60%] mx-auto">
 						<!-- <ServiceImage class="w-full h-full" serviceKey={service.key} /> -->
 						<img
-							class="w-full rounded-t-xl cover-image object-contain"
-							style="margin-left: -9px; transform: scale(.5); 
-							margin-top: -26px;"
+							class="service-img w-full rounded-t-xl cover-image object-contain"
+							style="margin-left: -9px;; 
+							margin-top: -20px;"
 							src={`services_images/${service.key}.svg`}
 						/>
 					</div>
@@ -169,6 +182,15 @@
 </div>
 
 <style>
+	.service .service-img {
+		transition: all linear 0.025s;
+		@apply scale-50;
+	}
+
+	.service:hover .service-img {
+		transform: scale(0.6);
+	}
+
 	.cover-image {
 		height: 200px;
 		width: 100%;
