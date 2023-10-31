@@ -62,7 +62,7 @@
 			class:opacity-70={isOnboardingExpaded}
 			on:click={() => (isOnboardingExpaded = !isOnboardingExpaded)}
 		>
-			How Fast Design Works?
+			How <b>Fast Design</b> Works?
 		</div>
 	</div>
 
