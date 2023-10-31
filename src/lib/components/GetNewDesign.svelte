@@ -5,6 +5,7 @@
 	import services from '$lib/stores/services';
 	import toDollars from '$lib/helpers/toDollars';
 	import showCrispChat from '$lib/helpers/showCrispChat';
+	import Icon from '$lib/components/Icon.svelte';
 
 	let designers = _.shuffle([
 		{
@@ -116,18 +117,15 @@
 		{/if}
 		<a href={service.href}>
 			<div
-				class="rounded-xl bg-zinc-900 relative border border-[#242424] flex flex-col justify-between mb-4 transition hover:border-white cursor-pointer"
+				class="bg-[#141414] rounded-xl bg-zinc-900 relative border border-[#5a5454] flex flex-col justify-between mb-4 transition hover:border-white cursor-pointer"
 			>
-				<div
-					class="relative"
-					style="height: 156px;
-				margin-top: -23px;"
-				>
+				<div class="relative" style="height: 156px;">
 					<div class=" max-w-[60%] mx-auto">
 						<!-- <ServiceImage class="w-full h-full" serviceKey={service.key} /> -->
 						<img
 							class="w-full rounded-t-xl cover-image object-contain"
-							style="margin-left: -9px; transform: scale(.5)"
+							style="margin-left: -9px; transform: scale(.5); 
+							margin-top: -26px;"
 							src={`services_images/${service.key}.svg`}
 						/>
 					</div>
@@ -143,7 +141,7 @@
 					<video playsinline class="cover-image" looped autoplay muted src={service.video} />
 				{/if} -->
 
-				<div class="p-4">
+				<div class="bg-[#18181b] p-4">
 					<div class="font-bold mb-2">
 						<h3>
 							{service.name}
@@ -152,8 +150,18 @@
 
 					<div class="opacity-80">{service.description}</div>
 				</div>
-				<div class="px-4 pb-4 text-lg font-semibold">
-					{toDollars(service.amount)}
+				<div
+					class="bg-[#18181b] border-t border-white/10 rounded-b-xl pt-4 flex justify-between px-4 pb-4 items-center"
+				>
+					<div class="text-lg font-semibold">
+						{toDollars(service.amount)}
+					</div>
+
+					<div class="opacity-80 flex items-center">
+						{#if service.time}
+							<Icon size="15" name="lightning" class="mr-2" />{service.time.label}
+						{/if}
+					</div>
 				</div>
 			</div>
 		</a>

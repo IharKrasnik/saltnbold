@@ -3,12 +3,14 @@
 	import PercentageIcon from '$lib/icons/percentage.svelte';
 	import UploadIcon from '$lib/icons/upload.svelte';
 	import WalletIcon from '$lib/icons/wallet.svelte';
+	import LightningIcon from '$lib/icons/lightning.svelte';
 
 	let map = {
 		notification: NotificationIcon,
 		percentage: PercentageIcon,
 		upload: UploadIcon,
-		wallet: WalletIcon
+		wallet: WalletIcon,
+		lightning: LightningIcon
 	};
 
 	let clazz = '';

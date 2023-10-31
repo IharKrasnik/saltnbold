@@ -18,6 +18,9 @@ let services = [
 		activateAmount: 999,
 		key: 'product_demo_video',
 		name: 'Product Demo Video',
+		time: {
+			label: '3 days'
+		},
 		description: 'Explain your product with dynamic video',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696528187173-image.png',
 		href: '/new/product-demo-video'
@@ -27,6 +30,9 @@ let services = [
 		activateAmount: 999,
 		key: 'marketing_assets',
 		name: 'Marketing Assets',
+		time: {
+			label: '3 days'
+		},
 		description: 'Logo, illustrations, icons and designs for your social media',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393662430-marketing.png',
 		href: '/new/marketing-assets'
@@ -36,6 +42,9 @@ let services = [
 		activateAmount: 999,
 		key: '3d_icon',
 		name: '3D Icon',
+		time: {
+			label: '48 hours'
+		},
 		description: 'Spice up your designs with authentic 3D art',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393543012-3d.png',
 		img2: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697798080012-image.png',
@@ -46,6 +55,9 @@ let services = [
 		activateAmount: 999,
 		key: 'motion_animation',
 		name: 'Motion Animation',
+		time: {
+			label: '3 days'
+		},
 		description: `Use short animations to promote your product features`,
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393679354-motion.png',
 
