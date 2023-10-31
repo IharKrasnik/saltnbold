@@ -27,7 +27,7 @@ let services = [
 		activateAmount: 999,
 		key: 'marketing_assets',
 		name: 'Marketing Assets',
-		description: 'Design nice unified marketing images',
+		description: 'Logo, illustrations, icons and designs for your social media',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393662430-marketing.png',
 		href: '/new/marketing-assets'
 	},
@@ -46,7 +46,7 @@ let services = [
 		activateAmount: 999,
 		key: 'motion_animation',
 		name: 'Motion Animation',
-		description: 'Win people attention with stunning animations',
+		description: `Use short animations to promote your product features`,
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393679354-motion.png',
 
 		video:
