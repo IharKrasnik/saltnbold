@@ -89,9 +89,17 @@
 		</div>
 	</div>
 	<div class="section-body grid sm:grid-cols-2 gap-4">
-		<RenderUrl url="https://www.loom.com/share/bb5dab095d17453faa3d3f1afdfd326c" />
-		<RenderUrl url="https://www.loom.com/share/721e225d20d54f8299c90c781664b031" />
-		<RenderUrl url="https://www.loom.com/share/f0f17226896c4246acf0340455ebefbd" />
-		<RenderUrl url="https://www.loom.com/share/677ef77cca2d40679ca07a361e2a7f6b" />
+		<RenderUrl
+			url="https://www.loom.com/share/bb5dab095d17453faa3d3f1afdfd326c?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+		/>
+		<RenderUrl
+			url="https://www.loom.com/share/721e225d20d54f8299c90c781664b031?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+		/>
+		<RenderUrl
+			url="https://www.loom.com/share/f0f17226896c4246acf0340455ebefbd?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+		/>
+		<RenderUrl
+			url="https://www.loom.com/share/677ef77cca2d40679ca07a361e2a7f6b?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+		/>
 	</div>
 </div>

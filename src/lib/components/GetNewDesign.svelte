@@ -1,6 +1,7 @@
 <script>
 	import _ from 'lodash';
 	// import ServiceImage from '$lib/components/ServiceImage.svelte';
+	import { fly } from 'svelte/transition';
 	import currentUser, { isLoading as isCurrentUserloading } from '$lib/stores/currentUser';
 	import services from '$lib/stores/services';
 	import toDollars from '$lib/helpers/toDollars';
@@ -44,6 +45,8 @@
 	]);
 
 	let isOnboardingExpaded = true;
+
+	let hoveringService = null;
 </script>
 
 <!-- <h1 class="text-2xl font-bold mb-4">
@@ -104,6 +107,7 @@
 		</div>
 	{/if}
 </div>
+
 <h2 class="mb-8">Send your request, get your design</h2>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-4 w-full">
@@ -126,10 +130,16 @@
 						/>
 					{/each}
 				</div>
-				<div class="mt-4">Book a call</div>
+				<div class="text-lg font-bold mt-4">$679.00/week</div>
+				<div class="mt-2">Book a free call</div>
 			</div>
 		{/if}
-		<a class="service" href={service.href}>
+		<a
+			class="service"
+			href={service.href}
+			on:mouseenter={() => (hoveringService = service)}
+			on:mouseleave={() => (hoveringService = null)}
+		>
 			<div
 				class="bg-[#141414] rounded-xl bg-zinc-900 relative border border-[#5a5454] flex flex-col justify-between mb-4 transition hover:border-white cursor-pointer"
 			>
@@ -167,15 +177,25 @@
 				<div
 					class="bg-[#18181b] border-t border-white/10 rounded-b-xl pt-4 flex justify-between px-4 pb-4 items-center"
 				>
-					<div class="text-lg font-semibold">
-						{toDollars(service.amount)}
-					</div>
+					{#if hoveringService?.name !== service.name}
+						<div class="text-lg font-semibold">
+							{toDollars(service.amount)}
+						</div>
 
-					<div class="opacity-80 flex items-center">
-						{#if service.time}
-							<Icon size="15" name="lightning" class="mr-2" />{service.time.label}
-						{/if}
-					</div>
+						<div class="opacity-80 flex items-center">
+							{#if service.time}
+								<Icon size="15" name="lightning" class="mr-2" />{service.time.label}
+							{/if}
+						</div>
+					{:else if service.activateAmount}
+						<div in:fly={{ duration: 150, y: 20 }}>
+							Activate for <b class="">{toDollars(service.activateAmount)}</b>
+						</div>
+						<div in:fly={{ duration: 150, y: 20 }}>⚡️</div>
+					{:else}
+						<div in:fly={{ duration: 150, y: 20 }}>Submit your brief</div>
+						<div in:fly={{ duration: 150, y: 20 }}>🤓</div>
+					{/if}
 				</div>
 			</div>
 		</a>
@@ -189,7 +209,6 @@
 	}
 
 	.service:hover .service-img {
-		transform: scale(0.6);
 	}
 
 	.cover-image {
