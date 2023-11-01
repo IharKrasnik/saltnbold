@@ -64,7 +64,7 @@
 
 <div class="section-header">
 	<div>
-		<h2 class="text-xl font-bold">Get your UX/UX prototype in 48 hours</h2>
+		<h2 class="text-xl font-bold">Get your UI/UX prototype in 48 hours</h2>
 		<h3 class="text-lg mt-2">
 			So, what are you building? Please share as much specific info as you can to get us started.
 		</h3>
