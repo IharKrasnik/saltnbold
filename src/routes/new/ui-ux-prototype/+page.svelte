@@ -104,9 +104,11 @@
 
 		<h3 class="mb-2">Here is how we'll present your prototype:</h3>
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 mb-2">
-			<RenderUrl url="https://www.loom.com/share/4f4896d2c82942acbe4a3f55e7b29c22" />
 			<RenderUrl
-				url="https://www.loom.com/share/49e83ae30050411492f992db3677c311?sid=af5d0e5e-3730-4112-aed6-6128e82bb3d3"
+				url="https://www.loom.com/share/4f4896d2c82942acbe4a3f55e7b29c22?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+			/>
+			<RenderUrl
+				url="https://www.loom.com/share/49e83ae30050411492f992db3677c311?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
 			/>
 		</div>
 	</div>
