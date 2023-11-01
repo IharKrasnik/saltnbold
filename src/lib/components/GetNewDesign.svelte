@@ -6,6 +6,7 @@
 	import toDollars from '$lib/helpers/toDollars';
 	import showCrispChat from '$lib/helpers/showCrispChat';
 	import Icon from '$lib/components/Icon.svelte';
+	import FlashIcon from '$lib/icons/flash.svelte';
 
 	let designers = _.shuffle([
 		{
@@ -42,7 +43,7 @@
 		}
 	]);
 
-	let isOnboardingExpaded = false;
+	let isOnboardingExpaded = true;
 </script>
 
 <!-- <h1 class="text-2xl font-bold mb-4">
@@ -56,7 +57,10 @@
 
 <div class="p-8 rounded-xl mb-8 mt-8" style="outline: 2px #414141 solid">
 	<div class="flex items-center justify-between">
-		<h3 class="text-2xl">No calls, no complex proposals, no friction</h3>
+		<div class="flex items-center">
+			<FlashIcon />
+			<h3 class="ml-2 text-2xl">No calls, no complex proposals, no friction</h3>
+		</div>
 		<div
 			class="cursor-pointer"
 			class:opacity-70={isOnboardingExpaded}
@@ -76,7 +80,7 @@
 
 			<div>
 				<div class="font-semibold mb-2">2. Activate your request</div>
-				<div>Pre-pay $9.99 to start the work</div>
+				<div>Pre-pay <b class="underline">$9.99</b> to start the work</div>
 			</div>
 			<div>
 				<div class="font-semibold mb-2">3. Get designs & Review</div>
@@ -92,13 +96,10 @@
 
 		<div class="mt-4">
 			<div class="text-sm py-1 w-full sm:text-center">
-				Chat with us at anytime, even before you've activated your request. <span
-					class="cursor-pointer text-blue-300"
-					on:click={showCrispChat}>Chat now</span
+				If you're not satisfied with final result, you don't need to pay service price. <span
+					class="block cursor-pointer text-blue-300"
+					on:click={showCrispChat}>Chat with the team now</span
 				>
-			</div>
-			<div class="text-sm py-1 w-full sm:text-center">
-				If you're not satisfied with final result, you don't need to pay service price
 			</div>
 		</div>
 	{/if}

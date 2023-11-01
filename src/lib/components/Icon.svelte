@@ -4,13 +4,15 @@
 	import UploadIcon from '$lib/icons/upload.svelte';
 	import WalletIcon from '$lib/icons/wallet.svelte';
 	import LightningIcon from '$lib/icons/lightning.svelte';
+	import CheckmarkIcon from '$lib/icons/checkmark.svelte';
 
 	let map = {
 		notification: NotificationIcon,
 		percentage: PercentageIcon,
 		upload: UploadIcon,
 		wallet: WalletIcon,
-		lightning: LightningIcon
+		lightning: LightningIcon,
+		checkmark: CheckmarkIcon
 	};
 
 	let clazz = '';
