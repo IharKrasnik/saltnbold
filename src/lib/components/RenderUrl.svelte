@@ -93,7 +93,7 @@
 				{:else}
 					<VimeoIcon class="w-[45px] opacity-50" />
 				{/if}
-			{:else if url.includes('.mp4') || url.includes('mov')}
+			{:else if url.includes('.mp4') || url.includes('.mov')}
 				{log()}
 				<video
 					class="rounded-xl max-w-[600px] w-full mx-auto {imgClass}"

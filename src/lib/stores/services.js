@@ -51,10 +51,10 @@ let services = [
 		href: '/new/3d-icon'
 	},
 	{
-		amount: 9999,
+		amount: 19999,
 		activateAmount: 999,
 		key: 'motion_animation',
-		name: 'Motion Animation',
+		name: 'Video Ads',
 		time: {
 			label: '3 days'
 		},
