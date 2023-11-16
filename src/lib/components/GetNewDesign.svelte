@@ -153,17 +153,7 @@
 							src={`services_images/${service.key}.svg`}
 						/>
 					</div>
-					<!-- <div
-						class="absolute top-2 right-4 rounded-2xl px-2 py-1 bg-blue-300/20 border-blue-300 border inline-block"
-					>
-						{toDollars(service.amount)}
-					</div> -->
 				</div>
-				<!-- {#if service.img}
-					<img class="w-full rounded-t-xl cover-image" src={`services_images/${service.key}.svg`} />
-				{:else if service.video}
-					<video playsinline class="cover-image" looped autoplay muted src={service.video} />
-				{/if} -->
 
 				<div class="bg-[#18181b] p-4">
 					<div class="font-bold mb-2">

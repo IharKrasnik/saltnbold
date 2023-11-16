@@ -195,7 +195,7 @@ You'll get a notification to your email ${$currentUser.email}`
 
 <div class="flex justify-between items-center">
 	<div>
-		<h1 class="mb-4">{request.data.name}</h1>
+		<h1 class="mb-4">{request.data.name || ''}</h1>
 		<h3 class="opacity-80">{formatRequestType(request.type)}</h3>
 	</div>
 	<div>

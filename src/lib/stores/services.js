@@ -98,6 +98,179 @@ let services = [
 	}
 ];
 
+export let marketingServices = [
+	{
+		key: 'logo',
+		name: 'Logo',
+		amount: 5999,
+		href: '/new/logo',
+		activateAmount: 999,
+		time: {
+			label: '3 days'
+		},
+		description: '3 unique concepts to choose from',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127540453-image.png',
+
+		form: {
+			cacheId: 'logo',
+			buttonText: 'Start Designing',
+			defaultValue: {
+				description: '',
+				references: ''
+			},
+			fields: [
+				{
+					name: 'description',
+					title: `What design do you need?`,
+					description: '',
+					placeholder: `I want to design a logo for my product Momentum. It will help founders to monitor their growth daily.`,
+					type: 'long-text',
+					hints: [`Please share the links to existing assets, if any`],
+					isRequired: true
+				},
+				{
+					name: 'references',
+					title: `Please send few examples (urls) of designs that you like`,
+					description: '',
+					placeholder: `I love how clean and simple Linear brand is (https://linear.app)`,
+					type: 'long-text',
+					// hint: `The more details you share, the better prototype you'll get`,
+					isRequired: true
+				}
+			]
+		},
+		explainers: [
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700136655062-image.png'
+		],
+		portfolio: [
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127450464-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127512982-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127540453-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127554415-image.png'
+		]
+	},
+	{
+		key: 'illustrations_pack',
+		href: '/new/illustrations-pack',
+		amount: 7999,
+		activateAmount: 999,
+		name: 'Illustrations Pack',
+		time: {
+			label: '3 days'
+		},
+
+		form: {
+			cacheId: 'illustrations_pack',
+			buttonText: 'Start Designing',
+			defaultValue: {
+				description: '',
+				references: ''
+			},
+			fields: [
+				{
+					name: 'description',
+					title: `What illustrations do you need and for what?`,
+					description: '',
+					placeholder: `I want to design a set of illustrations for my blog articles. Here's the link: ...`,
+					type: 'long-text',
+					hints: [`Please share the links to existing assets, if any`],
+					isRequired: true
+				},
+				{
+					name: 'references',
+					title: `Please send few examples (urls) of designs that you like`,
+					description: '',
+					placeholder: ``,
+					type: 'long-text',
+					// hint: `The more details you share, the better prototype you'll get`,
+					isRequired: false
+				}
+			]
+		},
+		explainers: [],
+		portfolio: [
+			'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1700127652798-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127670481-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127683618-image.png',
+			'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1700127698328-image.png'
+		],
+
+		description: 'Set of 3 unique illustrations',
+		img: 'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1700127652798-image.png'
+	},
+	{
+		key: 'icons_pack',
+		href: '/new/icons-pack',
+		amount: 7999,
+		activateAmount: 999,
+		name: 'Icons Pack',
+		time: {
+			label: '3 days'
+		},
+		form: {
+			cacheId: 'illustrations_pack',
+			buttonText: 'Start Designing',
+			defaultValue: {
+				description: '',
+				references: ''
+			},
+			fields: [
+				{
+					name: 'description',
+					title: `What icons do you need and for what?`,
+					description: '',
+					placeholder: `I want to design a set of icons for my landing page. Here's the link: ...`,
+					type: 'long-text',
+					hints: [`Please share the links to existing assets, if any`],
+					isRequired: true
+				},
+				{
+					name: 'references',
+					title: `Please send few examples (urls) of designs that you like`,
+					description: '',
+					placeholder: ``,
+					type: 'long-text',
+					isRequired: false
+				}
+			]
+		},
+		description: 'Set of 5 unique icons',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127581977-image.png',
+		portfolio: [
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127581977-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127598221-image.png',
+			// 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127819667-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127616319-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127628744-image.png'
+		],
+		explainers: [
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700136796754-image.png'
+		]
+	}
+];
+
+export let marketingPortfolio = {
+	logos: [
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127450464-image.png',
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127512982-image.png',
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127540453-image.png',
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127554415-image.png'
+	],
+	icons: [
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127581977-image.png',
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127598221-image.png',
+		// 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127819667-image.png',
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127616319-image.png',
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127628744-image.png'
+	],
+	illustrations: [
+		'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1700127652798-image.png',
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127670481-image.png',
+		'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127683618-image.png',
+		'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1700127698328-image.png'
+	]
+};
+
 export let portfolio = writable([
 	{
 		type: 'ui_ux_prototype',
@@ -132,9 +305,17 @@ export let portfolio = writable([
 export default writable(services);
 
 export let formatRequestType = (requestType) => {
-	return services.find((s) => s.key === requestType)?.name;
+	return (
+		(
+			services.find((s) => s.key === requestType) ||
+			marketingServices.find((s) => s.key === requestType)
+		)?.name || ''
+	);
 };
 
 export let getService = (requestType) => {
-	return services.find((s) => s.key === requestType);
+	return (
+		services.find((s) => s.key === requestType) ||
+		marketingServices.find((s) => s.key === requestType)
+	);
 };

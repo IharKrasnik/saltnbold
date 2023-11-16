@@ -99,7 +99,7 @@
 					</div>
 
 					<div class="p-4">
-						<h3 class="font-bold mb-2">{request.project.name}</h3>
+						<h3 class="font-bold mb-2">{request.project.name || ''}</h3>
 
 						<p class="opacity-80 line-clamp-2">{request.data.description}</p>
 					</div>
