@@ -30,7 +30,7 @@
 		{
 			_id: '1',
 			createdOn: request.createdOn,
-			content: `Hey ${request.user.fullName.split(' ')[0]}! Please describe your prototype`
+			content: `Hey ${request.user.fullName.split(' ')[0]}! Please describe your request`
 		},
 		{
 			_id: '2',
