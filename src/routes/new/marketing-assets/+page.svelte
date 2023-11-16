@@ -39,6 +39,28 @@
 		description: '',
 		references: ''
 	};
+
+	let portfolio = {
+		logos: [
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127450464-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127512982-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127540453-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127554415-image.png'
+		],
+		icons: [
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127581977-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127598221-image.png',
+			// 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127819667-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127616319-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127628744-image.png'
+		],
+		illustrations: [
+			'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1700127652798-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127670481-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127683618-image.png',
+			'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1700127698328-image.png'
+		]
+	};
 </script>
 
 <div class="section-header">
@@ -67,6 +89,36 @@
 			<h3 class="mt-2">Here's what we've created for founders like you</h3>
 		</div>
 	</div>
+
+	<div class="section-body">
+		<div>
+			<h2 class="mb-4">Logos</h2>
+			<div class="grid sm:grid-cols-2 gap-4">
+				{#each portfolio.logos as url}
+					<RenderUrl {url} />
+				{/each}
+			</div>
+		</div>
+
+		<div>
+			<h2 class="mb-4 mt-8">Icons</h2>
+			<div class="grid sm:grid-cols-2 gap-4">
+				{#each portfolio.icons as url}
+					<RenderUrl {url} />
+				{/each}
+			</div>
+		</div>
+
+		<div>
+			<h2 class="mb-4 mt-8">Illustrations</h2>
+			<div class="grid sm:grid-cols-2 gap-4">
+				{#each portfolio.illustrations as url}
+					<RenderUrl {url} />
+				{/each}
+			</div>
+		</div>
+	</div>
+	<!-- 
 	<div class="section-body grid sm:grid-cols-2 gap-4">
 		<RenderUrl
 			url="https://cdn.dribbble.com/userupload/8991636/file/original-ce8aa57c21e12a834b2aad762fe5b1ad.png?resize=1504x1128"
@@ -98,5 +150,5 @@
 		<RenderUrl
 			url="https://blog.paralect.com/storage/app/uploads/public/60a/673/c57/60a673c578c84710585563.png"
 		/>
-	</div>
+	</div> -->
 </div>
