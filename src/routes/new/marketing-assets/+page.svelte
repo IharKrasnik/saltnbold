@@ -35,7 +35,7 @@
 	};
 
 	let request = {
-		type: 'logo_branding',
+		type: 'marketing_assets',
 		description: '',
 		references: ''
 	};
