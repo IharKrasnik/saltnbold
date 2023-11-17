@@ -7,6 +7,7 @@
 	import RenderUrl from '$lib/components/RenderUrl.svelte';
 	import requests, { createRequest } from '$lib/stores/requests';
 	import { formatRequestType, portfolio } from '$lib/stores/services';
+	import FeatherIcon from '$lib/components/FeatherIcon.svelte';
 
 	import { goto } from '$app/navigation';
 
@@ -79,6 +80,34 @@
 	{:else}
 		<div><LoginButton /></div>
 	{/if}
+</div>
+
+<div class="my-12">
+	<div class="section-header">
+		<div>
+			<h2>What you'll get?</h2>
+		</div>
+	</div>
+
+	<div class="section-body">
+		<div class="grid sm:grid-cols-3 gap-4">
+			<div>
+				<FeatherIcon name="cpu" />
+				<div class="font-semibold mt-2">Dev-Ready Figma File</div>
+				<div>Use your design files to develop your application</div>
+			</div>
+			<div>
+				<FeatherIcon name="layout" />
+				<div class="font-semibold mt-2">1 Flow — Up to 10 screens</div>
+				<div>A complete workflow that you can demo</div>
+			</div>
+			<div>
+				<FeatherIcon name="smile" />
+				<div class="font-semibold mt-2">1 Change Request</div>
+				<div>Request changes once you get your designs for review</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="my-12">
