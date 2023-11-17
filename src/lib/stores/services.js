@@ -102,7 +102,7 @@ export let marketingServices = [
 	{
 		key: 'logo',
 		name: 'Logo',
-		amount: 5999,
+		amount: 14999,
 		href: '/new/logo',
 		activateAmount: 999,
 		time: {
@@ -150,17 +150,17 @@ export let marketingServices = [
 		]
 	},
 	{
-		key: 'illustrations_pack',
-		href: '/new/illustrations-pack',
-		amount: 7999,
+		key: 'illustration',
+		href: '/new/illustration',
+		amount: 5999,
 		activateAmount: 999,
-		name: 'Illustrations Pack',
+		name: 'Illustration',
 		time: {
 			label: '3 days'
 		},
 
 		form: {
-			cacheId: 'illustrations_pack',
+			cacheId: 'illustration',
 			buttonText: 'Start Designing',
 			defaultValue: {
 				description: '',
@@ -169,16 +169,16 @@ export let marketingServices = [
 			fields: [
 				{
 					name: 'description',
-					title: `What illustrations do you need and for what?`,
+					title: `What illustration do you need and for what?`,
 					description: '',
-					placeholder: `I want to design a set of illustrations for my blog articles. Here's the link: ...`,
+					placeholder: `I want to design an illustration for my blog article. Here's the link to it: ...`,
 					type: 'long-text',
 					hints: [`Please share the links to existing assets, if any`],
 					isRequired: true
 				},
 				{
 					name: 'references',
-					title: `Please send few examples (urls) of designs that you like`,
+					title: `Please send few examples (urls) of illustrations that you like`,
 					description: '',
 					placeholder: ``,
 					type: 'long-text',
@@ -195,20 +195,20 @@ export let marketingServices = [
 			'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1700127698328-image.png'
 		],
 
-		description: 'Set of 3 unique illustrations',
+		description: 'Illustration',
 		img: 'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1700127652798-image.png'
 	},
 	{
 		key: 'icons_pack',
 		href: '/new/icons-pack',
-		amount: 7999,
+		amount: 5999,
 		activateAmount: 999,
 		name: 'Icons Pack',
 		time: {
 			label: '3 days'
 		},
 		form: {
-			cacheId: 'illustrations_pack',
+			cacheId: 'icons_pack',
 			buttonText: 'Start Designing',
 			defaultValue: {
 				description: '',
