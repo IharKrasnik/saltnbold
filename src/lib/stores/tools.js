@@ -61,7 +61,7 @@ let tools = [
 		key: 'pitch-deck-templates',
 		name: 'Pitch Deck Templates',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697817362327-image.png',
-		url: 'https://drive.google.com/drive/folders/10sI5OZY944C8Rhw-5gw65ZvmZnT07MiS',
+		url: 'https://drive.google.com/drive/folders/10sI5OZY944C8Rhw_5gw65ZvmZnT07MiS',
 		description: '6 pitch deck templates'
 	}
 ];
