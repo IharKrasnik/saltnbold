@@ -176,7 +176,7 @@ ${referralLink}`;
 	<div>
 		<Icon class="mb-2" name="percentage" />
 		<div class="font-bold">3. Earn 20% Commision</div>
-		Once they buy from Salt & Bold we'll pay you 20% of their payment
+		You will get 20% of their paid amount during the 12 months after they sign up
 	</div>
 
 	<div>
