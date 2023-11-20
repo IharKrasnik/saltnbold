@@ -87,7 +87,7 @@
 				Pay remaining {toDollars(request.amount - request.activateAmount)} and download your files
 			</div>
 		</div>
-		{#if request.totalReviewsCount || 2 - request.reviews?.length > 0}
+		{#if (request.totalReviewsCount || 2) - request.reviews?.length > 0}
 			<div class="bg-orange-900 p-4">
 				<button class="orange" on:click={requestChanges}>Request Changes</button>
 

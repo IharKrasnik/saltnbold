@@ -201,8 +201,8 @@ You'll get a notification to your email ${$currentUser.email}`
 	<div>
 		{#if $currentUser._id === request.user._id && request.isActivated}
 			{#if request.isCompleted}
-				<a href={request.figmaFileUrl} target="_blank"><Button>Download Figma</Button></a>
-			{:else if request.reviews?.length && !isPendingReview(request)}
+				<a href={request.figmaFileUrl} target="_blank"><button>Download Figma</button></a>
+			{:else}
 				<Button class="green" onClick={completeRequest}>Approve & Download</Button>
 			{/if}
 		{/if}
