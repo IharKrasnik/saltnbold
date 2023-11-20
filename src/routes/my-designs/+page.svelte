@@ -9,7 +9,7 @@
 	import tooltip from '$lib/use/tooltip';
 	import currentUser from '$lib/stores/currentUser';
 	import requests from '$lib/stores/requests';
-	import services, { formatRequestType } from '$lib/stores/services';
+	import services, { marketingServices, formatRequestType } from '$lib/stores/services';
 	import showCrispChat from '$lib/helpers/showCrispChat';
 
 	if (browser) {
@@ -94,7 +94,10 @@
 						{/if}
 						<img
 							class="w-full rounded-t-xl cover-image absolute h-full object-cover"
-							src={request.img || $services.find((r) => r.key === request.type)?.img}
+							src={request.img ||
+								$services.find((r) => r.key === request.type)?.img ||
+								(marketingServices.find((r) => r.key === request.type) &&
+									marketingServices.find((r) => r.key === request.type).portfolio[0])}
 						/>
 					</div>
 
