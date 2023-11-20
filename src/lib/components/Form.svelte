@@ -118,7 +118,10 @@
 
 				{#if field.example}
 					<HelpTooltip class="mb-2 ml-2">
-						{field.example}
+						<div>
+							<b class="block">Example:</b>
+							<div class="opacity-80">{field.example}</div>
+						</div>
 					</HelpTooltip>
 				{/if}
 			</div>
