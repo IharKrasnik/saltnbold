@@ -106,9 +106,9 @@
 				</div>
 			</a>
 
-			{#if !$currentUser.paymentMethods?.length}
+			{#if !$currentUser.isAdmin && !$currentUser.paymentMethods?.length}
 				<button
-					class="w-full text-center py-4 border rounded-b-xl cursor-pointer"
+					class="w-full text-center py-4 border rounded-xl cursor-pointer"
 					on:click={() => addPaymentMethod()}
 				>
 					Add Card To Activate
