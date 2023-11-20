@@ -2,6 +2,8 @@
 	import { z } from 'zod';
 	import Loader from '$lib/components/Loader.svelte';
 	import formCache from '$lib/stores/formCache';
+	import FeatherIcon from '$lib/components/FeatherIcon.svelte';
+	import HelpTooltip from '$lib/components/HelpTooltip.svelte';
 
 	let clazz;
 	export { clazz as class };
@@ -111,8 +113,15 @@
 <div class="{clazz} w-full max-w-[600px]">
 	{#each form.fields as field, i}
 		<div class="mb-8">
-			<label>{field.title}</label>
+			<div class="flex items-center">
+				<label>{field.title}</label>
 
+				{#if field.example}
+					<HelpTooltip class="mb-2 ml-2">
+						{field.example}
+					</HelpTooltip>
+				{/if}
+			</div>
 			{#if field.type === 'url'}
 				<input
 					name={field.name}

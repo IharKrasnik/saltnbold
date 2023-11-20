@@ -44,7 +44,7 @@
 				name: 'mustHaveWorkflow',
 				title: `What is 1 must-have workflow?`,
 				description: '',
-				placeholder: `I'm building a marketplace like Trustpilot for fashion lovers. Fashion seekers should be able to find specialist in their area and book their service. Once service is done they can leave a feedback.`,
+				example: `I'm building a marketplace like Trustpilot for fashion lovers. Fashion seekers should be able to find specialist in their area and book their service. Once service is done they can leave a feedback.`,
 				type: 'long-text',
 				hints: [
 					`Focus single outcome to get better prototype. Decide what actually matters for your product to deliver the core value.`

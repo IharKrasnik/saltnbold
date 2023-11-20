@@ -15,7 +15,7 @@
 				name: 'description',
 				title: `What video do you need to create? How will you use it?`,
 				description: '',
-				placeholder: `I want to animate images on my website to add slight cool effect + I want to use this animation in social networks to promote my brand. Here's my website: somebrand.com. It would be cool to add some sci-fi vibes to it if possible!`,
+				example: `I want to animate images on my website to add slight cool effect + I want to use this animation in social networks to promote my brand. Here's my website: somebrand.com. It would be cool to add some sci-fi vibes to it if possible!`,
 				type: 'long-text',
 				isRequired: true
 			},
