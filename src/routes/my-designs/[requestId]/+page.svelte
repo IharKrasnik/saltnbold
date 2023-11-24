@@ -287,7 +287,7 @@ You'll get a notification to your email ${$currentUser.email}`
 						</div>
 					{/if}
 					<div class="content flex-start">
-						<div class=" whitespace-pre-wrap break-all">
+						<div class=" whitespace-pre-wrap" style="word-break: break-word;">
 							{@html linkifyHtml(message.content)}
 
 							{#if message.files?.length}
