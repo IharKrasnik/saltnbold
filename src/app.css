@@ -19,6 +19,10 @@ body {
 	border: 1px red solid;
 }
 
+.content a {
+	color: #7676ef;
+}
+
 button,
 button[type='submit'] {
 	background-color: var(--color-brand);

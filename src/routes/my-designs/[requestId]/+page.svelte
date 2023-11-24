@@ -11,6 +11,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import RenderUrl from '$lib/components/RenderUrl.svelte';
 	import Loader from '$lib/components/Loader.svelte';
+	import linkifyHtml from 'linkify-html';
 
 	import { browser } from '$app/environment';
 	import { get, post, postFile } from '$lib/api';
@@ -285,9 +286,9 @@ You'll get a notification to your email ${$currentUser.email}`
 							{/if}
 						</div>
 					{/if}
-					<div class="content whitespace-pre-wrap flex-start">
-						<div>
-							{message.content}
+					<div class="content flex-start">
+						<div class=" whitespace-pre-wrap break-all">
+							{@html linkifyHtml(message.content)}
 
 							{#if message.files?.length}
 								<div class="flex">
