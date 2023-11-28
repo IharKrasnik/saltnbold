@@ -13,7 +13,10 @@
 
 	if (browser) {
 		setTimeout(() => {
-			let referral = JSON.parse(localStorage['referral']) || { code: '' };
+			let referral = { code: '' };
+			try {
+				referral = JSON.parse(localStorage['referral']) || { code: '' };
+			} catch (err) {}
 
 			if (referral?.code) {
 				href = `${getGoogleLoginUrl()}&r=${referral.code}`;

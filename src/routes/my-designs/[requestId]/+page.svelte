@@ -1,5 +1,6 @@
 <script>
 	import _ from 'lodash';
+	import { getGoogleLoginUrl } from '$lib/env';
 	import { onMount, afterUpdate, tick } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { v4 as uuidv4 } from 'uuid';
@@ -26,6 +27,10 @@
 	let request = $requests.find((r) => r._id === $page.params.requestId);
 
 	let newMessage = { content: '', files: [] };
+
+	if (browser && !$currentUser) {
+		goto(getGoogleLoginUrl());
+	}
 
 	let messages = [
 		{
