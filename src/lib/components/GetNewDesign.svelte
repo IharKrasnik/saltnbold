@@ -112,28 +112,6 @@
 
 <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-4 w-full">
 	{#each $services as service, i}
-		{#if i === 2}
-			<div
-				class="rounded-xl py-8 border border-slate-600 flex flex-col mb-4 bg-[#97aadc] text-[#222] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-300 hover:text-black cursor-pointer"
-				data-cal-link="team/salt-and-bold/intro-call-30-min"
-			>
-				<div class="text-2xl" data-cal-link="team/salt-and-bold/intro-call-30-min">
-					Custom Design
-				</div>
-				<div class="flex flex-wrap mt-4 justify-center sm:w-[50%]">
-					{#each designers as designer}
-						<img
-							src={designer.avatarUrl}
-							class="w-[40px] h-[40px] rounded-full grayscale"
-							data-cal-link="team/salt-and-bold/intro-call-30-min"
-							style="margin-right: -10px;"
-						/>
-					{/each}
-				</div>
-				<div class="text-lg font-bold mt-4">$679.00/week</div>
-				<div class="mt-2">Book a free call</div>
-			</div>
-		{/if}
 		<a
 			class="service"
 			href={service.href}
@@ -189,6 +167,28 @@
 				</div>
 			</div>
 		</a>
+		{#if i === $services.length - 1}
+			<div
+				class="rounded-xl py-8 border border-slate-600 flex flex-col mb-4 bg-[#97aadc] text-[#222] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-300 hover:text-black cursor-pointer"
+				data-cal-link="team/salt-and-bold/intro-call-30-min"
+			>
+				<div class="text-2xl" data-cal-link="team/salt-and-bold/intro-call-30-min">
+					Custom Design
+				</div>
+				<div class="flex flex-wrap mt-4 justify-center sm:w-[50%]">
+					{#each designers as designer}
+						<img
+							src={designer.avatarUrl}
+							class="w-[40px] h-[40px] rounded-full grayscale"
+							data-cal-link="team/salt-and-bold/intro-call-30-min"
+							style="margin-right: -10px;"
+						/>
+					{/each}
+				</div>
+				<div class="text-lg font-bold mt-4">$1200.00/week</div>
+				<div class="mt-2">Book a free call</div>
+			</div>
+		{/if}
 	{/each}
 </div>
 

@@ -2,30 +2,6 @@ import { writable } from 'svelte/store';
 
 let services = [
 	{
-		key: 'ui_ux_prototype',
-		amount: 9999,
-		activateAmount: 999,
-		name: 'UI/UX Prototype in 48 Hours',
-		time: {
-			label: '48 hours'
-		},
-		description: 'Pitch your product to users and investors',
-		img: 'https://assets.website-files.com/64831da00244efd7c8280a6c/6501fa4c88cef88ac28330a7_image%202.png',
-		href: '/new/ui-ux-prototype'
-	},
-	{
-		amount: 39999,
-		activateAmount: 999,
-		key: 'product_demo_video',
-		name: 'Product Demo Video',
-		time: {
-			label: '5 days'
-		},
-		description: 'Explain your product with dynamic video',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696528187173-image.png',
-		href: '/new/product-demo-video'
-	},
-	{
 		amount: 5999,
 		activateAmount: 999,
 		key: 'marketing_assets',
@@ -38,75 +14,104 @@ let services = [
 		href: '/new/marketing-assets'
 	},
 	{
-		amount: 5999,
-		activateAmount: 999,
-		key: '3d_icon',
-		name: '3D Icon',
-		time: {
-			label: '48 hours'
-		},
-		description: 'Spice up your designs with authentic 3D art',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393543012-3d.png',
-		img2: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697798080012-image.png',
-		href: '/new/3d-icon'
-	},
-	{
-		amount: 19999,
-		activateAmount: 999,
-		key: 'motion_animation',
-		name: 'Video Ads',
-		time: {
-			label: '3 days'
-		},
-		description: `Use short animations to promote your product features`,
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393679354-motion.png',
-
-		video:
-			'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1696528525428-motion.mp4',
-		href: '/new/motion-animation'
-	},
-	{
 		amount: 19999,
 		key: 'landing_page',
 		activateAmount: 999,
 		name: 'Landing Page',
-		description: 'Validate your product idea and grow waitlist',
+		time: {
+			label: '3 days'
+		},
+		description: 'Validate your product idea or launch a page for your product',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393601171-Landing%20page.png',
 
 		img2: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527198530-image.png',
 		href: '/new/landing-page'
 	},
 	{
-		amount: 9999,
+		key: 'ui_ux_prototype',
+		amount: 67999,
 		activateAmount: 999,
-		key: 'pitch_deck',
-		name: 'Pitch Deck',
-		description: 'Convert your story into compelling pitch',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527520883-image.png',
-		href: '/new/pitch-deck'
+		name: 'UI/UX Prototype in 48 Hours',
+		time: {
+			label: '3 days'
+		},
+		description: 'Pitch your product to users and investors',
+		img: 'https://assets.website-files.com/64831da00244efd7c8280a6c/6501fa4c88cef88ac28330a7_image%202.png',
+		href: '/new/ui-ux-prototype'
 	},
 	{
-		amount: 750000,
-		key: 'mvp_build',
-		name: 'MVP in 1 Month',
-		description: 'Build your product super fast. Full-stack code + no-code',
+		amount: 117900,
+		activateAmount: 999,
+		key: 'product_demo_video',
+		name: 'Product Demo Video',
 		time: {
-			label: '1 month'
+			label: '5 days'
 		},
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697800210476-image.png',
-		href: '/new/mvp-build'
+		description: 'Explain your product with dynamic video',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696528187173-image.png',
+		href: '/new/product-demo-video'
 	}
+
+	// {
+	// 	amount: 5999,
+	// 	activateAmount: 999,
+	// 	key: '3d_icon',
+	// 	name: '3D Icon',
+	// 	time: {
+	// 		label: '48 hours'
+	// 	},
+	// 	description: 'Spice up your designs with authentic 3D art',
+	// 	img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393543012-3d.png',
+	// 	img2: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697798080012-image.png',
+	// 	href: '/new/3d-icon'
+	// },
+	// {
+	// 	amount: 19999,
+	// 	activateAmount: 999,
+	// 	key: 'motion_animation',
+	// 	name: 'Video Ads',
+	// 	time: {
+	// 		label: '3 days'
+	// 	},
+	// 	description: `Use short animations to promote your product features`,
+	// 	img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393679354-motion.png',
+
+	// 	video:
+	// 		'https://fra1.digitaloceanspaces.com/ship-app-assets/stream/rec4sLfwGXzHxLy54/1696528525428-motion.mp4',
+	// 	href: '/new/motion-animation'
+	// },
+
+	// {
+	// 	amount: 9999,
+	// 	activateAmount: 999,
+	// 	key: 'pitch_deck',
+	// 	name: 'Pitch Deck',
+	// 	description: 'Convert your story into compelling pitch',
+	// 	img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1696527520883-image.png',
+	// 	href: '/new/pitch-deck'
+	// },
+	// {
+	// 	amount: 750000,
+	// 	key: 'mvp_build',
+	// 	name: 'MVP in 1 Month',
+	// 	description: 'Build your product super fast. Full-stack code + no-code',
+	// 	time: {
+	// 		label: '1 month'
+	// 	},
+	// 	img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1697800210476-image.png',
+	// 	href: '/new/mvp-build'
+	// }
 ];
 
 export let marketingServices = [
 	{
 		key: 'logo',
 		name: 'Logo',
-		amount: 14999,
+		amount: 67999,
 		href: '/new/logo',
 		activateAmount: 999,
 		time: {
-			label: '3 days'
+			label: '2 days'
 		},
 		description: '3 unique concepts to choose from',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127540453-image.png',
