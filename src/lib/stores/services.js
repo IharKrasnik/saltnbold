@@ -7,7 +7,7 @@ let services = [
 		key: 'marketing_assets',
 		name: 'Marketing Assets',
 		time: {
-			label: '3 days'
+			label: '2 days'
 		},
 		description: 'Logo, illustrations, icons and designs for your social media',
 		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393662430-marketing.png',
