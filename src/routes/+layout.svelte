@@ -5,6 +5,7 @@
 	import NavLinks from '$lib/components/NavLinks.svelte';
 	import LoginButton from '$lib/components/LoginButton.svelte';
 	import { SvelteToast } from '@zerodevx/svelte-toast';
+	import { showSuccessMessage } from '$lib/services/toast';
 
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
@@ -27,6 +28,13 @@
 				isRequestsLoading.set(false);
 			}
 		}
+	}
+
+	$: if ($page.url.searchParams.get('isWelcome') && !$isCurrentUserLoading) {
+		showSuccessMessage(`Welcome, ${$currentUser.fullName.split(' ')[0]} 👋`);
+		const newUrl = new URL($page.url);
+		newUrl?.searchParams?.delete('isWelcome');
+		goto(newUrl);
 	}
 </script>
 

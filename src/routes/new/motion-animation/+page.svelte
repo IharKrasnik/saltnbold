@@ -45,13 +45,7 @@
 </div>
 
 <div class="section-body">
-	{#if $currentUser}
-		<div class="w-full max-w-[600px]">
-			<Form {form} valueObj={request} onSubmitted={createRequest} />
-		</div>
-	{:else}
-		<div class="">
-			<LoginButton />
-		</div>
-	{/if}
+	<div class="w-full max-w-[600px]">
+		<Form {form} valueObj={request} onSubmitted={createRequest} />
+	</div>
 </div>

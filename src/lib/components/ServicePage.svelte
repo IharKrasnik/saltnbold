@@ -29,22 +29,16 @@
 </div>
 
 <div class="section-body">
-	{#if $currentUser}
-		<div class="w-full max-w-[600px]">
-			<Form
-				form={service.form}
-				valueObj={{
-					...service.form.defaultValue,
-					type: service.key
-				}}
-				onSubmitted={createRequest}
-			/>
-		</div>
-	{:else}
-		<div class="">
-			<LoginButton />
-		</div>
-	{/if}
+	<div class="w-full max-w-[600px]">
+		<Form
+			form={service.form}
+			valueObj={{
+				...service.form.defaultValue,
+				type: service.key
+			}}
+			onSubmitted={createRequest}
+		/>
+	</div>
 </div>
 
 <div class="my-12">

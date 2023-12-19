@@ -20,7 +20,7 @@
 	};
 
 	let formatRequestStatus = (request) => {
-		if (!request.isActivated || !request.amount) {
+		if (!request.isActivated) {
 			return 'In Draft';
 		} else if (!request.isCompleted) {
 			return 'Work In Progress';
@@ -87,7 +87,7 @@
 							</div>
 						</div>
 
-						{#if request.isActivated}
+						{#if request.isActivated && request.amount}
 							<div class="absolute left-4 top-4 z-10 px-2 rounded-lg bg-zinc-600">
 								Revisions: {request.reviews?.length || 0}/{request.totalReviewsCount || 2}
 							</div>

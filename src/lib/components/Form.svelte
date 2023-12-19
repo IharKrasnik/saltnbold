@@ -4,9 +4,13 @@
 	import formCache from '$lib/stores/formCache';
 	import FeatherIcon from '$lib/components/FeatherIcon.svelte';
 	import HelpTooltip from '$lib/components/HelpTooltip.svelte';
+	import LoginButton from '$lib/components/LoginButton.svelte';
+	import currentUser from '$lib/stores/currentUser';
 
 	let clazz;
 	export { clazz as class };
+
+	export let isWithAuth = true;
 
 	export let form = {
 		cacheId: '',
@@ -170,11 +174,15 @@
 		</div>
 	{/each}
 
-	<button class="primary" type="submit" on:click={submit} disabled={isLoading}>
-		{#if isLoading}
-			<Loader />
-		{/if}
+	{#if $currentUser}
+		<button class="primary" type="submit" on:click={submit} disabled={isLoading}>
+			{#if isLoading}
+				<Loader />
+			{/if}
 
-		{form.buttonText || 'Continue'}</button
-	>
+			{form.buttonText || 'Continue'}</button
+		>
+	{:else}
+		<LoginButton />
+	{/if}
 </div>
