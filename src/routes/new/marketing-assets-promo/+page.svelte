@@ -58,3 +58,8 @@
 		<Form {form} valueObj={request} onSubmitted={createRequest} />
 	</div>
 </div>
+
+<img
+	src="https://pbs.twimg.com/media/GAvzsZ-XQAATrZc?format=png&name=medium"
+	class="rounded shadow-lg max-w-[400px] mx-auto mt-8"
+/>
