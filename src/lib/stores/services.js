@@ -106,7 +106,7 @@ let services = [
 	},
 
 	{
-		amount: 29999,
+		amount: 39999,
 		key: 'landing_page',
 		activateAmount: 999,
 		name: 'Landing Page',

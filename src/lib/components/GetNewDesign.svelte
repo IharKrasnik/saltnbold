@@ -140,7 +140,7 @@
 						</h3>
 					</div>
 
-					<div class="opacity-80">{service.description}</div>
+					<div class="opacity-70">{service.description}</div>
 				</div>
 				<div
 					class="bg-[#18181b] border-t border-white/10 rounded-b-xl pt-4 flex justify-between px-4 pb-4 items-center"
