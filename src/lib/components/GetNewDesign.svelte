@@ -113,19 +113,19 @@
 <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-4 w-full">
 	{#each $services as service, i}
 		<a
-			class="service"
+			class="group service"
 			href={service.href}
 			on:mouseenter={() => (hoveringService = service)}
 			on:mouseleave={() => (hoveringService = null)}
 		>
 			<div
-				class="bg-[#141414] rounded-xl bg-zinc-900 relative border border-[#5a5454] flex flex-col justify-between mb-4 transition hover:border-white cursor-pointer"
+				class=" bg-[#141414] rounded-xl bg-zinc-900 relative border border-[#5a5454] flex flex-col justify-between mb-4 transition hover:border-white cursor-pointer"
 			>
 				<div class="relative" style="height: 156px;">
-					<div class=" max-w-[60%] mx-auto">
+					<div class="mx-auto">
 						<!-- <ServiceImage class="w-full h-full" serviceKey={service.key} /> -->
 						<img
-							class="service-img w-full rounded-t-xl cover-image object-contain"
+							class="service-img w-full rounded-t-xl cover-image object-contain grayscale-dimmed group-hover:grayscale-0"
 							style="margin-left: -9px;; 
 							margin-top: -20px;"
 							src={`services_images/${service.key}.svg`}
@@ -169,7 +169,7 @@
 		</a>
 		{#if i === $services.length - 1}
 			<div
-				class="rounded-xl py-8 border border-slate-600 flex flex-col mb-4 bg-[#97aadc] text-[#222] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-300 hover:text-black cursor-pointer"
+				class="group rounded-xl py-8 border border-slate-600 flex flex-col mb-4 bg-[#97aadc] text-[#222] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-300 hover:text-black cursor-pointer"
 				data-cal-link="team/salt-and-bold/intro-call-30-min"
 			>
 				<div class="text-2xl" data-cal-link="team/salt-and-bold/intro-call-30-min">
@@ -179,7 +179,7 @@
 					{#each designers as designer}
 						<img
 							src={designer.avatarUrl}
-							class="w-[40px] h-[40px] rounded-full grayscale"
+							class="w-[40px] h-[40px] rounded-full grayscale group-hover:grayscale-0"
 							data-cal-link="team/salt-and-bold/intro-call-30-min"
 							style="margin-right: -10px;"
 						/>

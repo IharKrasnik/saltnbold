@@ -151,3 +151,9 @@ h3 {
 .svgicon.active .fill-color {
 	fill: #ffffff;
 }
+
+@layer utilities {
+	.grayscale-dimmed {
+		filter: grayscale(0.7);
+	}
+}

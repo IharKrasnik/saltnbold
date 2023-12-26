@@ -9,10 +9,9 @@
 	import requests, { createRequest } from '$lib/stores/requests';
 	import { goto } from '$app/navigation';
 
-	import { marketingServices, marketingPortfolio } from '$lib/stores/services';
+	import services, { marketingServices, marketingPortfolio } from '$lib/stores/services';
 
 	import { fly } from 'svelte/transition';
-	import services from '$lib/stores/services';
 	import toDollars from '$lib/helpers/toDollars';
 	import showCrispChat from '$lib/helpers/showCrispChat';
 	import Icon from '$lib/components/Icon.svelte';
@@ -23,8 +22,10 @@
 
 <div class="section-header">
 	<div>
-		<h2 class="text-xl font-bold">Get your brand design</h2>
-		<h3 class="text-lg mt-2">Please share as much specific info as you can to get us started.</h3>
+		<h2 class="text-xl font-bold">Get your design</h2>
+		<h3 class="text-lg mt-2 opacity-70">
+			Please share as much specific info as you can to get us started
+		</h3>
 	</div>
 </div>
 
@@ -45,7 +46,7 @@
 	<div class="section-header">
 		<div>
 			<h2>Some examples</h2>
-			<h3 class="mt-2">Here's what we've created for founders like you</h3>
+			<h3 class="mt-2 opacity-70">Here's what we've created for founders like you</h3>
 		</div>
 	</div>
 

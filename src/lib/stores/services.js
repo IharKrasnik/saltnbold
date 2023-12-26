@@ -2,19 +2,111 @@ import { writable } from 'svelte/store';
 
 let services = [
 	{
+		key: 'social_media_assets',
+		name: 'Social Media Asset',
 		amount: 5999,
+		href: '/new/social-media-assets',
 		activateAmount: 999,
-		key: 'marketing_assets',
-		name: 'Marketing Assets',
 		time: {
 			label: '2 days'
 		},
-		description: 'Logo, illustrations, icons and designs for your social media',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1698393662430-marketing.png',
-		href: '/new/marketing-assets'
+		description: 'Illustration for your social media post or other content',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703607260430-image.png',
+
+		form: {
+			cacheId: 'social_media_asset',
+			buttonText: 'Start Designing',
+			defaultValue: {
+				description: '',
+				references: ''
+			},
+			fields: [
+				{
+					name: 'description',
+					title: `What designs do you need?`,
+					description: '',
+					placeholder: `I need an image to announce the release of a new feature that we were building for the last month`,
+					type: 'long-text',
+					hints: [`Please share the links to existing assets, if any`],
+					isRequired: true
+				},
+				{
+					name: 'references',
+					title: `Please send few examples (urls) of designs that you like`,
+					description: '',
+					placeholder: `I love how clean and simple Linear brand is (https://linear.app)`,
+					type: 'long-text',
+					// hint: `The more details you share, the better prototype you'll get`,
+					isRequired: true
+				}
+			]
+		},
+
+		portfolio: [
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703609528544-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703609568270-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703609587501-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703609642932-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703609608863-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703609665955-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703610002111-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703610033470-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703610056964-image.png'
+		]
 	},
 	{
-		amount: 19999,
+		key: 'logo',
+		name: 'Logo',
+		amount: 37999,
+		href: '/new/logo',
+		activateAmount: 999,
+		time: {
+			label: '2 days'
+		},
+		description: '3 unique concepts to choose from',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703607260430-image.png',
+
+		form: {
+			cacheId: 'logo',
+			buttonText: 'Start Designing',
+			defaultValue: {
+				description: '',
+				references: ''
+			},
+			fields: [
+				{
+					name: 'description',
+					title: `What design do you need?`,
+					description: '',
+					placeholder: `I want to design a logo for my product Momentum. It will help founders to monitor their growth daily.`,
+					type: 'long-text',
+					hints: [`Please share the links to existing assets, if any`],
+					isRequired: true
+				},
+				{
+					name: 'references',
+					title: `Please send few examples (urls) of designs that you like`,
+					description: '',
+					placeholder: `I love how clean and simple Linear brand is (https://linear.app)`,
+					type: 'long-text',
+					// hint: `The more details you share, the better prototype you'll get`,
+					isRequired: true
+				}
+			]
+		},
+		explainers: [
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700136655062-image.png'
+		],
+		portfolio: [
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127450464-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127512982-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127540453-image.png',
+			'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127554415-image.png'
+		]
+	},
+
+	{
+		amount: 29999,
 		key: 'landing_page',
 		activateAmount: 999,
 		name: 'Landing Page',
@@ -114,7 +206,7 @@ export let marketingServices = [
 			label: '2 days'
 		},
 		description: '3 unique concepts to choose from',
-		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1700127540453-image.png',
+		img: 'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703607260430-image.png',
 
 		form: {
 			cacheId: 'logo',
