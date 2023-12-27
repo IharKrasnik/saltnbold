@@ -169,10 +169,10 @@
 		</a>
 		{#if i === $services.length - 1}
 			<div
-				class="group rounded-xl py-8 border border-zinc-600 flex flex-col mb-4 bg-[#18181b] text-[rgba(255,255,255,.8)] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-300 hover:text-black cursor-pointer"
+				class="group rounded-xl py-8 border border-zinc-600 flex flex-col mb-4 bg-[#18181b] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-brand hover:text-black cursor-pointer"
 				data-cal-link="team/salt-and-bold/intro-call-30-min"
 			>
-				<div class="text-2xl" data-cal-link="team/salt-and-bold/intro-call-30-min">
+				<div class="text-2xl opacity-80" data-cal-link="team/salt-and-bold/intro-call-30-min">
 					Custom Design
 				</div>
 				<div class="flex flex-wrap mt-4 justify-center sm:w-[50%]">
@@ -185,8 +185,8 @@
 						/>
 					{/each}
 				</div>
-				<div class="text-lg font-bold mt-4">$1200.00/week</div>
-				<div class="mt-2">Book a free call</div>
+				<div class="text-lg font-bold mt-4 opacity-90">$1200.00/week</div>
+				<div class="mt-2 opacity-90">Book a free call</div>
 			</div>
 		{/if}
 	{/each}

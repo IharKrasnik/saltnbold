@@ -88,7 +88,7 @@
 		<a
 			href="/referrals"
 			class:active={$page.url.pathname.startsWith('/referrals')}
-			class="nav block w-full bg-zinc-900 border border-[#242424] cursor-pointer p-4 rounded-xl mt-8 hover:bg-green-400 hover:text-black transition"
+			class="nav block w-full bg-zinc-900 border border-[#242424] cursor-pointer p-4 rounded-xl mt-8 hover:bg-green-brand hover:text-black transition"
 		>
 			<div class="block">Share With Friends 💙</div>
 			<div class="opacity-80 text-sm mt-2">
