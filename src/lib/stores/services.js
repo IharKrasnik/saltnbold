@@ -27,7 +27,6 @@ let services = [
 					description: '',
 					placeholder: `I need an image to announce the release of a new feature that we were building for the last month`,
 					type: 'long-text',
-					hints: [`Please share the links to existing assets, if any`],
 					isRequired: true
 				},
 				{
