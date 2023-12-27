@@ -125,7 +125,7 @@
 					<div class="mx-auto">
 						<!-- <ServiceImage class="w-full h-full" serviceKey={service.key} /> -->
 						<img
-							class="service-img w-full rounded-t-xl cover-image object-contain grayscale-dimmed group-hover:grayscale-0"
+							class="service-img w-full rounded-t-xl cover-image object-contain"
 							style="margin-left: -9px;; 
 							margin-top: -20px;"
 							src={`services_images/${service.key}.svg`}
@@ -169,7 +169,7 @@
 		</a>
 		{#if i === $services.length - 1}
 			<div
-				class="group rounded-xl py-8 border border-slate-600 flex flex-col mb-4 bg-[#97aadc] text-[#222] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-300 hover:text-black cursor-pointer"
+				class="group rounded-xl py-8 border border-zinc-600 flex flex-col mb-4 bg-[#18181b] text-[rgba(255,255,255,.8)] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-300 hover:text-black cursor-pointer"
 				data-cal-link="team/salt-and-bold/intro-call-30-min"
 			>
 				<div class="text-2xl" data-cal-link="team/salt-and-bold/intro-call-30-min">
