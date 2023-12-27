@@ -16,15 +16,15 @@
 		},
 		{
 			avatarUrl:
+				'https://ship-app-assets.fra1.digitaloceanspaces.com/stream/rec4sLfwGXzHxLy54/1703667213958-image.png'
+		},
+		{
+			avatarUrl:
 				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253e778bc23c60411216b8_Ellipse%207.png'
 		},
 		{
 			avatarUrl:
 				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253e85c9f60eedf06d758d_Ellipse%2023.png'
-		},
-		{
-			avatarUrl:
-				'https://assets-global.website-files.com/64831da00244efd7c8280a6c/65253ea584fc70a4cd15a622_zhenya.png'
 		},
 		{
 			avatarUrl:
@@ -179,7 +179,7 @@
 					{#each designers as designer}
 						<img
 							src={designer.avatarUrl}
-							class="w-[40px] h-[40px] rounded-full grayscale group-hover:grayscale-0"
+							class="w-[40px] h-[40px] rounded-full grayscale-dimmed group-hover:grayscale-0"
 							data-cal-link="team/salt-and-bold/intro-call-30-min"
 							style="margin-right: -10px;"
 						/>
