@@ -5,6 +5,7 @@
 	import requests, { isLoading as isRequestsLoading } from '$lib/stores/requests';
 	import Loader from '$lib/components/Loader.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import FeatherIcon from '$lib/components/FeatherIcon.svelte';
 
 	import HomeIcon from '$lib/icons/home.svelte';
 	import GiftIcon from '$lib/icons/gift.svelte';
@@ -74,6 +75,26 @@
 
 	<div class="mt-2 text-sm opacity-80">
 		Salt & Bold is a result-driven design studio for startups
+	</div>
+
+	<div class="mt-4 flex gap-2">
+		<a class="opacity-70 hover:opacity-100" href="https://twitter.com/saltnbold" target="_blank">
+			<FeatherIcon size="20" name="twitter" />
+		</a>
+		<a
+			class="opacity-70 hover:opacity-100"
+			href="https://www.linkedin.com/company/saltnbold"
+			target="_blank"
+		>
+			<FeatherIcon size="20" name="linkedin" />
+		</a>
+		<a
+			class="opacity-70 hover:opacity-100"
+			href="https://www.instagram.com/saltnbold"
+			target="_blank"
+		>
+			<FeatherIcon size="20" name="instagram" />
+		</a>
 	</div>
 </div>
 

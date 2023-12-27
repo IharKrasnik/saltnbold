@@ -2,7 +2,6 @@
 	import { z } from 'zod';
 	import Loader from '$lib/components/Loader.svelte';
 	import formCache from '$lib/stores/formCache';
-	import FeatherIcon from '$lib/components/FeatherIcon.svelte';
 	import HelpTooltip from '$lib/components/HelpTooltip.svelte';
 	import LoginButton from '$lib/components/LoginButton.svelte';
 	import currentUser from '$lib/stores/currentUser';

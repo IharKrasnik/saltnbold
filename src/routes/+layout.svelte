@@ -6,6 +6,7 @@
 	import LoginButton from '$lib/components/LoginButton.svelte';
 	import { SvelteToast } from '@zerodevx/svelte-toast';
 	import { showSuccessMessage } from '$lib/services/toast';
+	import FeatherIcon from '$lib/components/FeatherIcon.svelte';
 
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';

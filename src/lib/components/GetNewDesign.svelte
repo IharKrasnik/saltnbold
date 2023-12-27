@@ -95,7 +95,7 @@
 			</div>
 		</div>
 
-		<hr class="border-white/20 my-8" />
+		<!-- <hr class="border-white/20 my-8" />
 
 		<div class="mt-4">
 			<div class="text-sm py-1 w-full sm:text-center">
@@ -104,7 +104,7 @@
 					on:click={showCrispChat}>Chat with the team now</span
 				>
 			</div>
-		</div>
+		</div> -->
 	{/if}
 </div>
 
@@ -168,9 +168,11 @@
 			</div>
 		</a>
 		{#if i === $services.length - 1}
-			<div
+			<a
+				href="https://cal.com/team/salt-and-bold/intro-call?date=2023-12-27&month=2023-12"
+				target="_blank"
 				class="group rounded-xl py-8 border border-zinc-600 flex flex-col mb-4 bg-[#18181b] flex flex-col justify-center items-center transition hover:boder-white hover:bg-green-brand hover:text-black cursor-pointer"
-				data-cal-link="team/salt-and-bold/intro-call-30-min"
+				datas-cal-link="team/salt-and-bold/intro-call-30-min"
 			>
 				<div class="text-2xl opacity-80" data-cal-link="team/salt-and-bold/intro-call-30-min">
 					Custom Design
@@ -187,7 +189,7 @@
 				</div>
 				<div class="text-lg font-bold mt-4 opacity-90">$1200.00/week</div>
 				<div class="mt-2 opacity-90">Book a free call</div>
-			</div>
+			</a>
 		{/if}
 	{/each}
 </div>
