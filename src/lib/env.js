@@ -7,7 +7,7 @@ import { browser } from '$app/environment';
 let isProduction = import.meta.env.VITE_APP_ENV === 'production';
 
 export let isDev = !isProduction;
-
+console.log('isDev', isDev);
 export const API_URL = isDev
 	? 'https://ship-6527f44a69156500134a0316.paralect.net'
 	: 'https://ship-prod-6527f44a69156500134a0316.paralect.net';
